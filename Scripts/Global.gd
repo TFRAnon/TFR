@@ -19,4 +19,6 @@ func _process(delta: float) -> void:
 func changeScene(sceneName):
 	match sceneName:
 		"MainMenu":
-			get_tree().change_scene_to_file("res://Scenes/Main_menu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+		"Continue":
+			get_tree().change_scene_to_file("res://Scenes/SaveGame.tscn")

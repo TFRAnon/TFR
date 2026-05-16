@@ -1,0 +1,91 @@
+[gd_scene load_steps=19 format=3 uid="uid://ekm5pyl1gjcf"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_auv26"]
+[ext_resource type="Texture2D" uid="uid://dfw6j3qpwgb8d" path="res://Textures/MainMenu/title.jpg" id="2_pj20a"]
+[ext_resource type="Texture2D" uid="uid://scxq7mfi05aq" path="res://Textures/MainMenu/start_clear.png" id="3_8dbtm"]
+[ext_resource type="Texture2D" uid="uid://c03wcaf0h8n13" path="res://Textures/MainMenu/start.png" id="4_2678o"]
+[ext_resource type="Texture2D" uid="uid://n0jmmuhhqfa0" path="res://Textures/MainMenu/config_clear.png" id="5_ipknm"]
+[ext_resource type="Texture2D" uid="uid://db3p6oqjoong0" path="res://Textures/MainMenu/config.png" id="6_4w8ss"]
+[ext_resource type="Texture2D" uid="uid://2pq0k6orvnea" path="res://Textures/MainMenu/history_clear.png" id="7_do5mc"]
+[ext_resource type="Texture2D" uid="uid://bhmyhbms8nyxy" path="res://Textures/MainMenu/history.png" id="8_3vg18"]
+[ext_resource type="Texture2D" uid="uid://0j6ddt44qtaj" path="res://Textures/MainMenu/patch_clear.png" id="9_4u1oc"]
+[ext_resource type="Texture2D" uid="uid://b60xp2jmv0h7v" path="res://Textures/MainMenu/patch.png" id="10_0ajai"]
+[ext_resource type="Texture2D" uid="uid://ldah7lix3imr" path="res://Textures/MainMenu/continue_clear.png" id="11_7l1bn"]
+[ext_resource type="Texture2D" uid="uid://cqkemti1vslf2" path="res://Textures/MainMenu/continue.png" id="12_cjopr"]
+[ext_resource type="Texture2D" uid="uid://b6lj7hq8nyhdy" path="res://Textures/MainMenu/readme_clear.png" id="13_vpx0m"]
+[ext_resource type="Texture2D" uid="uid://bqmw6xpu46spm" path="res://Textures/MainMenu/readme.png" id="14_hlmru"]
+[ext_resource type="Texture2D" uid="uid://dhlas0dnoc27b" path="res://Textures/MainMenu/credit_clear.png" id="15_ac22j"]
+[ext_resource type="Texture2D" uid="uid://da5f7nhhirmo8" path="res://Textures/MainMenu/credit.png" id="16_4cj5o"]
+[ext_resource type="Texture2D" uid="uid://58e1ahnnbnc8" path="res://Textures/MainMenu/quit_clear.png" id="17_koowc"]
+[ext_resource type="Texture2D" uid="uid://15b7tghk2anj" path="res://Textures/MainMenu/quit.png" id="18_vi848"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_auv26")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_pj20a")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 511.0
+offset_top = 713.0
+offset_right = 1411.0
+offset_bottom = 996.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Start" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture_normal = ExtResource("3_8dbtm")
+texture_hover = ExtResource("4_2678o")
+
+[node name="Config" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture_normal = ExtResource("5_ipknm")
+texture_hover = ExtResource("6_4w8ss")
+
+[node name="UpdateHistory" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture_normal = ExtResource("7_do5mc")
+texture_hover = ExtResource("8_3vg18")
+
+[node name="ApplyPatch" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture_normal = ExtResource("9_4u1oc")
+texture_hover = ExtResource("10_0ajai")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Continue" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture_normal = ExtResource("11_7l1bn")
+texture_hover = ExtResource("12_cjopr")
+
+[node name="Readme" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture_normal = ExtResource("13_vpx0m")
+texture_hover = ExtResource("14_hlmru")
+
+[node name="Credit" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture_normal = ExtResource("15_ac22j")
+texture_hover = ExtResource("16_4cj5o")
+
+[node name="Quit" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture_normal = ExtResource("17_koowc")
+texture_hover = ExtResource("18_vi848")

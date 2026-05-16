@@ -1,0 +1,142 @@
+[gd_scene load_steps=35 format=3 uid="uid://evrai8nlpnvq"]
+
+[ext_resource type="Texture2D" uid="uid://dnjtqbsuni5q1" path="res://Textures/Save-Load/bg_save.png" id="1_3jthg"]
+[ext_resource type="Script" path="res://Scripts/SaveGame.gd" id="1_ru7bs"]
+[ext_resource type="Texture2D" uid="uid://bh245bt4qqsy7" path="res://Textures/Save-Load/back.png" id="2_dqlob"]
+[ext_resource type="Texture2D" uid="uid://3w1yqaymbck7" path="res://Textures/Save-Load/back_h.png" id="3_tihhd"]
+[ext_resource type="Texture2D" uid="uid://ndcdrbgd1yo8" path="res://Textures/Save-Load/Numbers/1_transparent.png" id="4_ioanr"]
+[ext_resource type="Texture2D" uid="uid://d28pli475yxts" path="res://Textures/Save-Load/Numbers/1_black.png" id="5_83nla"]
+[ext_resource type="Texture2D" uid="uid://dfafslnh7fxey" path="res://Textures/Save-Load/Numbers/1_white.png" id="6_5kvt3"]
+[ext_resource type="Texture2D" uid="uid://dbvir78sy6oh2" path="res://Textures/Save-Load/Numbers/2_transparent.png" id="7_xe26d"]
+[ext_resource type="Texture2D" uid="uid://bei4b306sman7" path="res://Textures/Save-Load/Numbers/2_black.png" id="8_6dmyw"]
+[ext_resource type="Texture2D" uid="uid://wknctials5v" path="res://Textures/Save-Load/Numbers/2_white.png" id="9_ykc5h"]
+[ext_resource type="Texture2D" uid="uid://cwpofgepk43dy" path="res://Textures/Save-Load/Numbers/3_transparent.png" id="10_5fs14"]
+[ext_resource type="Texture2D" uid="uid://ctdstn22vuk3b" path="res://Textures/Save-Load/Numbers/3_black.png" id="11_6fgxe"]
+[ext_resource type="Texture2D" uid="uid://cacwfdkaaghh6" path="res://Textures/Save-Load/Numbers/3_white.png" id="12_c4xxw"]
+[ext_resource type="Texture2D" uid="uid://omlxkxcscnxu" path="res://Textures/Save-Load/Numbers/4_transparent.png" id="13_h2xcy"]
+[ext_resource type="Texture2D" uid="uid://cuas4i4685iex" path="res://Textures/Save-Load/Numbers/4_black.png" id="14_2ittp"]
+[ext_resource type="Texture2D" uid="uid://c5n018qshbwmt" path="res://Textures/Save-Load/Numbers/4_white.png" id="15_4sdtk"]
+[ext_resource type="Texture2D" uid="uid://benxcuklpw0jv" path="res://Textures/Save-Load/Numbers/5_transparent.png" id="16_tvwjr"]
+[ext_resource type="Texture2D" uid="uid://k7wnq6ney1ai" path="res://Textures/Save-Load/Numbers/5_black.png" id="17_wjk3j"]
+[ext_resource type="Texture2D" uid="uid://8obum5s2yohv" path="res://Textures/Save-Load/Numbers/5_white.png" id="18_46tvk"]
+[ext_resource type="Texture2D" uid="uid://c52dpxgahp0lb" path="res://Textures/Save-Load/Numbers/6_transparent.png" id="19_wcuog"]
+[ext_resource type="Texture2D" uid="uid://ccupd4uthrx7v" path="res://Textures/Save-Load/Numbers/6_black.png" id="20_jga1p"]
+[ext_resource type="Texture2D" uid="uid://ydrr3rkkljik" path="res://Textures/Save-Load/Numbers/6_white.png" id="21_v0qdi"]
+[ext_resource type="Texture2D" uid="uid://dpuwhtkxv0sn8" path="res://Textures/Save-Load/Numbers/7_transparent.png" id="22_3m2ib"]
+[ext_resource type="Texture2D" uid="uid://twvageuj4f8q" path="res://Textures/Save-Load/Numbers/7_black.png" id="23_yv5hd"]
+[ext_resource type="Texture2D" uid="uid://bca1xoscadwav" path="res://Textures/Save-Load/Numbers/7_white.png" id="24_p70yb"]
+[ext_resource type="Texture2D" uid="uid://osfrufnhcw0g" path="res://Textures/Save-Load/Numbers/8_transparent.png" id="25_ixqrt"]
+[ext_resource type="Texture2D" uid="uid://buax232algmx7" path="res://Textures/Save-Load/Numbers/8_black.png" id="26_blr6a"]
+[ext_resource type="Texture2D" uid="uid://bqd86ig6qoxic" path="res://Textures/Save-Load/Numbers/8_white.png" id="27_if7j8"]
+[ext_resource type="Texture2D" uid="uid://bftupd3ul7pyy" path="res://Textures/Save-Load/Numbers/9_transparent.png" id="28_gljiu"]
+[ext_resource type="Texture2D" uid="uid://dx8yiyrut4wnk" path="res://Textures/Save-Load/Numbers/9_black.png" id="29_fy3vq"]
+[ext_resource type="Texture2D" uid="uid://deggskc8nwiob" path="res://Textures/Save-Load/Numbers/9_white.png" id="30_dgs7x"]
+[ext_resource type="Texture2D" uid="uid://b16tbdyp7fyna" path="res://Textures/Save-Load/Numbers/10_transparent.png" id="31_a8rqr"]
+[ext_resource type="Texture2D" uid="uid://b3e0yaw863p35" path="res://Textures/Save-Load/Numbers/10_black.png" id="32_7tkr6"]
+[ext_resource type="Texture2D" uid="uid://cdcrnipsrxjdt" path="res://Textures/Save-Load/Numbers/10_white.png" id="33_arwy2"]
+
+[node name="SaveGame" type="Node2D"]
+script = ExtResource("1_ru7bs")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_3jthg")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="ExitButton" type="TextureButton" parent="."]
+offset_left = 1805.0
+offset_top = 14.0
+offset_right = 1888.0
+offset_bottom = 97.0
+texture_normal = ExtResource("2_dqlob")
+texture_hover = ExtResource("3_tihhd")
+metadata/_edit_lock_ = true
+
+[node name="Pages" type="HBoxContainer" parent="."]
+offset_left = 840.0
+offset_top = 5.0
+offset_right = 1606.0
+offset_bottom = 88.0
+scale = Vector2(1.2, 1.2)
+metadata/_edit_lock_ = true
+
+[node name="1" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_ioanr")
+texture_hover = ExtResource("5_83nla")
+texture_disabled = ExtResource("6_5kvt3")
+metadata/_edit_lock_ = true
+
+[node name="2" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("7_xe26d")
+texture_hover = ExtResource("8_6dmyw")
+texture_disabled = ExtResource("9_ykc5h")
+metadata/_edit_lock_ = true
+
+[node name="3" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("10_5fs14")
+texture_hover = ExtResource("11_6fgxe")
+texture_disabled = ExtResource("12_c4xxw")
+metadata/_edit_lock_ = true
+
+[node name="4" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("13_h2xcy")
+texture_hover = ExtResource("14_2ittp")
+texture_disabled = ExtResource("15_4sdtk")
+metadata/_edit_lock_ = true
+
+[node name="5" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("16_tvwjr")
+texture_hover = ExtResource("17_wjk3j")
+texture_disabled = ExtResource("18_46tvk")
+metadata/_edit_lock_ = true
+
+[node name="6" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("19_wcuog")
+texture_hover = ExtResource("20_jga1p")
+texture_disabled = ExtResource("21_v0qdi")
+metadata/_edit_lock_ = true
+
+[node name="7" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("22_3m2ib")
+texture_hover = ExtResource("23_yv5hd")
+texture_disabled = ExtResource("24_p70yb")
+metadata/_edit_lock_ = true
+
+[node name="8" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("25_ixqrt")
+texture_hover = ExtResource("26_blr6a")
+texture_disabled = ExtResource("27_if7j8")
+metadata/_edit_lock_ = true
+
+[node name="9" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("28_gljiu")
+texture_hover = ExtResource("29_fy3vq")
+texture_disabled = ExtResource("30_dgs7x")
+metadata/_edit_lock_ = true
+
+[node name="10" type="TextureButton" parent="Pages"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+texture_normal = ExtResource("31_a8rqr")
+texture_hover = ExtResource("32_7tkr6")
+texture_disabled = ExtResource("33_arwy2")
+metadata/_edit_lock_ = true
