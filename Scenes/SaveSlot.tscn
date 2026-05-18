@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dawwjeag436fb"]
+
+[ext_resource type="Texture2D" uid="uid://bhuvyyf5edneu" path="res://Textures/Save-Load/save_slot.png" id="1_ue2o1"]
+[ext_resource type="Texture2D" uid="uid://wuphmo7y54x0" path="res://Textures/Save-Load/no_data.png" id="2_sakuc"]
+[ext_resource type="Script" path="res://Scripts/SaveSlot.gd" id="2_xn5sb"]
+[ext_resource type="Texture2D" uid="uid://lhq61qftasd6" path="res://Textures/Save-Load/delete.png" id="3_468bh"]
+[ext_resource type="Texture2D" uid="uid://q6iuaqkyy87o" path="res://Textures/Save-Load/delete_h.png" id="4_j7uk4"]
+[ext_resource type="Texture2D" uid="uid://b14mp0m5mjdeu" path="res://Textures/Save-Load/new.png" id="5_7pa6h"]
+
+[node name="SaveSlot" type="TextureButton"]
+texture_normal = ExtResource("1_ue2o1")
+script = ExtResource("2_xn5sb")
+
+[node name="NoData" type="Sprite2D" parent="."]
+position = Vector2(80.4958, 89.5833)
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("2_sakuc")
+
+[node name="LastScreen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(80.4958, 89.5833)
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("2_sakuc")
+
+[node name="SlotNumber" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.33333
+offset_right = 42.0
+offset_bottom = 30.3333
+scale = Vector2(1.82, 1.82)
+text = "#"
+scroll_active = false
+
+[node name="Delete" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 9.16666
+offset_right = 150.0
+offset_bottom = 36.1667
+texture_normal = ExtResource("3_468bh")
+texture_hover = ExtResource("4_j7uk4")
+
+[node name="Date-Time" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 165.833
+offset_top = 3.33333
+offset_right = 479.833
+offset_bottom = 26.3333
+scale = Vector2(1.82, 1.82)
+text = "####/##/##    ##:##:##"
+scroll_active = false
+
+[node name="RecentMessage" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 164.167
+offset_top = 70.8333
+offset_right = 683.167
+offset_bottom = 112.833
+scale = Vector2(1.1, 1.1)
+text = "=System=  :  -----------------------------LoadingFailed-----------------------------"
+scroll_active = false
+
+[node name="New" type="Sprite2D" parent="."]
+position = Vector2(80, 90)
+scale = Vector2(1.02106, 1.02106)
+texture = ExtResource("5_7pa6h")

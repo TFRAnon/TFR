@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://evrai8nlpnvq"]
+[gd_scene load_steps=36 format=3 uid="uid://evrai8nlpnvq"]
 
 [ext_resource type="Texture2D" uid="uid://dnjtqbsuni5q1" path="res://Textures/Save-Load/bg_save.png" id="1_3jthg"]
 [ext_resource type="Script" path="res://Scripts/SaveGame.gd" id="1_ru7bs"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://b16tbdyp7fyna" path="res://Textures/Save-Load/Numbers/10_transparent.png" id="31_a8rqr"]
 [ext_resource type="Texture2D" uid="uid://b3e0yaw863p35" path="res://Textures/Save-Load/Numbers/10_black.png" id="32_7tkr6"]
 [ext_resource type="Texture2D" uid="uid://cdcrnipsrxjdt" path="res://Textures/Save-Load/Numbers/10_white.png" id="33_arwy2"]
+[ext_resource type="PackedScene" uid="uid://dawwjeag436fb" path="res://Scenes/SaveSlot.tscn" id="35_2pnjr"]
 
 [node name="SaveGame" type="Node2D"]
 script = ExtResource("1_ru7bs")
@@ -140,3 +141,46 @@ texture_normal = ExtResource("31_a8rqr")
 texture_hover = ExtResource("32_7tkr6")
 texture_disabled = ExtResource("33_arwy2")
 metadata/_edit_lock_ = true
+
+[node name="Pages2" type="HBoxContainer" parent="."]
+offset_left = 66.0
+offset_top = 169.0
+offset_right = 1882.0
+offset_bottom = 865.0
+scale = Vector2(1.2, 1.2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pages2"]
+layout_mode = 2
+
+[node name="SaveSlot" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="SaveSlot2" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="SaveSlot3" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="SaveSlot4" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="SaveSlot5" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Pages2"]
+layout_mode = 2
+
+[node name="SaveSlot" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="SaveSlot2" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="SaveSlot3" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="SaveSlot4" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
+
+[node name="SaveSlot5" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+layout_mode = 2
