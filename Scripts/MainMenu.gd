@@ -13,7 +13,7 @@ func _ready() -> void:
 	$HBoxContainer/VBoxContainer2/Readme.pressed.connect(buttonPressed.bind("readme"))
 	$HBoxContainer/VBoxContainer2/Credit.pressed.connect(buttonPressed.bind("credit"))
 	$HBoxContainer/VBoxContainer2/Quit.pressed.connect(buttonPressed.bind("quit"))
-	
+	$FullScreen.pressed.connect(Global.toggleFullScreen)
 	
 
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+# switch for all buttons in scene
 func buttonPressed(button):
 	match button:
 		"newgame":
@@ -41,4 +41,3 @@ func buttonPressed(button):
 		"quit":
 			print("quitting")
 			get_tree().quit()
-		
