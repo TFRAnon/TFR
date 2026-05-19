@@ -152,35 +152,35 @@ scale = Vector2(1.2, 1.2)
 [node name="VBoxContainer" type="VBoxContainer" parent="Pages2"]
 layout_mode = 2
 
-[node name="SaveSlot" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+[node name="1" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
-[node name="SaveSlot2" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+[node name="2" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
-[node name="SaveSlot3" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+[node name="3" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
-[node name="SaveSlot4" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+[node name="4" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
-[node name="SaveSlot5" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
+[node name="5" parent="Pages2/VBoxContainer" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Pages2"]
 layout_mode = 2
 
-[node name="SaveSlot" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+[node name="6" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
-[node name="SaveSlot2" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+[node name="7" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
-[node name="SaveSlot3" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+[node name="8" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
-[node name="SaveSlot4" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+[node name="9" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
 layout_mode = 2
 
-[node name="SaveSlot5" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
+[node name="10" parent="Pages2/VBoxContainer2" instance=ExtResource("35_2pnjr")]
 layout_mode = 2

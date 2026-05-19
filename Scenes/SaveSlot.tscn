@@ -29,6 +29,7 @@ offset_top = 3.33333
 offset_right = 42.0
 offset_bottom = 30.3333
 scale = Vector2(1.82, 1.82)
+mouse_filter = 1
 text = "#"
 scroll_active = false
 
@@ -48,6 +49,7 @@ offset_top = 3.33333
 offset_right = 479.833
 offset_bottom = 26.3333
 scale = Vector2(1.82, 1.82)
+mouse_filter = 1
 text = "####/##/##    ##:##:##"
 scroll_active = false
 
@@ -58,6 +60,7 @@ offset_top = 70.8333
 offset_right = 683.167
 offset_bottom = 112.833
 scale = Vector2(1.1, 1.1)
+mouse_filter = 1
 text = "=System=  :  -----------------------------LoadingFailed-----------------------------"
 scroll_active = false
 

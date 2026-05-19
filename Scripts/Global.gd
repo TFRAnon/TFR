@@ -1,6 +1,8 @@
 extends Node
 
-# dictionary containing game settings
+signal updateSaveLoadPage(page)
+
+# dictionary containing game settings 
 var settingsDict = {
 	"fullscreen" : false
 }
@@ -30,7 +32,7 @@ func changeScene(sceneName):
 		"MainMenu":
 			get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 		"Continue":
-			get_tree().change_scene_to_file("res://Scenes/SaveGame.tscn")
+			get_tree().change_scene_to_file("res://Scenes/LoadGame.tscn")
 
 # toggles full screen
 func toggleFullScreen():
@@ -45,3 +47,15 @@ func onStartUp():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func createSaveSlot(saveSlotID):
+	print("creating save slot at : "+saveSlotID)
+
+func loadFromSlot(saveSlotID):
+	print("loading slot from : "+saveSlotID)
+
+func emitSignal(signalName,data):
+	match signalName:
+		"PageChange":
+			print(signalName+" emitted with : "+str(data))
+			updateSaveLoadPage.emit(data)
