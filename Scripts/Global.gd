@@ -4,7 +4,9 @@ signal updateSaveLoadPage(page)
 
 # dictionary containing game settings 
 var settingsDict = {
-	"fullscreen" : false
+	"fullscreen" : false,
+	"lastSave" : "0",
+	"SaveLoadBG" : "save"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -31,8 +33,12 @@ func changeScene(sceneName):
 	match sceneName:
 		"MainMenu":
 			get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
-		"Continue":
-			get_tree().change_scene_to_file("res://Scenes/LoadGame.tscn")
+		"LoadGame":
+			setSettings("SaveLoadBG","load")
+			get_tree().change_scene_to_file("res://Scenes/SaveLoadGame.tscn")
+		"SaveGame":
+			setSettings("SaveLoadBG","save")
+			get_tree().change_scene_to_file("res://Scenes/SaveLoadGame.tscn")
 
 # toggles full screen
 func toggleFullScreen():
@@ -59,3 +65,30 @@ func emitSignal(signalName,data):
 		"PageChange":
 			print(signalName+" emitted with : "+str(data))
 			updateSaveLoadPage.emit(data)
+
+# checks to see if saveName exists. returns True or False
+func doesSaveExists(saveName):
+	if FileAccess.file_exists("user://"+saveName):
+		return true
+	else:
+		return false
+
+# function to create a new savefile with name saveName
+func createSave(saveName):
+	print("creating save : "+saveName)
+	var data = "test"
+	var file = FileAccess.open("user://"+saveName, FileAccess.WRITE)
+	file.store_string(data)
+	file.close()
+
+# function used to delete save file
+func deleteSave(saveName):
+	print("deleteing save : "+saveName)
+	if FileAccess.file_exists("user://"+saveName):
+		var result = DirAccess.remove_absolute("user://"+saveName)
+		if result == OK:
+			print("Deleted")
+		else:
+			print("Failed to delete File : "+"user://"+saveName)
+	else:
+		print("error : file does not exist? : "+"user://"+saveName)

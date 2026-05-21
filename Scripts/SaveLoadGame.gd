@@ -6,8 +6,7 @@ func _ready() -> void:
 	for button in $Pages.get_children():
 		button.pressed.connect(changePage.bind(button.name,button))
 	$ExitButton.pressed.connect(exitButton)
-	# init first page
-	changePage("1",$"Pages/1")
+	loadBackground()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,3 +26,10 @@ func changePage(pageNumber,button):
 
 func exitButton():
 	Global.changeScene("MainMenu")
+
+func loadBackground():
+	match Global.getSettings("SaveLoadBG"):
+		"save":
+			$Background.texture = load("res://Textures/Save-Load/bg_save.png")
+		"load":
+			$Background.texture = load("res://Textures/Save-Load/bg_load.png")
