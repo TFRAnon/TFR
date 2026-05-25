@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8armcar6v6xq"]
+
+[ext_resource type="Texture2D" uid="uid://5i02pvpevtau" path="res://Textures/Save-Load/bace.png" id="1_pkare"]
+[ext_resource type="Texture2D" uid="uid://c1va7up371745" path="res://Textures/Save-Load/ok.png" id="2_5kogl"]
+[ext_resource type="Script" path="res://Scripts/Confirm.gd" id="2_ge55g"]
+[ext_resource type="Texture2D" uid="uid://dcxuovcsi7338" path="res://Textures/Save-Load/cancel.png" id="3_duyas"]
+
+[node name="ColorRect" type="ColorRect"]
+self_modulate = Color(0.811765, 0.811765, 0.811765, 0.192157)
+offset_right = 1919.0
+offset_bottom = 1080.0
+script = ExtResource("2_ge55g")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bace" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_pkare")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/Bace"]
+clip_contents = false
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 696.0
+offset_bottom = 48.0
+bbcode_enabled = true
+text = "[center]Are you sure you want to delete Save ##?"
+scroll_active = false
+
+[node name="Confirm" type="TextureButton" parent="CenterContainer/Bace"]
+offset_left = 384.0
+offset_top = 74.0
+offset_right = 534.0
+offset_bottom = 116.0
+texture_normal = ExtResource("2_5kogl")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/Bace/Confirm"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 151.0
+offset_bottom = 42.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]OK[/center]"
+
+[node name="Cancel" type="TextureButton" parent="CenterContainer/Bace"]
+offset_left = 167.0
+offset_top = 74.0
+offset_right = 317.0
+offset_bottom = 116.0
+texture_normal = ExtResource("3_duyas")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/Bace/Cancel"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 151.0
+offset_bottom = 42.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]Cancel[/center]"

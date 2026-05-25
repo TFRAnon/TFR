@@ -1,6 +1,8 @@
 extends Node
 
 signal updateSaveLoadPage(page)
+signal createConfirmDialoge(saveSlotID)
+signal refreshSaveSlots
 
 # dictionary containing game settings 
 var settingsDict = {
@@ -54,17 +56,42 @@ func onStartUp():
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
+# creates a save file with name as saveSlotID
 func createSaveSlot(saveSlotID):
 	print("creating save slot at : "+saveSlotID)
+	if (doesSaveExists(saveSlotID)):
+		deleteSave(saveSlotID)
+	var file = FileAccess.open("user://"+saveSlotID, FileAccess.WRITE)
+	if file: # if file is not null
+		file.store_string(JSON.stringify(settingsDict))
+		file.close()
+		setSettings("lastSave",saveSlotID)
+	else: # error occured
+		print("save failed")
+		print(FileAccess.get_open_error())
+	refreshSaveSlots.emit()
 
 func loadFromSlot(saveSlotID):
 	print("loading slot from : "+saveSlotID)
+	if (doesSaveExists(saveSlotID)):
+		var saveFile = FileAccess.open("user://"+saveSlotID, FileAccess.READ)
+		if saveFile: # if file is not null
+			var dataDict = JSON.parse_string(saveFile.get_as_text())
+			# Load data from dataDict created by save slot
+		else: # error occured
+			print("failed to load")
+			print(FileAccess.get_open_error())
+	else:
+		print("error : save slot does not exist")
 
+# emits a signal 
 func emitSignal(signalName,data):
 	match signalName:
 		"PageChange":
 			print(signalName+" emitted with : "+str(data))
 			updateSaveLoadPage.emit(data)
+		"createConfirmDialoge": # spawns a confirmation menu for the save slot
+			createConfirmDialoge.emit(data)
 
 # checks to see if saveName exists. returns True or False
 func doesSaveExists(saveName):
@@ -72,14 +99,6 @@ func doesSaveExists(saveName):
 		return true
 	else:
 		return false
-
-# function to create a new savefile with name saveName
-func createSave(saveName):
-	print("creating save : "+saveName)
-	var data = "test"
-	var file = FileAccess.open("user://"+saveName, FileAccess.WRITE)
-	file.store_string(data)
-	file.close()
 
 # function used to delete save file
 func deleteSave(saveName):
@@ -92,3 +111,4 @@ func deleteSave(saveName):
 			print("Failed to delete File : "+"user://"+saveName)
 	else:
 		print("error : file does not exist? : "+"user://"+saveName)
+	refreshSaveSlots.emit()

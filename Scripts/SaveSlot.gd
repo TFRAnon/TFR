@@ -5,11 +5,12 @@ var buttonValue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# initial value becomes ones portion of slot id
+	# initial value becomes ones portion of slot id. Do not change, used for single digit position.
 	buttonValue = int(str(self.name))
 	self.pressed.connect(saveSlotPressed)
+	$Delete.pressed.connect(delete)
 	Global.updateSaveLoadPage.connect(changePage)
-	changePage("1")
+	Global.refreshSaveSlots.connect(refresh)
 	checkNewTag()
 	loadData()
 
@@ -47,3 +48,10 @@ func loadData():
 		$"Date-Time".text = ""
 		$RecentMessage.text = "No Save Data Exists."
 		$Delete.visible = false
+
+func delete():
+	print("delete pressed")
+	Global.emitSignal("createConfirmDialoge",$SlotNumber.text)
+
+func refresh():
+	loadData()

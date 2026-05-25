@@ -7,7 +7,10 @@ func _ready() -> void:
 		button.pressed.connect(changePage.bind(button.name,button))
 	$ExitButton.pressed.connect(exitButton)
 	loadBackground()
-
+	# init everything to page 1
+	changePage("1",$"Pages/1")
+	# connect
+	Global.createConfirmDialoge.connect(createConfirm)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,3 +36,11 @@ func loadBackground():
 			$Background.texture = load("res://Textures/Save-Load/bg_save.png")
 		"load":
 			$Background.texture = load("res://Textures/Save-Load/bg_load.png")
+
+func createConfirm(saveSlotID):
+	print("creating confirm for save slot : "+saveSlotID)
+	var menu = preload("res://Scenes/Confirm.tscn")
+	var menuInstance = menu.instantiate()
+	self.add_child(menuInstance)
+	menuInstance.setSaveSlotID(saveSlotID)
+	menuInstance.setText("[center]Are you sure you want to delete Save "+str(saveSlotID)+"?")
