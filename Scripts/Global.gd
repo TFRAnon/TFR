@@ -43,6 +43,8 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/SaveLoadGame.tscn")
 		"ReadMe":
 			get_tree().change_scene_to_file("res://Scenes/ReadMe.tscn")
+		"Credit":
+			get_tree().change_scene_to_file("res://Scenes/Credit.tscn")
 
 # toggles full screen
 func toggleFullScreen():

@@ -37,7 +37,7 @@ func buttonPressed(button):
 		"readme":
 			Global.changeScene("ReadMe")
 		"credit":
-			pass
+			Global.changeScene("Credit")
 		"quit":
 			print("quitting")
 			get_tree().quit()
