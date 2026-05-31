@@ -35,7 +35,7 @@ func buttonPressed(button):
 		"continue":
 			Global.changeScene("LoadGame")
 		"readme":
-			Global.changeScene("SaveGame")
+			Global.changeScene("ReadMe")
 		"credit":
 			pass
 		"quit":

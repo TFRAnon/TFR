@@ -55,3 +55,4 @@ func delete():
 
 func refresh():
 	loadData()
+	checkNewTag()

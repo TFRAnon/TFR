@@ -1,0 +1,192 @@
+[gd_scene load_steps=29 format=3 uid="uid://b2ggpqg5hm7ts"]
+
+[ext_resource type="Texture2D" uid="uid://boo3ck3h72apg" path="res://Textures/ReadMe/bace.jpg" id="1_gafvw"]
+[ext_resource type="Script" path="res://Scripts/ReadMe.gd" id="1_rlt32"]
+[ext_resource type="Texture2D" uid="uid://cs23g8gx0lxae" path="res://Textures/ReadMe/Buttons/bace_black.png" id="2_f56oi"]
+[ext_resource type="Texture2D" uid="uid://beqjptgqiuwl" path="res://Textures/ReadMe/Buttons/bace_white.png" id="3_lwyvl"]
+[ext_resource type="Texture2D" uid="uid://c66fuy577mykn" path="res://Textures/ReadMe/Buttons/command_black.png" id="4_dc6ce"]
+[ext_resource type="Texture2D" uid="uid://i4e84w82ti4e" path="res://Textures/ReadMe/Buttons/command_white.png" id="5_woue3"]
+[ext_resource type="Texture2D" uid="uid://cd2oo07fhtd0c" path="res://Textures/ReadMe/Buttons/command_act_black.png" id="6_4lxpt"]
+[ext_resource type="Texture2D" uid="uid://cnwokj8esdjt5" path="res://Textures/ReadMe/Buttons/command_act_white.png" id="7_ruyri"]
+[ext_resource type="Texture2D" uid="uid://dw3ob1vb2xrrf" path="res://Textures/ReadMe/Buttons/command_sub_black.png" id="8_04o4m"]
+[ext_resource type="Texture2D" uid="uid://dx1s4fjr2wqfp" path="res://Textures/ReadMe/Buttons/command_sub_white.png" id="9_uf5f5"]
+[ext_resource type="Texture2D" uid="uid://qnb8v4qky4pd" path="res://Textures/ReadMe/Buttons/status_black.png" id="10_14jje"]
+[ext_resource type="Texture2D" uid="uid://17g186oiej8u" path="res://Textures/ReadMe/Buttons/status_white.png" id="11_nelgs"]
+[ext_resource type="Texture2D" uid="uid://cdweb8682vja5" path="res://Textures/ReadMe/Buttons/out_side_black.png" id="12_tywh7"]
+[ext_resource type="Texture2D" uid="uid://cnikwwikn0bes" path="res://Textures/ReadMe/Buttons/out_side_white.png" id="13_ndu0c"]
+[ext_resource type="Texture2D" uid="uid://b1v6ihnhcc7jl" path="res://Textures/ReadMe/Buttons/dress_up_black.png" id="14_4xhtd"]
+[ext_resource type="Texture2D" uid="uid://bug08bbmcmbnx" path="res://Textures/ReadMe/Buttons/dress_up_white.png" id="15_tx42j"]
+[ext_resource type="Texture2D" uid="uid://d4mgmqv8wfq02" path="res://Textures/ReadMe/Buttons/communicate_black.png" id="16_842ho"]
+[ext_resource type="Texture2D" uid="uid://cdju4gx12whus" path="res://Textures/ReadMe/Buttons/communicate_white.png" id="17_2c2qk"]
+[ext_resource type="Texture2D" uid="uid://c0d1kjqfslyix" path="res://Textures/ReadMe/Buttons/bed_black.png" id="18_5vyge"]
+[ext_resource type="Texture2D" uid="uid://c87tsm3b4oq5j" path="res://Textures/ReadMe/Buttons/bed_white.png" id="19_jg43l"]
+[ext_resource type="Texture2D" uid="uid://di8pyeud2710a" path="res://Textures/ReadMe/Buttons/question_black.png" id="20_yaevn"]
+[ext_resource type="Texture2D" uid="uid://tyx22dsl6110" path="res://Textures/ReadMe/Buttons/question_white.png" id="21_md4p2"]
+[ext_resource type="Texture2D" uid="uid://daix0pcmxb7e8" path="res://Textures/ReadMe/Buttons/trivia_black.png" id="22_1txni"]
+[ext_resource type="Texture2D" uid="uid://ceo0fvy0u8shq" path="res://Textures/ReadMe/Buttons/trivia_white.png" id="23_gidul"]
+[ext_resource type="Texture2D" uid="uid://7hqjobkpi74j" path="res://Textures/ReadMe/Buttons/credit_black.png" id="24_7q00y"]
+[ext_resource type="Texture2D" uid="uid://2cwy3myyyoc0" path="res://Textures/ReadMe/Buttons/credit_white.png" id="25_rbtkq"]
+[ext_resource type="Texture2D" uid="uid://6thi3n2hjre4" path="res://Textures/ReadMe/Buttons/return_black.png" id="26_uefsl"]
+[ext_resource type="Texture2D" uid="uid://vbpolc662l3u" path="res://Textures/ReadMe/Buttons/return_white.png" id="27_xjx0c"]
+
+[node name="ReadMe" type="Node2D"]
+script = ExtResource("1_rlt32")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_gafvw")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Bace" type="TextureButton" parent="."]
+offset_left = 2.0
+offset_top = 78.0
+offset_right = 212.0
+offset_bottom = 131.0
+texture_normal = ExtResource("2_f56oi")
+texture_hover = ExtResource("3_lwyvl")
+texture_disabled = ExtResource("3_lwyvl")
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 1.0
+offset_top = 188.0
+offset_right = 213.0
+offset_bottom = 696.0
+metadata/_edit_group_ = true
+
+[node name="Spacer" type="Panel" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Command" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_dc6ce")
+texture_hover = ExtResource("5_woue3")
+texture_disabled = ExtResource("5_woue3")
+stretch_mode = 0
+
+[node name="Spacer2" type="Panel" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="CommandAct" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_4lxpt")
+texture_hover = ExtResource("7_ruyri")
+texture_disabled = ExtResource("7_ruyri")
+stretch_mode = 0
+
+[node name="Spacer3" type="Panel" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="CommandSub" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_04o4m")
+texture_hover = ExtResource("9_uf5f5")
+texture_disabled = ExtResource("9_uf5f5")
+stretch_mode = 0
+
+[node name="Spacer4" type="Panel" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Status" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_14jje")
+texture_hover = ExtResource("11_nelgs")
+texture_disabled = ExtResource("11_nelgs")
+stretch_mode = 0
+
+[node name="Spacer5" type="Panel" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Outside" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_tywh7")
+texture_hover = ExtResource("13_ndu0c")
+texture_disabled = ExtResource("13_ndu0c")
+stretch_mode = 0
+
+[node name="Spacer6" type="Panel" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="DressUp" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("14_4xhtd")
+texture_hover = ExtResource("15_tx42j")
+texture_disabled = ExtResource("15_tx42j")
+stretch_mode = 0
+
+[node name="Spacer7" type="Panel" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Communicate" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_842ho")
+texture_hover = ExtResource("17_2c2qk")
+texture_disabled = ExtResource("17_2c2qk")
+stretch_mode = 0
+
+[node name="Spacer8" type="Panel" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Bed" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("18_5vyge")
+texture_hover = ExtResource("19_jg43l")
+texture_disabled = ExtResource("19_jg43l")
+stretch_mode = 0
+
+[node name="Question" type="TextureButton" parent="."]
+offset_left = 2.0
+offset_top = 761.0
+offset_right = 212.0
+offset_bottom = 814.0
+texture_normal = ExtResource("20_yaevn")
+texture_hover = ExtResource("21_md4p2")
+texture_disabled = ExtResource("21_md4p2")
+stretch_mode = 0
+
+[node name="Trivia" type="TextureButton" parent="."]
+offset_left = 2.0
+offset_top = 822.0
+offset_right = 212.0
+offset_bottom = 875.0
+texture_normal = ExtResource("22_1txni")
+texture_hover = ExtResource("23_gidul")
+texture_disabled = ExtResource("23_gidul")
+stretch_mode = 0
+
+[node name="Credit" type="TextureButton" parent="."]
+offset_left = 1.0
+offset_top = 908.0
+offset_right = 211.0
+offset_bottom = 961.0
+texture_normal = ExtResource("24_7q00y")
+texture_hover = ExtResource("25_rbtkq")
+texture_disabled = ExtResource("25_rbtkq")
+stretch_mode = 0
+
+[node name="Return" type="TextureButton" parent="."]
+offset_left = 2.0
+offset_top = 982.0
+offset_right = 212.0
+offset_bottom = 1035.0
+texture_normal = ExtResource("26_uefsl")
+texture_hover = ExtResource("27_xjx0c")
+texture_disabled = ExtResource("27_xjx0c")
+stretch_mode = 0
