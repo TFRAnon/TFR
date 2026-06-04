@@ -27,7 +27,7 @@ func buttonPressed(button):
 		"newgame":
 			pass
 		"config":
-			pass
+			Global.changeScene("Config")
 		"updatehistory":
 			pass
 		"applypatch":
