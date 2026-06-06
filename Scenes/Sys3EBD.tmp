@@ -1,7 +1,7 @@
 [gd_scene load_steps=59 format=3 uid="uid://cjg0ck5osr2m"]
 
-[ext_resource type="Texture2D" uid="uid://c4tawsnubfnr6" path="res://Textures/Config/config_sys.jpg" id="1_4udo3"]
 [ext_resource type="Script" path="res://Scripts/SystemSettings.gd" id="1_56e1a"]
+[ext_resource type="Texture2D" uid="uid://cwuhsnudpcpb7" path="res://Textures/Config/config_word_b.jpg" id="2_hxv3g"]
 [ext_resource type="Texture2D" uid="uid://dybv1133prbc2" path="res://Textures/Config/Buttons/full.png" id="3_kd028"]
 [ext_resource type="Texture2D" uid="uid://c8v7gjmgt6xdm" path="res://Textures/Config/Buttons/full_.png" id="4_35usy"]
 [ext_resource type="Texture2D" uid="uid://4w8xmopawlo7" path="res://Textures/Config/Buttons/mute.png" id="5_rygm0"]
@@ -64,7 +64,7 @@ script = ExtResource("1_56e1a")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("1_4udo3")
+texture = ExtResource("2_hxv3g")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -107,6 +107,7 @@ texture_disabled = ExtResource("55_dqj3k")
 stretch_mode = 0
 
 [node name="PageMain" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -444,7 +445,6 @@ texture_hover = ExtResource("6_0nxv5")
 texture_disabled = ExtResource("7_oaoji")
 
 [node name="AddWordSegment" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -559,7 +559,6 @@ texture_normal = ExtResource("56_xqum1")
 texture_hover = ExtResource("57_86jhc")
 
 [node name="Words" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

@@ -3,12 +3,29 @@ extends Node
 signal updateSaveLoadPage(page)
 signal createConfirmDialoge(saveSlotID)
 signal refreshSaveSlots
+signal refreshWords
+signal changeWordPage(newPage)
 
 # dictionary containing game settings 
 var settingsDict = {
 	"fullscreen" : false,
 	"lastSave" : "0",
 	"SaveLoadBG" : "save"
+}
+
+var customWordDict = {
+	"pg1-1" = ["crotch","genitals"],
+	"pg1-2" = ["clitoris","clit"],
+	"pg1-3" = ["breasts"],
+	"pg1-4" = ["pussy","vagina"],
+	"pg1-5" = ["womb","uterus"],
+	"pg1-6" = ["mouth"],
+	"pg2-1" = ["penis"],
+	"pg2-2" = ["sex","intercourse"],
+	"pg2-3" = ["semen","cum"],
+	"pg2-4" = ["orgasm"],
+	"pg2-5" = ["oral"],
+	"pg2-6" = ["love juices"]
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +37,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func removeWord(word,slot):
+	var arr = customWordDict[slot]
+	arr.erase(word)
+	refreshWords.emit()
 
+func addWord(word,slot):
+	var arr = customWordDict[slot]
+	arr.append(word)
+	refreshWords.emit()
+
+func getWord(key):
+	var arr = customWordDict[key].duplicate(true)
+	return arr
 
 # get values from settings
 func getSettings(settingName):
@@ -98,6 +127,10 @@ func emitSignal(signalName,data):
 			updateSaveLoadPage.emit(data)
 		"createConfirmDialoge": # spawns a confirmation menu for the save slot
 			createConfirmDialoge.emit(data)
+		"changeWordPage":
+			changeWordPage.emit(data)
+		"refreshWords":
+			refreshWords.emit()
 
 # checks to see if saveName exists. returns True or False
 func doesSaveExists(saveName):
