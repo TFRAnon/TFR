@@ -81,6 +81,8 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/Credit.tscn")
 		"Config":
 			get_tree().change_scene_to_file("res://Scenes/SystemSettings.tscn")
+		"UpdateHistory":
+			get_tree().change_scene_to_file("res://Scenes/History.tscn")
 
 # toggles full screen
 func toggleFullScreen():

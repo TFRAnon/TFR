@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxu25e2rxlu8t"]
+
+[ext_resource type="Script" path="res://Scripts/History.gd" id="1_27esi"]
+[ext_resource type="Texture2D" uid="uid://cb34nt0xtsnog" path="res://Textures/History/update_hist.jpg" id="1_a6kgl"]
+[ext_resource type="Texture2D" uid="uid://ddrqnfcv8o0nx" path="res://Textures/History/return.png" id="3_0lte6"]
+[ext_resource type="Texture2D" uid="uid://bx84i0vutxmm6" path="res://Textures/History/return_.png" id="4_0e6wt"]
+[ext_resource type="Texture2D" uid="uid://b4h78t7su6msg" path="res://Textures/History/Versions/10.png" id="5_a7ukd"]
+[ext_resource type="Texture2D" uid="uid://dnqbwkfv6om4m" path="res://Textures/History/Versions/10_.png" id="6_ncilg"]
+
+[node name="History" type="Node2D"]
+script = ExtResource("1_27esi")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_a6kgl")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Return" type="TextureButton" parent="."]
+offset_left = 23.0
+offset_top = 1018.0
+offset_right = 211.0
+offset_bottom = 1068.0
+texture_normal = ExtResource("3_0lte6")
+texture_hover = ExtResource("4_0e6wt")
+stretch_mode = 0
+
+[node name="1_0_0" type="TextureButton" parent="."]
+offset_left = 25.0
+offset_top = 75.0
+offset_right = 209.0
+offset_bottom = 124.0
+texture_normal = ExtResource("5_a7ukd")
+texture_hover = ExtResource("6_ncilg")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 278.0
+offset_top = 43.0
+offset_right = 1841.0
+offset_bottom = 1045.0
+bbcode_enabled = true

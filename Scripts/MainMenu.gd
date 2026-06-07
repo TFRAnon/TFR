@@ -29,7 +29,7 @@ func buttonPressed(button):
 		"config":
 			Global.changeScene("Config")
 		"updatehistory":
-			pass
+			Global.changeScene("UpdateHistory")
 		"applypatch":
 			pass
 		"continue":
