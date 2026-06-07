@@ -10,7 +10,12 @@ signal changeWordPage(newPage)
 var settingsDict = {
 	"fullscreen" : false,
 	"lastSave" : "0",
-	"SaveLoadBG" : "save"
+	"SaveLoadBG" : "save",
+	"MusicVolume" : 5,
+	"EffectVolume" : 5,
+	"ScrollSpeed" : 5,
+	"AutoScrollSpeed" : 5,
+	"ScrollControls" : false
 }
 
 var customWordDict = {
