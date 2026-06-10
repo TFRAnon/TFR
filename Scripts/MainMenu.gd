@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 func buttonPressed(button):
 	match button:
 		"newgame":
-			pass
+			Global.changeScene("NewGame")
 		"config":
 			Global.changeScene("Config")
 		"updatehistory":

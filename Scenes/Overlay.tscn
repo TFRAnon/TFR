@@ -1,0 +1,101 @@
+[gd_scene load_steps=19 format=3 uid="uid://tyc3p7xiiwmd"]
+
+[ext_resource type="Script" path="res://Scripts/overlay.gd" id="1_axccu"]
+[ext_resource type="Texture2D" uid="uid://gqo0kk7uvst6" path="res://Textures/Overlay/bace.png" id="1_dqyq3"]
+[ext_resource type="Texture2D" uid="uid://bi8sys6i48h4d" path="res://Textures/Overlay/Buttons/load.png" id="2_qi53r"]
+[ext_resource type="Texture2D" uid="uid://cfvvyqq5mklst" path="res://Textures/Overlay/Buttons/load_.png" id="3_5ekpl"]
+[ext_resource type="Texture2D" uid="uid://c1ktegdd51msg" path="res://Textures/Overlay/Buttons/hint.png" id="4_5w302"]
+[ext_resource type="Texture2D" uid="uid://xynggyrx5s3c" path="res://Textures/Overlay/Buttons/hint_.png" id="5_p8qw2"]
+[ext_resource type="Texture2D" uid="uid://x1pkph5gm4l5" path="res://Textures/Overlay/Buttons/skip.png" id="6_81ikc"]
+[ext_resource type="Texture2D" uid="uid://cb57ala4x24bn" path="res://Textures/Overlay/Buttons/skip_.png" id="7_rbu1q"]
+[ext_resource type="Texture2D" uid="uid://cls8q0a4afrev" path="res://Textures/Overlay/Buttons/auto.png" id="8_il6mr"]
+[ext_resource type="Texture2D" uid="uid://mgqwexon3bo7" path="res://Textures/Overlay/Buttons/auto_.png" id="9_1hgnj"]
+[ext_resource type="Texture2D" uid="uid://cpmv64sywakcx" path="res://Textures/Overlay/Buttons/log.png" id="10_1fjt7"]
+[ext_resource type="Texture2D" uid="uid://bl71peijwi3ox" path="res://Textures/Overlay/Buttons/log_.png" id="11_owfq7"]
+[ext_resource type="Texture2D" uid="uid://dk17lycurgh0l" path="res://Textures/Overlay/Buttons/config.png" id="12_kdeye"]
+[ext_resource type="Texture2D" uid="uid://dbotxqwsxk1fu" path="res://Textures/Overlay/Buttons/config_.png" id="13_j0b8m"]
+[ext_resource type="Texture2D" uid="uid://54dunx01fpjc" path="res://Textures/Overlay/Buttons/title.png" id="14_tdw70"]
+[ext_resource type="Texture2D" uid="uid://dc78wosgo8dr0" path="res://Textures/Overlay/Buttons/title_.png" id="15_et5h0"]
+[ext_resource type="Texture2D" uid="uid://dvi301eobi18b" path="res://Textures/Overlay/Buttons/close_.png" id="16_tuy6p"]
+[ext_resource type="Texture2D" uid="uid://colhrftk56hut" path="res://Textures/Overlay/Buttons/close.png" id="17_ekars"]
+
+[node name="Overlay" type="Node2D"]
+script = ExtResource("1_axccu")
+
+[node name="Bace" type="Sprite2D" parent="."]
+position = Vector2(960, 953.309)
+scale = Vector2(1.2, 1.1952)
+texture = ExtResource("1_dqyq3")
+metadata/_edit_lock_ = true
+
+[node name="Load" type="TextureButton" parent="."]
+offset_left = 1725.0
+offset_top = 889.0
+offset_right = 1814.0
+offset_bottom = 934.0
+texture_normal = ExtResource("2_qi53r")
+texture_hover = ExtResource("3_5ekpl")
+stretch_mode = 0
+
+[node name="ReadMe" type="TextureButton" parent="."]
+offset_left = 1816.0
+offset_top = 936.0
+offset_right = 1905.0
+offset_bottom = 981.0
+texture_normal = ExtResource("4_5w302")
+texture_hover = ExtResource("5_p8qw2")
+stretch_mode = 0
+
+[node name="Skip" type="TextureButton" parent="."]
+offset_left = 1725.0
+offset_top = 936.0
+offset_right = 1814.0
+offset_bottom = 981.0
+texture_normal = ExtResource("6_81ikc")
+texture_hover = ExtResource("7_rbu1q")
+stretch_mode = 0
+
+[node name="Auto" type="TextureButton" parent="."]
+offset_left = 1725.0
+offset_top = 982.0
+offset_right = 1814.0
+offset_bottom = 1027.0
+texture_normal = ExtResource("8_il6mr")
+texture_hover = ExtResource("9_1hgnj")
+stretch_mode = 0
+
+[node name="Log" type="TextureButton" parent="."]
+offset_left = 1725.0
+offset_top = 1028.0
+offset_right = 1814.0
+offset_bottom = 1073.0
+texture_normal = ExtResource("10_1fjt7")
+texture_hover = ExtResource("11_owfq7")
+stretch_mode = 0
+
+[node name="Config" type="TextureButton" parent="."]
+offset_left = 1816.0
+offset_top = 982.0
+offset_right = 1905.0
+offset_bottom = 1027.0
+texture_normal = ExtResource("12_kdeye")
+texture_hover = ExtResource("13_j0b8m")
+stretch_mode = 0
+
+[node name="Title" type="TextureButton" parent="."]
+offset_left = 1816.0
+offset_top = 1028.0
+offset_right = 1905.0
+offset_bottom = 1073.0
+texture_normal = ExtResource("14_tdw70")
+texture_hover = ExtResource("15_et5h0")
+stretch_mode = 0
+
+[node name="Close" type="TextureButton" parent="."]
+offset_left = 1816.0
+offset_top = 889.0
+offset_right = 1905.0
+offset_bottom = 934.0
+texture_normal = ExtResource("16_tuy6p")
+texture_hover = ExtResource("17_ekars")
+stretch_mode = 0

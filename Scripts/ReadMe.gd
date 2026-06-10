@@ -60,7 +60,11 @@ func buttonPressed(buttonName):
 			$Background.texture = load("res://Textures/ReadMe/credit.jpg")
 			$Credit.disabled = true
 		"Return":
-			Global.changeScene("MainMenu")
+			match Global.getSettings("InMenu"):
+				true:
+					Global.changeScene("MainMenu")
+				false:
+					Global.changeScene("ScenarioPlayer")
 
 # re-enables all disabled buttons
 func clearButtons():

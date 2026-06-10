@@ -28,7 +28,11 @@ func changePage(pageNumber,button):
 	button.disabled = true
 
 func exitButton():
-	Global.changeScene("MainMenu")
+	match Global.getSettings("InMenu"):
+		true:
+			Global.changeScene("MainMenu")
+		false:
+			Global.changeScene("ScenarioPlayer")
 
 func loadBackground():
 	match Global.getSettings("SaveLoadBG"):

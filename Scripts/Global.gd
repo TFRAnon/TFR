@@ -15,7 +15,8 @@ var settingsDict = {
 	"EffectVolume" : 5,
 	"ScrollSpeed" : 5,
 	"AutoScrollSpeed" : 5,
-	"ScrollControls" : false
+	"ScrollControls" : false,
+	"InMenu" : true
 }
 
 var customWordDict = {
@@ -83,6 +84,12 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/SystemSettings.tscn")
 		"UpdateHistory":
 			get_tree().change_scene_to_file("res://Scenes/History.tscn")
+		"NewGame":
+			# set newgame tag
+			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
+		"ScenarioPlayer":
+			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
+			
 
 # toggles full screen
 func toggleFullScreen():
