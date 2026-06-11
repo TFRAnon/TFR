@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://brgimh17u2nm1"]
+
+[node name="Line" type="ColorRect"]
+custom_minimum_size = Vector2(1257, 3)
+size_flags_horizontal = 8
+color = Color(0.380392, 0.380392, 0.380392, 0.427451)

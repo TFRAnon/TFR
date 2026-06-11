@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://tyc3p7xiiwmd"]
+[gd_scene load_steps=25 format=3 uid="uid://tyc3p7xiiwmd"]
 
 [ext_resource type="Script" path="res://Scripts/overlay.gd" id="1_axccu"]
 [ext_resource type="Texture2D" uid="uid://gqo0kk7uvst6" path="res://Textures/Overlay/bace.png" id="1_dqyq3"]
@@ -18,6 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://dc78wosgo8dr0" path="res://Textures/Overlay/Buttons/title_.png" id="15_et5h0"]
 [ext_resource type="Texture2D" uid="uid://dvi301eobi18b" path="res://Textures/Overlay/Buttons/close_.png" id="16_tuy6p"]
 [ext_resource type="Texture2D" uid="uid://colhrftk56hut" path="res://Textures/Overlay/Buttons/close.png" id="17_ekars"]
+[ext_resource type="Texture2D" uid="uid://baqo7kxa75i74" path="res://Textures/Overlay/Blank.png" id="19_sk8dv"]
+[ext_resource type="FontFile" uid="uid://gmhv7xjx4vrt" path="res://Fonts/kirieji04.ttf" id="20_tg27v"]
+[ext_resource type="PackedScene" uid="uid://bqd67a481jupn" path="res://Scenes/LogEntry.tscn" id="21_0ajoo"]
+[ext_resource type="PackedScene" uid="uid://brgimh17u2nm1" path="res://Scenes/LogLine.tscn" id="22_sdvtk"]
+[ext_resource type="Texture2D" uid="uid://bh245bt4qqsy7" path="res://Textures/Save-Load/back.png" id="23_baldt"]
+[ext_resource type="Texture2D" uid="uid://3w1yqaymbck7" path="res://Textures/Save-Load/back_h.png" id="24_s3x4s"]
 
 [node name="Overlay" type="Node2D"]
 script = ExtResource("1_axccu")
@@ -99,3 +105,92 @@ offset_bottom = 934.0
 texture_normal = ExtResource("16_tuy6p")
 texture_hover = ExtResource("17_ekars")
 stretch_mode = 0
+
+[node name="Namecard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="Sprite2D" parent="Namecard"]
+position = Vector2(959, 947)
+scale = Vector2(1.19811, 1.19811)
+texture = ExtResource("19_sk8dv")
+
+[node name="CenterContainer" type="CenterContainer" parent="Namecard"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 827.0
+offset_right = 209.0
+offset_bottom = 852.0
+scale = Vector2(1.99498, 1.99498)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Namecard/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("20_tg27v")
+text = "This is a test"
+fit_content = true
+autowrap_mode = 0
+
+[node name="MainTextBlock" type="RichTextLabel" parent="."]
+offset_left = 208.0
+offset_top = 894.0
+offset_right = 1696.0
+offset_bottom = 1069.0
+theme_override_fonts/normal_font = ExtResource("20_tg27v")
+theme_override_font_sizes/normal_font_size = 33
+text = "test"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="LogPage" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="LogPage"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.203922, 0.203922, 0.203922, 0.784314)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LogPage"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 111.0
+offset_right = 1740.0
+offset_bottom = 794.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LogPage/ScrollContainer"]
+layout_mode = 2
+
+[node name="LogEntry" parent="LogPage/ScrollContainer/VBoxContainer" instance=ExtResource("21_0ajoo")]
+layout_mode = 2
+
+[node name="Line" parent="LogPage/ScrollContainer/VBoxContainer" instance=ExtResource("22_sdvtk")]
+layout_mode = 2
+
+[node name="ExitButton" type="TextureButton" parent="LogPage"]
+offset_left = 1827.0
+offset_top = 18.0
+offset_right = 1910.0
+offset_bottom = 101.0
+scale = Vector2(0.81, 0.81)
+texture_normal = ExtResource("23_baldt")
+texture_hover = ExtResource("24_s3x4s")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LogPage"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 27.0
+offset_right = 89.0
+offset_bottom = 44.0
+scale = Vector2(3.975, 3.975)
+theme_override_fonts/normal_font = ExtResource("20_tg27v")
+text = "Logs"
+fit_content = true
+autowrap_mode = 0

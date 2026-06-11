@@ -1,5 +1,6 @@
 extends Node2D
 
+var logPageVisible
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,11 +12,19 @@ func _ready() -> void:
 	$Config.pressed.connect(buttonPressed.bind("Config"))
 	$Title.pressed.connect(buttonPressed.bind("Title"))
 	$Close.pressed.connect(buttonPressed.bind("Close"))
+	
+	$LogPage/ExitButton.pressed.connect(closeLog)
+	logPageVisible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if logPageVisible:
+		$LogPage.modulate.a = lerp($LogPage.modulate.a, 1.0, 0.1)
+	else:
+		$LogPage.modulate.a = lerp($LogPage.modulate.a, 0.0, 0.1)
+		if $LogPage.modulate.a <= 0.1:
+			$LogPage.visible = false
 
 
 func buttonPressed(buttonName):
@@ -36,7 +45,8 @@ func buttonPressed(buttonName):
 			pass
 		"Log":
 			# fade in overlay with log. return fades back
-			pass
+			logPageVisible = true
+			$LogPage.visible = true
 		"Config":
 			Global.setSettings("InMenu",false)
 			Global.changeScene("Config")
@@ -48,3 +58,24 @@ func buttonPressed(buttonName):
 		"Close":
 			# turns overlay visibility off.
 			pass
+
+func changeNamecard(newName):
+	$Namecard/CenterContainer/RichTextLabel.text = newName
+	if newName.isEmpty():
+		$Namecard.visible = false
+	else:
+		$Namecard.visible = true
+
+func addLog(title,textArr):
+	var line = load("res://Scenes/LogEntry.tscn")
+	var lineInst = line.instantiate()
+	$Log2/ScrollContainer/VBoxContainer.add_child(lineInst)
+	
+	var log = load("res://Scenes/LogEntry.tscn")
+	var logInst = log.instantiate()
+	logInst.setTitle(title)
+	logInst.setText(textArr)
+	$Log2/ScrollContainer/VBoxContainer.add_child(logInst)
+
+func closeLog():
+	logPageVisible = false
