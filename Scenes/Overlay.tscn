@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://tyc3p7xiiwmd"]
+[gd_scene load_steps=28 format=3 uid="uid://tyc3p7xiiwmd"]
 
 [ext_resource type="Script" path="res://Scripts/overlay.gd" id="1_axccu"]
 [ext_resource type="Texture2D" uid="uid://gqo0kk7uvst6" path="res://Textures/Overlay/bace.png" id="1_dqyq3"]
@@ -24,6 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://brgimh17u2nm1" path="res://Scenes/LogLine.tscn" id="22_sdvtk"]
 [ext_resource type="Texture2D" uid="uid://bh245bt4qqsy7" path="res://Textures/Save-Load/back.png" id="23_baldt"]
 [ext_resource type="Texture2D" uid="uid://3w1yqaymbck7" path="res://Textures/Save-Load/back_h.png" id="24_s3x4s"]
+[ext_resource type="Texture2D" uid="uid://5i02pvpevtau" path="res://Textures/Save-Load/bace.png" id="25_cesbp"]
+[ext_resource type="Texture2D" uid="uid://c1va7up371745" path="res://Textures/Save-Load/ok.png" id="26_jbo47"]
+[ext_resource type="Texture2D" uid="uid://dcxuovcsi7338" path="res://Textures/Save-Load/cancel.png" id="27_ev86j"]
 
 [node name="Overlay" type="Node2D"]
 script = ExtResource("1_axccu")
@@ -145,6 +148,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="LogPage" type="Control" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
@@ -174,6 +178,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ExitButton" type="TextureButton" parent="LogPage"]
+layout_mode = 0
 offset_left = 1827.0
 offset_top = 18.0
 offset_right = 1910.0
@@ -194,3 +199,70 @@ theme_override_fonts/normal_font = ExtResource("20_tg27v")
 text = "Logs"
 fit_content = true
 autowrap_mode = 0
+
+[node name="ConfirmPage" type="Control" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="ConfirmPage"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.203922, 0.203922, 0.203922, 0.784314)
+
+[node name="Confirm" type="TextureRect" parent="ConfirmPage"]
+offset_left = 611.0
+offset_top = 475.0
+offset_right = 1311.0
+offset_bottom = 605.0
+texture = ExtResource("25_cesbp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmPage/Confirm"]
+clip_contents = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 696.0
+offset_bottom = 48.0
+bbcode_enabled = true
+text = "[center]Are you sure you want to delete Save ##?"
+scroll_active = false
+
+[node name="Confirm" type="TextureButton" parent="ConfirmPage/Confirm"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 74.0
+offset_right = 534.0
+offset_bottom = 116.0
+texture_normal = ExtResource("26_jbo47")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmPage/Confirm/Confirm"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 151.0
+offset_bottom = 42.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]OK[/center]"
+
+[node name="Cancel" type="TextureButton" parent="ConfirmPage/Confirm"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 74.0
+offset_right = 317.0
+offset_bottom = 116.0
+texture_normal = ExtResource("27_ev86j")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmPage/Confirm/Cancel"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 151.0
+offset_bottom = 42.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]Cancel[/center]"

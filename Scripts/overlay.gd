@@ -1,6 +1,7 @@
 extends Node2D
 
 var logPageVisible
+var confirmPageVisible
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +16,9 @@ func _ready() -> void:
 	
 	$LogPage/ExitButton.pressed.connect(closeLog)
 	logPageVisible = false
+	confirmPageVisible = false
+	
+	$ConfirmPage/Confirm/Cancel.pressed.connect(closeConfirm)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +29,12 @@ func _process(delta: float) -> void:
 		$LogPage.modulate.a = lerp($LogPage.modulate.a, 0.0, 0.1)
 		if $LogPage.modulate.a <= 0.1:
 			$LogPage.visible = false
+	
+	if confirmPageVisible:
+		$ConfirmPage.modulate.a = lerp($ConfirmPage.modulate.a, 1.0, 0.1)
+	else:
+		$ConfirmPage.modulate.a = 0.0
+		$ConfirmPage.visible = false
 
 
 func buttonPressed(buttonName):
@@ -51,10 +61,9 @@ func buttonPressed(buttonName):
 			Global.setSettings("InMenu",false)
 			Global.changeScene("Config")
 		"Title":
-			# create confirm menu
+			$ConfirmPage.visible = true
 			# sends to title, no save. 
-			Global.setSettings("InMenu",true)
-			Global.changeScene("MainMenu")
+			openConfirmMenu("Return to the title screen. Okay?",goToMainMenu)
 		"Close":
 			# turns overlay visibility off.
 			pass
@@ -77,5 +86,25 @@ func addLog(title,textArr):
 	logInst.setText(textArr)
 	$Log2/ScrollContainer/VBoxContainer.add_child(logInst)
 
+func openConfirmMenu(menuText,onConfirm):
+	confirmPageVisible = true
+	$ConfirmPage/Confirm/RichTextLabel.text = "[center]"+menuText
+	purgeConnections()
+	$ConfirmPage/Confirm/Confirm.pressed.connect(onConfirm)
+
+func purgeConnections():
+	var confirmBtn = $ConfirmPage/Confirm/Confirm
+	var connectionsConfirm = confirmBtn.pressed.get_connections()
+	
+	for connection in connectionsConfirm:
+		confirmBtn.pressed.disconnect(connection.callable)
+
+func goToMainMenu():
+	Global.setSettings("InMenu",true)
+	Global.changeScene("MainMenu")
+
 func closeLog():
 	logPageVisible = false
+
+func closeConfirm():
+	confirmPageVisible = false
