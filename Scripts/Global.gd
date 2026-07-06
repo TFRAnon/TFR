@@ -5,18 +5,21 @@ signal createConfirmDialoge(saveSlotID)
 signal refreshSaveSlots
 signal refreshWords
 signal changeWordPage(newPage)
+signal commandComplete
+signal displayText(text)
 
-# dictionary containing game settings 
+# dictionary containing game settings and flags
 var settingsDict = {
 	"fullscreen" : false,
 	"lastSave" : "0",
 	"SaveLoadBG" : "save",
 	"MusicVolume" : 5,
 	"EffectVolume" : 5,
-	"ScrollSpeed" : 5,
+	"ScrollSpeed" : 10,
 	"AutoScrollSpeed" : 5,
 	"ScrollControls" : false,
-	"InMenu" : true
+	"InMenu" : true,
+	"currentScene" : "None"
 }
 
 var customWordDict = {
@@ -32,6 +35,21 @@ var customWordDict = {
 	"pg2-4" = ["orgasm"],
 	"pg2-5" = ["oral"],
 	"pg2-6" = ["love juices"]
+}
+
+# "changeText", [text,text,text]
+# "changeBackground", "newBackground"
+# "changeCharacter", "PickCharacter", "newCharacter" 
+# "moveCharacter", "PickCharacter", "newLocation", "SpeedOfMovement"
+# "makeChoice", choicesArr[]
+
+
+
+var gameDataDict : Dictionary = {
+	"TestScenario" = {
+		0 : ["changeBackground","res://Textures/Scenario/Crossdale/forest.jpg"],
+		1 : ["changeText",["This is a test A.","This is a test B.","This is a test C.","This is a test D."]]
+	}
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -56,6 +74,16 @@ func addWord(word,slot):
 func getWord(key):
 	var arr = customWordDict[key].duplicate(true)
 	return arr
+
+func getCurrentSceneData():
+	var currentScene = getSettings("currentScene")
+	return gameDataDict[currentScene].duplicate(true)
+
+func setCurrentScene(newScene):
+	if gameDataDict.has(newScene):
+		setSettings("currentScene",newScene)
+	else:
+		print("error failed to load set scene : "+str(newScene))
 
 # get values from settings
 func getSettings(settingName):
@@ -85,7 +113,7 @@ func changeScene(sceneName):
 		"UpdateHistory":
 			get_tree().change_scene_to_file("res://Scenes/History.tscn")
 		"NewGame":
-			# set newgame tag
+			setSettings("currentScene","TestScenario")
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
 		"ScenarioPlayer":
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
@@ -135,6 +163,7 @@ func loadFromSlot(saveSlotID):
 
 # emits a signal 
 func emitSignal(signalName,data):
+	print("signal emitted : "+signalName)
 	match signalName:
 		"PageChange":
 			print(signalName+" emitted with : "+str(data))
@@ -145,6 +174,10 @@ func emitSignal(signalName,data):
 			changeWordPage.emit(data)
 		"refreshWords":
 			refreshWords.emit()
+		"commandComplete":
+			commandComplete.emit()
+		"displayText":
+			displayText.emit(data)
 
 # checks to see if saveName exists. returns True or False
 func doesSaveExists(saveName):

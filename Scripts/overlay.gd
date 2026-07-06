@@ -2,6 +2,9 @@ extends Node2D
 
 var logPageVisible
 var confirmPageVisible
+var textData : Array
+var textPos
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,12 +16,17 @@ func _ready() -> void:
 	$Config.pressed.connect(buttonPressed.bind("Config"))
 	$Title.pressed.connect(buttonPressed.bind("Title"))
 	$Close.pressed.connect(buttonPressed.bind("Close"))
+	$TextButton.pressed.connect(buttonPressed.bind("TextPressed"))
 	
 	$LogPage/ExitButton.pressed.connect(closeLog)
 	logPageVisible = false
 	confirmPageVisible = false
 	
 	$ConfirmPage/Confirm/Cancel.pressed.connect(closeConfirm)
+	
+	Global.displayText.connect(displayNewText)
+	textData = [""]
+	textPos = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,6 +43,7 @@ func _process(delta: float) -> void:
 	else:
 		$ConfirmPage.modulate.a = 0.0
 		$ConfirmPage.visible = false
+	processText(delta)
 
 
 func buttonPressed(buttonName):
@@ -67,6 +76,26 @@ func buttonPressed(buttonName):
 		"Close":
 			# turns overlay visibility off.
 			pass
+		"TextPressed":
+			if $MainTextBlock.visible_characters < $MainTextBlock.text.length():
+					textPos = $MainTextBlock.text.length()
+			else: # if text already finished displaying
+				if !textData.is_empty():
+					textPos = $MainTextBlock.text.length()
+					$MainTextBlock.visible_characters = $MainTextBlock.text.length()
+					
+					$MainTextBlock.text = $MainTextBlock.text + textData.pop_front()
+				else:
+					Global.emitSignal("commandComplete","")
+
+func displayNewText(newTextData):
+	textData = newTextData
+	$MainTextBlock.text = textData.pop_front()
+	$MainTextBlock.visible_characters = 0
+
+func processText(delta):
+	textPos += delta * Global.getSettings("ScrollSpeed")
+	$MainTextBlock.visible_characters = textPos
 
 func changeNamecard(newName):
 	$Namecard/CenterContainer/RichTextLabel.text = newName
