@@ -75,7 +75,7 @@ func buttonPressed(buttonName):
 			openConfirmMenu("Return to the title screen. Okay?",goToMainMenu)
 		"Close":
 			# turns overlay visibility off.
-			pass
+			closeUI()
 		"TextPressed":
 			if $MainTextBlock.visible_characters < $MainTextBlock.text.length():
 					textPos = $MainTextBlock.text.length()
@@ -132,8 +132,15 @@ func goToMainMenu():
 	Global.setSettings("InMenu",true)
 	Global.changeScene("MainMenu")
 
+func closeUI():
+	self.visible = false
+
 func closeLog():
 	logPageVisible = false
 
 func closeConfirm():
 	confirmPageVisible = false
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		self.visible = true
