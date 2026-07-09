@@ -48,7 +48,7 @@ func processLine():
 			Global.emitSignal("displayText",command[1])
 			state = states.WAIT
 		"changeBackground":
-			var texture = load(command[1])
+			var texture = load(Global.getImage(command[1]))
 			if texture:
 				$Background.texture = texture
 			else:
@@ -60,5 +60,5 @@ func processLine():
 		"makeChoice":
 			pass
 		"changeNameCard":
-			pass
+			Global.emitSignal(command[0],[command[1],command[2]])
 	currentPosition = currentPosition + 1

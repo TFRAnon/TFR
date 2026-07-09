@@ -25,6 +25,7 @@ func _ready() -> void:
 	$ConfirmPage/Confirm/Cancel.pressed.connect(closeConfirm)
 	
 	Global.displayText.connect(displayNewText)
+	Global.displayNameCard.connect(changeNamecard)
 	textData = [""]
 	textPos = 0
 
@@ -97,12 +98,18 @@ func processText(delta):
 	textPos += delta * Global.getSettings("ScrollSpeed")
 	$MainTextBlock.visible_characters = textPos
 
-func changeNamecard(newName):
+func changeNamecard(data):
+	var newName = data[0]
 	$Namecard/CenterContainer/RichTextLabel.text = newName
-	if newName.isEmpty():
+	if newName == "":
 		$Namecard.visible = false
 	else:
 		$Namecard.visible = true
+	var frameType = data[1]
+	match frameType:
+		"basic":
+			$Namecard/Background.texture = load("res://Textures/Overlay/Blank.png")
+		# TODO add more frame types
 
 func addLog(title,textArr):
 	var line = load("res://Scenes/LogEntry.tscn")

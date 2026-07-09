@@ -7,6 +7,7 @@ signal refreshWords
 signal changeWordPage(newPage)
 signal commandComplete
 signal displayText(text)
+signal displayNameCard(data) # ["new name","frame type"]
 
 # dictionary containing game settings and flags
 var settingsDict = {
@@ -42,14 +43,47 @@ var customWordDict = {
 # "changeCharacter", "PickCharacter", "newCharacter" 
 # "moveCharacter", "PickCharacter", "newLocation", "SpeedOfMovement"
 # "makeChoice", choicesArr[]
+# "changeNameCard", "newName", "frame type"
+
 
 
 
 var gameDataDict : Dictionary = {
 	"TestScenario" = {
-		0 : ["changeBackground","res://Textures/Scenario/Crossdale/forest.jpg"],
+		0 : ["changeBackground","forrest"],
 		1 : ["changeText",["This is a test A.","This is a test B.","This is a test C.","This is a test D."]]
+	},
+	"StartGame" = {
+		0 : ["changeBackground","DoorStart"],
+		1 : ["changeText",["(In the early hours of the day,","\nthere was light knocking on the door."]],
+		2 : ["changeText",["(I didn't plan to meet with anyone today,\nand I don't have any friends who'd drop by without saying so either."," Who could it be?"]],
+		3 : ["changeCharacter","CharRight","StrangerASmile"],
+		4 : ["moveCharacter","CharRight","center","0"],
+		5 : ["changeNameCard","Suspicious Man","basic"],
+		6 : ["changeText",["Greetings, doctor."]],
+		7 : ["changeNameCard","","basic"],
+		8 : ["changeText",["(I opened the door and there was a suspicious middle-aged man standing in front of my house."]],
+		9 : ["changeNameCard","Suspicious Man","basic"],
+		10 : ["changeText",["Do you remember me?","\nYou saved my life in the past."]],
+		11 : ["changeNameCard","","basic"],
+		12 : ["changeText",["(I look at the man's face and try to remember.","\n...Now that he mentions it, I do vaguely recognize his face."]],
+		13 : ["changeNameCard","Suspicious Man","basic"],
+		14 : ["changeText",["Thats right. Long ago you saved me when I had collapsed in the outskirts of town."]],
+		15 : ["changeText",["Even though you knew involving yourself would bring nothing but trouble...","\nI wonder if it's just in a doctor's nature."]],
+		16 : ["changeText",["I apologize that I left at that time without thanking you properly","\nI happened to be nearby, so I thought I'd come to give my thanks"]],
+		17 : ["changeNameCard","","basic"],
+		18 : ["changeText",["(He's certainly suspicious, but he went out of his way to come thank me.\nMaybe I should make some tea..."]],
+		19 : ["changeNameCard","Suspicious Man","basic"],
+		20 : ["changeText",["Oh no, I'm fine. I don't plan to take too much of your time."]],
+		21 : ["changeText",["For now, please accept this..."]]
 	}
+}
+
+var imageDict : Dictionary = {
+	"error" = "res://Textures/Scenario/black.jpg",
+	"DoorStart" = "res://Textures/Scenario/door.jpg",
+	"StrangerASmile" = "res://Textures/Scenario/Character/fel_a_smile.png",
+	"forrest" = "res://Textures/Scenario/Crossdale/forest.jpg"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -85,6 +119,14 @@ func setCurrentScene(newScene):
 	else:
 		print("error failed to load set scene : "+str(newScene))
 
+func getImage(imageName):
+	if imageDict.has(imageName):
+		print("loading image : "+str(imageName))
+		return imageDict[imageName]
+	else:
+		print("error during loading image : "+str(imageName))
+		return imageDict["error"]
+
 # get values from settings
 func getSettings(settingName):
 	return settingsDict[settingName]
@@ -113,7 +155,7 @@ func changeScene(sceneName):
 		"UpdateHistory":
 			get_tree().change_scene_to_file("res://Scenes/History.tscn")
 		"NewGame":
-			setSettings("currentScene","TestScenario")
+			setSettings("currentScene","StartGame")
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
 		"ScenarioPlayer":
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
@@ -178,6 +220,9 @@ func emitSignal(signalName,data):
 			commandComplete.emit()
 		"displayText":
 			displayText.emit(data)
+		"changeNameCard":
+			displayNameCard.emit(data)
+			
 
 # checks to see if saveName exists. returns True or False
 func doesSaveExists(saveName):
