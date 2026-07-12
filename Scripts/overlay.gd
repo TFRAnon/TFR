@@ -93,6 +93,7 @@ func displayNewText(newTextData):
 	textData = newTextData
 	$MainTextBlock.text = textData.pop_front()
 	$MainTextBlock.visible_characters = 0
+	textPos = 0
 
 func processText(delta):
 	textPos += delta * Global.getSettings("ScrollSpeed")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4fdtcrw65t1v"
-path="res://.godot/imported/s-t.png-4eb83a045c43bb401512dd0eb8c84f2e.ctex"
+uid="uid://d3gwd1x0y4yyu"
+path="res://.godot/imported/s-talk-blink.png-3ee15478595d34150678a965aeb88988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Scenario/Character/s-t.png"
-dest_files=["res://.godot/imported/s-t.png-4eb83a045c43bb401512dd0eb8c84f2e.ctex"]
+source_file="res://Textures/Scenario/Character/s-talk-blink.png"
+dest_files=["res://.godot/imported/s-talk-blink.png-3ee15478595d34150678a965aeb88988.ctex"]
 
 [params]
 

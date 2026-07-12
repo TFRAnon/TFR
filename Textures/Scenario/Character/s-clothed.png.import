@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brkw7bhgthvlt"
-path="res://.godot/imported/s-cl.png-6e5c388a7c461bfefa675570270e278a.ctex"
+path="res://.godot/imported/s-clothed.png-4b95744b211c0d2135a50fbe4750f99f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Scenario/Character/s-cl.png"
-dest_files=["res://.godot/imported/s-cl.png-6e5c388a7c461bfefa675570270e278a.ctex"]
+source_file="res://Textures/Scenario/Character/s-clothed.png"
+dest_files=["res://.godot/imported/s-clothed.png-4b95744b211c0d2135a50fbe4750f99f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cysqx8nylabt1"
-path="res://.godot/imported/s-t-.png-3c4986766ebff98cd13b797f3fd07165.ctex"
+uid="uid://s4r3pa35x3mt"
+path="res://.godot/imported/s-shine.png-41c38bf0642b045e227efe4b60906daa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Scenario/Character/s-t-.png"
-dest_files=["res://.godot/imported/s-t-.png-3c4986766ebff98cd13b797f3fd07165.ctex"]
+source_file="res://Textures/Scenario/Character/s-shine.png"
+dest_files=["res://.godot/imported/s-shine.png-41c38bf0642b045e227efe4b60906daa.ctex"]
 
 [params]
 

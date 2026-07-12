@@ -8,6 +8,8 @@ signal changeWordPage(newPage)
 signal commandComplete
 signal displayText(text)
 signal displayNameCard(data) # ["new name","frame type"]
+signal displayCharacter(data) # ["PickCharacter", "newCharacter"]
+signal moveCharacter(data) # ["PickCharacter", "newLocation", "SpeedOfMovement"]
 
 # dictionary containing game settings and flags
 var settingsDict = {
@@ -42,7 +44,7 @@ var customWordDict = {
 # "changeBackground", "newBackground"
 # "changeCharacter", "PickCharacter", "newCharacter" 
 # "moveCharacter", "PickCharacter", "newLocation", "SpeedOfMovement"
-# "makeChoice", choicesArr[]
+# "makeChoice", choicesArr[] ( ["text","button texture","command","commandData" ] ) 
 # "changeNameCard", "newName", "frame type"
 
 
@@ -51,14 +53,22 @@ var customWordDict = {
 var gameDataDict : Dictionary = {
 	"TestScenario" = {
 		0 : ["changeBackground","forrest"],
-		1 : ["changeText",["This is a test A.","This is a test B.","This is a test C.","This is a test D."]]
+		1 : ["changeText",["This is a test A.","This is a test B.","This is a test C.","This is a test D."]],
+		2 : ["changeCharacter","CharRight","StrangerASmile"],
+		3 : ["moveCharacter","CharRight","center","1"],
+		4 : ["moveCharacter","CharRight","right","1"],
+		5 : ["moveCharacter","CharRight","left","1"],
+		6 : ["moveCharacter","CharRight","center","0.1"],
+		7 : ["moveCharacter","CharRight","right","0.1"],
+		8 : ["moveCharacter","CharRight","left","0.1"],
+		9 : ["moveCharacter","CharRight","center","0.1"]
 	},
 	"StartGame" = {
 		0 : ["changeBackground","DoorStart"],
 		1 : ["changeText",["(In the early hours of the day,","\nthere was light knocking on the door."]],
 		2 : ["changeText",["(I didn't plan to meet with anyone today,\nand I don't have any friends who'd drop by without saying so either."," Who could it be?"]],
-		3 : ["changeCharacter","CharRight","StrangerASmile"],
-		4 : ["moveCharacter","CharRight","center","0"],
+		3 : ["moveCharacter","CharRight","center","1"],
+		4 : ["changeCharacter","CharRight","StrangerASmile"],
 		5 : ["changeNameCard","Suspicious Man","basic"],
 		6 : ["changeText",["Greetings, doctor."]],
 		7 : ["changeNameCard","","basic"],
@@ -75,7 +85,42 @@ var gameDataDict : Dictionary = {
 		18 : ["changeText",["(He's certainly suspicious, but he went out of his way to come thank me.\nMaybe I should make some tea..."]],
 		19 : ["changeNameCard","Suspicious Man","basic"],
 		20 : ["changeText",["Oh no, I'm fine. I don't plan to take too much of your time."]],
-		21 : ["changeText",["For now, please accept this..."]]
+		21 : ["changeText",["For now, please accept this...","\nAt the time I had nothing on me, so I couldn't even pay for my treatment."]],
+		22 : ["changeNameCard","","basic"],
+		23 : ["changeText",["(The man handed me an envelope.","\nInside was more money than one would expect for just treatment fees."]],
+		24 : ["changeNameCard","Suspicious Man","basic"],
+		25 : ["changeText",["My payment was delayed until now, so please consider it as an apology.","\nPlease accept it."]],
+		26 : ["changeText",["I have one more thing I brought with me, but...\nMay I come inside before we discuss this?"]],
+		27 : ["changeText",["As expected of you, doctor.","\n...Hey, come over here."]],
+		28 : ["moveCharacter","CharRight","right","0.1"],
+		29 : ["moveCharacter","CharLeft","left","1"],
+		30 : ["changeCharacter","CharLeft","Sylvie-rags"],
+		31 : ["changeNameCard","","basic"],
+		32 : ["changeText",["(The man raises his voice torwards the door, and a girl walks in."]],
+		33 : ["changeNameCard","Suspicious Man","basic"],
+		34 : ["changeText",["A wealthy person died in an accident recently.","\nHe didn't have any close relatives, so people claiming to be government officials,\nrelatives, and friends came and stole all of his assets."]],
+		35 : ["changeText",["I have a few connections here and there so I was able to get some of the leftovers,","\nbut I was also entrusted with a few troublesom items.","\nYes, this one here is one of them."]],
+		36 : ["changeText",["I am but a humble merchant now,","and my motto is to buy and sell \"anything,\" so I was told to sell this off somehow, but..."]],
+		37 : ["changeText",["When it comes to buying and selling people, it'd be fine if the one in question could be used for more\nmanual labor, but it's not easy finding a buyer for a brat like this.","\nIf I rush things, there is a possibility that I may suffer some losses too."]],
+		38 : ["changeText",["It's not like I need to break even on this one, so rather than doing something stupid,\nI thought of either disposing of her or throwing her away, but...","\nEven I have some conscience and compassion"]],
+		39 : ["changeText",["I want to avoid anything troubleson, but I didn't even have anywhere I could hand this one off to.\nI was doing business in this town, and then I remembered that you had saved my life once before."]],
+		40 : ["changeText",["From what I can tell it seems that you are still living by yourself,","\nand it may be none of my business, but I thought that you may be feeling a bit lonely..."]],
+		41 : ["changeText",["It's a bit sudden, but would you take this one in?"]],
+		42 : ["changeNameCard","","basic"],
+		43 : ["changeText",["(What shall I do?"]],
+		44 : ["makeChoice",[
+			["Take the girl","Normal","changeScene","girlTaken"],
+			["Decline","Bad","changeScene","girlRejected"]
+		]]
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
 
@@ -83,7 +128,8 @@ var imageDict : Dictionary = {
 	"error" = "res://Textures/Scenario/black.jpg",
 	"DoorStart" = "res://Textures/Scenario/door.jpg",
 	"StrangerASmile" = "res://Textures/Scenario/Character/fel_a_smile.png",
-	"forrest" = "res://Textures/Scenario/Crossdale/forest.jpg"
+	"forrest" = "res://Textures/Scenario/Crossdale/forest.jpg",
+	"Sylvie-rags" = "res://Textures/Scenario/Character/s.png"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -156,6 +202,7 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/History.tscn")
 		"NewGame":
 			setSettings("currentScene","StartGame")
+			#setSettings("currentScene","TestScenario")
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
 		"ScenarioPlayer":
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
@@ -222,7 +269,10 @@ func emitSignal(signalName,data):
 			displayText.emit(data)
 		"changeNameCard":
 			displayNameCard.emit(data)
-			
+		"changeCharacter":
+			displayCharacter.emit(data)
+		"moveCharacter":
+			moveCharacter.emit(data)
 
 # checks to see if saveName exists. returns True or False
 func doesSaveExists(saveName):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3gwd1x0y4yyu"
-path="res://.godot/imported/s-c.png-6abf212d383687d0e7becfc6f010e382.ctex"
+uid="uid://cdn7bptjj7reh"
+path="res://.godot/imported/black.jpg-50a207f39b11803eb74bb9b04556da61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Scenario/Character/s-c.png"
-dest_files=["res://.godot/imported/s-c.png-6abf212d383687d0e7becfc6f010e382.ctex"]
+source_file="res://Textures/Scenario/Character/black.jpg"
+dest_files=["res://.godot/imported/black.jpg-50a207f39b11803eb74bb9b04556da61.ctex"]
 
 [params]
 

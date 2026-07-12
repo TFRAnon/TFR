@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bncv4teswa3aq"]
+[gd_scene load_steps=5 format=3 uid="uid://bncv4teswa3aq"]
 
 [ext_resource type="Script" path="res://Scripts/ScenarioPlayer.gd" id="1_4cwm6"]
 [ext_resource type="Texture2D" uid="uid://bnau36q6v5lmh" path="res://Textures/ScenarioPlayer/Black.png" id="1_int5r"]
 [ext_resource type="PackedScene" uid="uid://tyc3p7xiiwmd" path="res://Scenes/Overlay.tscn" id="2_6vwqq"]
+[ext_resource type="PackedScene" uid="uid://d3px7de1m3h1j" path="res://Scenes/Character.tscn" id="3_7xrmj"]
 
 [node name="ScenarioPlayer" type="Node2D"]
 script = ExtResource("1_4cwm6")
@@ -12,5 +13,9 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_int5r")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="CharRight" parent="." instance=ExtResource("3_7xrmj")]
+
+[node name="CharLeft" parent="." instance=ExtResource("3_7xrmj")]
 
 [node name="Overlay" parent="." instance=ExtResource("2_6vwqq")]

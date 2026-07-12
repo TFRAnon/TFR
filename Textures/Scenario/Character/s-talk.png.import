@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s4r3pa35x3mt"
-path="res://.godot/imported/s-.png-24b03f7d8c536f7692a877f536b1820a.ctex"
+uid="uid://b4fdtcrw65t1v"
+path="res://.godot/imported/s-talk.png-46b1fec3c1e5f8b9d6f439d54f7b3c50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Scenario/Character/s-.png"
-dest_files=["res://.godot/imported/s-.png-24b03f7d8c536f7692a877f536b1820a.ctex"]
+source_file="res://Textures/Scenario/Character/s-talk.png"
+dest_files=["res://.godot/imported/s-talk.png-46b1fec3c1e5f8b9d6f439d54f7b3c50.ctex"]
 
 [params]
 
