@@ -23,7 +23,9 @@ var settingsDict = {
 	"AutoScrollSpeed" : 5,
 	"ScrollControls" : false,
 	"InMenu" : true,
-	"currentScene" : "None"
+	"currentScene" : "None",
+	"skipToggled" : false,
+	"autoToggled" : false
 }
 
 var customWordDict = {

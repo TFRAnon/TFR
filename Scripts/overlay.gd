@@ -4,7 +4,7 @@ var logPageVisible
 var confirmPageVisible
 var textData : Array
 var textPos
-
+var timeSinceLastMove : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,6 +29,7 @@ func _ready() -> void:
 	Global.makeChoice.connect(createChoices)
 	textData = [""]
 	textPos = 0
+	timeSinceLastMove = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,6 +47,13 @@ func _process(delta: float) -> void:
 		$ConfirmPage.modulate.a = 0.0
 		$ConfirmPage.visible = false
 	processText(delta)
+	if isSkiped():
+		buttonPressed("TextPressed")
+	if isAuto():
+		timeSinceLastMove += delta
+		if timeSinceLastMove > ( Global.getSettings("AutoScrollSpeed") / 4):
+			timeSinceLastMove = 0
+			buttonPressed("TextPressed")
 
 
 func buttonPressed(buttonName):
@@ -60,10 +68,10 @@ func buttonPressed(buttonName):
 			Global.changeScene("ReadMe")
 		"Skip":
 			# sets text to auto skip
-			pass
+			toggleSkip()
 		"Auto":
 			# sets text to auto scroll?
-			pass
+			toggleAuto()
 		"Log":
 			# fade in overlay with log. return fades back
 			logPageVisible = true
@@ -165,3 +173,21 @@ func createChoices(dataArr): #[ ["Take the girl","Normal","changeScene","girlTak
 		var bufferBar = choiceScene.instantiate()
 		bufferBar.self_modulate.a = 0.0
 		$Choices/CenterContainer/VBoxContainer.add_child(bufferBar)
+
+func toggleSkip():
+	if Global.getSettings("skipToggled"):
+		Global.setSettings("skipToggled",false)
+	else:
+		Global.setSettings("skipToggled",true)
+
+func toggleAuto():
+	if Global.getSettings("autoToggled"):
+		Global.setSettings("autoToggled",false)
+	else:
+		Global.setSettings("autoToggled",true)
+
+func isSkiped():
+	return Global.getSettings("skipToggled")
+
+func isAuto():
+	return Global.getSettings("autoToggled")
