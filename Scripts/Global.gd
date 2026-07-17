@@ -119,11 +119,7 @@ var gameDataDict : Dictionary = {
 		]]
 	},
 	"girlTaken" = {
-		0 : ["changeBackground","DoorStart"],
-		1 : ["moveCharacter","CharRight","right","1"],
-		2 : ["moveCharacter","CharLeft","left","1"],
-		3 : ["changeCharacter","CharRight","StrangerASmile"],
-		4 : ["changeCharacter","CharLeft","Sylvie-rags"]
+		1 : ["changeText",["test"]],
 	},
 	"girlRejected" = {
 		0 : ["changeCharacter","CharRight","StrangerAFrown"],
@@ -200,6 +196,7 @@ func getSettings(settingName):
 
 # set values in settings
 func setSettings(settingName, value):
+	print("set "+settingName+" : "+str(value))
 	settingsDict[settingName] = value
 
 # function used to change from one scene to another 

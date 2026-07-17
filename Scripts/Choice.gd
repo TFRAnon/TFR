@@ -32,8 +32,11 @@ func changeTexture(newTexture):
 func changeOnPress(action,data):
 	match action:
 		"changeScene":
-			Global.setSettings("currentScene",data)
-			self.pressed.connect(Global.emitSignal.bind("loadNewScene","N/A"))
+			self.pressed.connect(
+				func():
+					print("Pressed :", action," : ", data)
+					Global.setSettings("currentScene",data)
+					Global.emitSignal("loadNewScene","N/A"))
 		"changeRedotScene":
 			self.pressed.connect(Global.changeScene.bind(data))
 

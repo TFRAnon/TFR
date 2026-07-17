@@ -167,8 +167,11 @@ func createChoices(dataArr): #[ ["Take the girl","Normal","changeScene","girlTak
 	for data in dataArr:
 		var scene = choiceScene.instantiate()
 		scene.changeText(data[0])
+		print("creating : "+data[0])
 		scene.changeTexture(data[1])
 		scene.changeOnPress(data[2],data[3])
+		print(data[2]+" : "+data[3])
+		
 		$Choices/CenterContainer/VBoxContainer.add_child(scene)
 		var bufferBar = choiceScene.instantiate()
 		bufferBar.self_modulate.a = 0.0
