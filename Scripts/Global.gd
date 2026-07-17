@@ -11,6 +11,8 @@ signal displayNameCard(data) # ["new name","frame type"]
 signal displayCharacter(data) # ["PickCharacter", "newCharacter"]
 signal moveCharacter(data) # ["PickCharacter", "newLocation", "SpeedOfMovement"]
 signal makeChoice(data) # [ ["text","button texture","command","commandData" ],["text","button texture","command","commandData" ] ] 
+signal loadNewScene()
+signal clearChoicesSignal()
 
 # dictionary containing game settings and flags
 var settingsDict = {
@@ -117,17 +119,36 @@ var gameDataDict : Dictionary = {
 		]]
 	},
 	"girlTaken" = {
-		0 : ["changeBackground","forrest"],
+		0 : ["changeBackground","DoorStart"],
+		1 : ["moveCharacter","CharRight","right","1"],
+		2 : ["moveCharacter","CharLeft","left","1"],
+		3 : ["changeCharacter","CharRight","StrangerASmile"],
+		4 : ["changeCharacter","CharLeft","Sylvie-rags"]
 	},
 	"girlRejected" = {
-		0 : ["changeBackground","forrest"],
-	}
+		0 : ["changeCharacter","CharRight","StrangerAFrown"],
+		1 : ["changeNameCard","Suspicious Man","basic"],
+		2 : ["changeText",["I see.","\nWell, it was sudden so I guess it can't be helped."]],
+		3 : ["changeText",["Thank you for your time.","\nI shall take my leave."]],
+		4 : ["changeBackground","error"],
+		5 : ["changeNameCard","","basic"],
+		6 : ["changeText",["(The man left with the girl in tow."]],
+		7 : ["changeBackground","gameOver"], # TODO add game over screen
+		8 : ["makeChoice",[
+			["Show hint","Normal","changeScene","nullRoom"], # TODO replaces button with "The game won't start unless you take her in." make something funnier instead.
+			["Load save","Normal","changeRedotScene","LoadGame"], # I hate this name
+			["Return to the title screen","Normal","changeRedotScene","MainMenu"]
+		]]
+	},
+	"nullRoom" = {}
 }
 
 var imageDict : Dictionary = {
+	"gameOver" = "res://Textures/Scenario/black.jpg",
 	"error" = "res://Textures/Scenario/black.jpg",
 	"DoorStart" = "res://Textures/Scenario/door.jpg",
 	"StrangerASmile" = "res://Textures/Scenario/Character/fel_a_smile.png",
+	"StrangerAFrown" = "res://Textures/Scenario/Character/fel_a_def.png",
 	"forrest" = "res://Textures/Scenario/Crossdale/forest.jpg",
 	"Sylvie-rags" = "res://Textures/Scenario/Character/s.png"
 }
@@ -275,6 +296,9 @@ func emitSignal(signalName,data):
 			moveCharacter.emit(data)
 		"makeChoice":
 			makeChoice.emit(data)
+		"loadNewScene":
+			clearChoicesSignal.emit()
+			loadNewScene.emit()
 
 # checks to see if saveName exists. returns True or False
 func doesSaveExists(saveName):

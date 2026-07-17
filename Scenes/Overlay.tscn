@@ -110,6 +110,7 @@ texture_hover = ExtResource("17_ekars")
 stretch_mode = 0
 
 [node name="Namecard" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -131,7 +132,6 @@ scale = Vector2(1.99498, 1.99498)
 [node name="RichTextLabel" type="RichTextLabel" parent="Namecard/CenterContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("20_tg27v")
-text = "This is a test"
 fit_content = true
 autowrap_mode = 0
 

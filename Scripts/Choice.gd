@@ -3,7 +3,7 @@ extends TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Global.clearChoicesSignal.connect(clear)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,4 +33,9 @@ func changeOnPress(action,data):
 	match action:
 		"changeScene":
 			Global.setSettings("currentScene",data)
-			self.pressed.connect(Global.changeScene.bind("ScenarioPlayer"))
+			self.pressed.connect(Global.emitSignal.bind("loadNewScene","N/A"))
+		"changeRedotScene":
+			self.pressed.connect(Global.changeScene.bind(data))
+
+func clear():
+	self.queue_free()

@@ -13,9 +13,10 @@ var currentPosition : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	loadData()
-	print("loaded scenario : "+str(dataDict))
+	print("loaded scenario : " + Global.getSettings("currentScene"))
 	currentPosition = 0;
 	Global.commandComplete.connect(waitOver)
+	Global.loadNewScene.connect(loadNewScene)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +26,11 @@ func _process(delta: float) -> void:
 			pass
 		states.CONTINUE:
 			processLine()
+
+func loadNewScene():
+	loadData()
+	print("loaded scenario : " + Global.getSettings("currentScene"))
+	currentPosition = 0;
 
 func loadData():
 	dataDict = Global.getCurrentSceneData()
