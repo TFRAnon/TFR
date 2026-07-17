@@ -1,0 +1,36 @@
+extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func changeText(newText):
+	$CenterContainer/RichTextLabel.text = newText
+
+func changeTexture(newTexture):
+	match newTexture:
+		"Normal":
+			var regTexture = load("res://Textures/Overlay/ChoiceUI/reg_white.png")
+			var hoverTexture = load("res://Textures/Overlay/ChoiceUI/reg_hover.png")
+			
+			self.texture_normal = regTexture
+			self.texture_hover = hoverTexture 
+			
+		"Bad":
+			var regTexture = load("res://Textures/Overlay/ChoiceUI/bad_white.png")
+			var hoverTexture = load("res://Textures/Overlay/ChoiceUI/bad_hover.png")
+			
+			self.texture_normal = regTexture
+			self.texture_hover = hoverTexture
+
+func changeOnPress(action,data):
+	match action:
+		"changeScene":
+			Global.setSettings("currentScene",data)
+			self.pressed.connect(Global.changeScene.bind("ScenarioPlayer"))

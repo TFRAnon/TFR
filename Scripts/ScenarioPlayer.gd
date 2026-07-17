@@ -59,7 +59,7 @@ func processLine():
 			Global.emitSignal(command[0],[command[1],command[2],command[3]])
 			state = states.WAIT
 		"makeChoice":
-			pass
+			Global.emitSignal(command[0],command[1])
 		"changeNameCard":
 			Global.emitSignal(command[0],[command[1],command[2]])
 	currentPosition = currentPosition + 1

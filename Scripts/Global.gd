@@ -10,6 +10,7 @@ signal displayText(text)
 signal displayNameCard(data) # ["new name","frame type"]
 signal displayCharacter(data) # ["PickCharacter", "newCharacter"]
 signal moveCharacter(data) # ["PickCharacter", "newLocation", "SpeedOfMovement"]
+signal makeChoice(data) # [ ["text","button texture","command","commandData" ],["text","button texture","command","commandData" ] ] 
 
 # dictionary containing game settings and flags
 var settingsDict = {
@@ -112,15 +113,12 @@ var gameDataDict : Dictionary = {
 			["Take the girl","Normal","changeScene","girlTaken"],
 			["Decline","Bad","changeScene","girlRejected"]
 		]]
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	},
+	"girlTaken" = {
+		0 : ["changeBackground","forrest"],
+	},
+	"girlRejected" = {
+		0 : ["changeBackground","forrest"],
 	}
 }
 
@@ -273,6 +271,8 @@ func emitSignal(signalName,data):
 			displayCharacter.emit(data)
 		"moveCharacter":
 			moveCharacter.emit(data)
+		"makeChoice":
+			makeChoice.emit(data)
 
 # checks to see if saveName exists. returns True or False
 func doesSaveExists(saveName):
