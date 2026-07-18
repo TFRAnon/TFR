@@ -119,6 +119,8 @@ func changeNamecard(data):
 	match frameType:
 		"basic":
 			$Namecard/Background.texture = load("res://Textures/Overlay/Blank.png")
+		"silver":
+			$Namecard/Background.texture = load("res://Textures/Overlay/Silver.png")
 		# TODO add more frame types
 
 func addLog(title,textArr):

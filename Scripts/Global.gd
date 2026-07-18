@@ -27,7 +27,9 @@ var settingsDict = {
 	"InMenu" : true,
 	"currentScene" : "None",
 	"skipToggled" : false,
-	"autoToggled" : false
+	"autoToggled" : false,
+	"RepeatToggled" : false,
+	"CurrentTime" : 0
 }
 
 var customWordDict = {
@@ -119,7 +121,25 @@ var gameDataDict : Dictionary = {
 		]]
 	},
 	"girlTaken" = {
-		1 : ["changeText",["test"]],
+		1 : ["changeNameCard","Suspicious Man","basic"],
+		2 : ["changeText",["Is that so! It'll help both me and this girl out."]],
+		3 : ["changeText",["This girl is a slave without any relatives.","\nYou can have her help around the house, or if you have such preferences you can treat her like your toy.","\nThere is no one who would object."]],
+		4 : ["changeText",["If you want to know more about her, you can ask her.","\nThen, I shall take my leave."]],
+		5 : ["changeText",["Once again, thank you very much for saving me that day."]],
+		6 : ["changeNameCard","","basic"],
+		7 : ["changeCharacter","CharRight","empty"],
+		8 : ["moveCharacter","CharLeft","center","0.1"],
+		9 : ["changeText",["(The man left."]],
+		10 : ["changeNameCard","Sylvie","silver"],
+		11 : ["changeCharacter","CharLeft","Sylvie-rags-talk"],
+		12 : ["changeText",["Nice to meet you. My name is Sylvie.","\nThank you very much for accepting me."]],
+		13 : ["changeText",["I cannot do heavy labor, but I believe I can do any simple chores that you would ask of me."]],
+		14 : ["changeCharacter","CharLeft","Sylvie-rags-talk-blink"],
+		15 : ["changeText",["However, my previous master enjoyed hearing my screams the most."]],
+		16 : ["changeCharacter","CharLeft","Sylvie-rags-talk"],
+		17 : ["changeText",["Please... treat me gently..."]],
+		18 : ["changeScene","Home"]
+		
 	},
 	"girlRejected" = {
 		0 : ["changeCharacter","CharRight","StrangerAFrown"],
@@ -142,11 +162,15 @@ var gameDataDict : Dictionary = {
 var imageDict : Dictionary = {
 	"gameOver" = "res://Textures/Scenario/black.jpg",
 	"error" = "res://Textures/Scenario/black.jpg",
+	"empty" = "res://Textures/Scenario/Character/empty.png",
 	"DoorStart" = "res://Textures/Scenario/door.jpg",
 	"StrangerASmile" = "res://Textures/Scenario/Character/fel_a_smile.png",
 	"StrangerAFrown" = "res://Textures/Scenario/Character/fel_a_def.png",
 	"forrest" = "res://Textures/Scenario/Crossdale/forest.jpg",
-	"Sylvie-rags" = "res://Textures/Scenario/Character/s.png"
+	"Sylvie-rags" = "res://Textures/Scenario/Character/s.png",
+	"Sylvie-rags-talk" = "res://Textures/Scenario/Character/s-talk.png",
+	"Sylvie-rags-talk-blink" = "res://Textures/Scenario/Character/s-talk-blink.png"
+	
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -224,7 +248,8 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
 		"ScenarioPlayer":
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
-			
+		"Home":
+			get_tree().change_scene_to_file("res://Scenes/Home.tscn")
 
 # toggles full screen
 func toggleFullScreen():

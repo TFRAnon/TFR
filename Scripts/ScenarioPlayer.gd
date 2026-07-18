@@ -68,6 +68,8 @@ func processLine():
 			Global.emitSignal(command[0],command[1])
 		"changeNameCard":
 			Global.emitSignal(command[0],[command[1],command[2]])
+		"changeScene":
+			Global.changeScene(command[1])
 	currentPosition = currentPosition + 1
 
 # ["changeCharacter","CharRight","StrangerASmile"]
