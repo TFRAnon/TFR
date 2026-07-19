@@ -52,7 +52,7 @@ var internalSave : Dictionary = {
 	"characterReturnSilence" : false,
 	"atChoices" : false,
 	"currentChoices" : [],
-	"savedNameCard" : []
+	"savedNameCard" : ["","basic"]
 }
 
 var customWordDict = {
@@ -399,3 +399,4 @@ func resetInternalSceneData():
 	setGameData("visibleChars",0)
 	setGameData("characterReturnSilence",false)
 	setGameData("currentChoices",[])
+	setGameData("savedNameCard",["","basic"])
