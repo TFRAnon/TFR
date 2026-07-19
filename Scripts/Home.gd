@@ -13,6 +13,7 @@ func _ready() -> void:
 	$Buttons/Memory.pressed.connect(buttonPressed.bind("Memory"))
 	$Buttons/Repeat.pressed.connect(toggleRepeat)
 	timeWhenLastUpdated = -1
+	Global.resetInternalSceneData()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,7 +34,7 @@ func toggleRepeat():
 
 # yes this is inefficient as hell but I have processing power to spare and it keeps things simple
 func keepUpdated():
-	if timeWhenLastUpdated != Global.getSettings("CurrentTime"):
+	if timeWhenLastUpdated != Global.getGameData("CurrentTime"):
 		updateTimeBackground()
 	var onTexture = load("res://Textures/Home/buttons/repeat-.png")
 	var offTexture = load("res://Textures/Home/buttons/repeat.png")
@@ -46,7 +47,7 @@ func keepUpdated():
 
 func updateTimeBackground():
 	var texture
-	match Global.getSettings("CurrentTime"):
+	match Global.getGameData("CurrentTime"):
 		0 :
 			texture = load("res://Textures/Home/Time/1.png")
 			$Time.texture = texture

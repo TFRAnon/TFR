@@ -11,8 +11,11 @@ signal displayNameCard(data) # ["new name","frame type"]
 signal displayCharacter(data) # ["PickCharacter", "newCharacter"]
 signal moveCharacter(data) # ["PickCharacter", "newLocation", "SpeedOfMovement"]
 signal makeChoice(data) # [ ["text","button texture","command","commandData" ],["text","button texture","command","commandData" ] ] 
+signal changeBackground(data) # textureName
 signal loadNewScene()
 signal clearChoicesSignal()
+signal loadSavedText() # [oldTextData,currentText,visibleChars,oldTextPos]
+signal loadsavedChoices()
 
 # dictionary containing game settings and flags
 var settingsDict = {
@@ -24,12 +27,31 @@ var settingsDict = {
 	"ScrollSpeed" : 10,
 	"AutoScrollSpeed" : 5,
 	"ScrollControls" : false,
-	"InMenu" : true,
 	"currentScene" : "None",
 	"skipToggled" : false,
 	"autoToggled" : false,
-	"RepeatToggled" : false,
-	"CurrentTime" : 0
+	"RepeatToggled" : false
+}
+
+var internalSave : Dictionary = {
+	"CurrentTime" : 0,
+	"trust" : 0,
+	"friendship" : 0,
+	"ScenarioBackground" : "",
+	"ScenarioCharL" : "",
+	"ScenarioCharR" : "",
+	"ScenarioCharLLocation" : "",
+	"ScenarioCharRLocation" : "",
+	"gameDataPosition" : 0,
+	"textData" : {},
+	"currentText" : "",
+	"textPos" : 0,
+	"visibleChars" : 0,
+	"savedLocation" : "MainMenu",
+	"return" : false,
+	"characterReturnSilence" : false,
+	"atChoices" : false,
+	"currentChoices" : []
 }
 
 var customWordDict = {
@@ -173,6 +195,10 @@ var imageDict : Dictionary = {
 	
 }
 
+var talkDict : Dictionary = {
+	0 : []
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	onStartUp()
@@ -212,7 +238,7 @@ func getImage(imageName):
 		return imageDict[imageName]
 	else:
 		print("error during loading image : "+str(imageName))
-		return imageDict["error"]
+		return null
 
 # get values from settings
 func getSettings(settingName):
@@ -220,13 +246,23 @@ func getSettings(settingName):
 
 # set values in settings
 func setSettings(settingName, value):
-	print("set "+settingName+" : "+str(value))
+	print("set settings "+settingName+" : "+str(value))
 	settingsDict[settingName] = value
+
+# get values from game data
+func getGameData(dataName):
+	return internalSave[dataName]
+
+# set values in game data
+func setGameData(dataName, value):
+	print("set gamedata "+dataName+" : "+str(value))
+	internalSave[dataName] = value
 
 # function used to change from one scene to another 
 func changeScene(sceneName):
 	match sceneName:
 		"MainMenu":
+			setSettings("currentScene","MainMenu")
 			get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 		"LoadGame":
 			setSettings("SaveLoadBG","load")
@@ -244,11 +280,14 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/History.tscn")
 		"NewGame":
 			setSettings("currentScene","StartGame")
+			setGameData("savedLocation","ScenarioPlayer")
 			#setSettings("currentScene","TestScenario")
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
 		"ScenarioPlayer":
+			setGameData("savedLocation","ScenarioPlayer")
 			get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
 		"Home":
+			setGameData("savedLocation","Home")
 			get_tree().change_scene_to_file("res://Scenes/Home.tscn")
 
 # toggles full screen
@@ -321,7 +360,11 @@ func emitSignal(signalName,data):
 		"loadNewScene":
 			clearChoicesSignal.emit()
 			loadNewScene.emit()
-
+		"loadSavedText":
+			loadSavedText.emit()
+		"changeBackground":
+			print("emitting change background")
+			changeBackground.emit(data)
 # checks to see if saveName exists. returns True or False
 func doesSaveExists(saveName):
 	if FileAccess.file_exists("user://"+saveName):
@@ -341,3 +384,17 @@ func deleteSave(saveName):
 	else:
 		print("error : file does not exist? : "+"user://"+saveName)
 	refreshSaveSlots.emit()
+
+func resetInternalSceneData():
+	setGameData("ScenarioBackground","")
+	setGameData("ScenarioCharL","")
+	setGameData("ScenarioCharR","")
+	setGameData("ScenarioCharLLocation","")
+	setGameData("ScenarioCharRLocation","")
+	setGameData("gameDataPosition",0)
+	setGameData("textData",{})
+	setGameData("currentText","")
+	setGameData("textPos",0)
+	setGameData("visibleChars",0)
+	setGameData("characterReturnSilence",false)
+	setGameData("currentChoices",[])

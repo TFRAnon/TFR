@@ -27,10 +27,13 @@ func _ready() -> void:
 	Global.displayText.connect(displayNewText)
 	Global.displayNameCard.connect(changeNamecard)
 	Global.makeChoice.connect(createChoices)
+	Global.loadSavedText.connect(loadSavedText)
+	Global.loadsavedChoices.connect(createChoices)
+	
+	
 	textData = [""]
 	textPos = 0
 	timeSinceLastMove = 0
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -60,11 +63,15 @@ func buttonPressed(buttonName):
 	match buttonName:
 		"Load":
 			# sends to load menu, returns to original location
-			Global.setSettings("InMenu",false)
+			Global.setGameData("return",true)
+			Global.setGameData("characterReturnSilence",true)
+			saveCurrentState()
 			Global.changeScene("LoadGame")
 		"ReadMe":
 			# sends to read me, returns to original location
-			Global.setSettings("InMenu",false)
+			Global.setGameData("return",true)
+			Global.setGameData("characterReturnSilence",true)
+			saveCurrentState()
 			Global.changeScene("ReadMe")
 		"Skip":
 			# sets text to auto skip
@@ -77,7 +84,9 @@ func buttonPressed(buttonName):
 			logPageVisible = true
 			$LogPage.visible = true
 		"Config":
-			Global.setSettings("InMenu",false)
+			Global.setGameData("return",true)
+			Global.setGameData("characterReturnSilence",true)
+			saveCurrentState()
 			Global.changeScene("Config")
 		"Title":
 			$ConfirmPage.visible = true
@@ -103,6 +112,18 @@ func displayNewText(newTextData):
 	$MainTextBlock.text = textData.pop_front()
 	$MainTextBlock.visible_characters = 0
 	textPos = 0
+
+func loadSavedText(): 
+	textData = Global.getGameData("textData")
+	$MainTextBlock.text = Global.getGameData("currentText")
+	$MainTextBlock.visible_characters = Global.getGameData("visibleChars")
+	textPos = Global.getGameData("textPos")
+
+func saveCurrentState():
+	Global.setGameData("textData",textData.duplicate(true))
+	Global.setGameData("textPos",textPos)
+	Global.setGameData("currentText",$MainTextBlock.text)
+	Global.setGameData("visibleChars",$MainTextBlock.visible_characters)
 
 func processText(delta):
 	textPos += delta * Global.getSettings("ScrollSpeed")
@@ -148,7 +169,8 @@ func purgeConnections():
 		confirmBtn.pressed.disconnect(connection.callable)
 
 func goToMainMenu():
-	Global.setSettings("InMenu",true)
+	Global.setGameData("return",false)
+	Global.resetInternalSceneData()
 	Global.changeScene("MainMenu")
 
 func closeUI():

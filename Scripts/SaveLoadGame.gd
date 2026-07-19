@@ -28,11 +28,14 @@ func changePage(pageNumber,button):
 	button.disabled = true
 
 func exitButton():
-	match Global.getSettings("InMenu"):
-		true:
+	print("exiting save/load")
+	match Global.getGameData("savedLocation"):
+		"MainMenu":
 			Global.changeScene("MainMenu")
-		false:
+		"ScenarioPlayer":
 			Global.changeScene("ScenarioPlayer")
+		"Home":
+			Global.changeScene("Home")
 
 func loadBackground():
 	match Global.getSettings("SaveLoadBG"):

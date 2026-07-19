@@ -187,11 +187,13 @@ func refreshMiscControls():
 		$ScrollControlOff.disabled = true
 
 func exitButton():
-	match Global.getSettings("InMenu"):
-		true:
-			Global.changeScene("MainMenu")
-		false:
-			Global.changeScene("ScenarioPlayer")
+	match Global.getGameData("savedLocation"):
+				"MainMenu":
+					Global.changeScene("MainMenu")
+				"ScenarioPlayer":
+					Global.changeScene("ScenarioPlayer")
+				"Home":
+					Global.changeScene("Home")
 
 func addWord(location):
 	if not getTextFromLocation(location).is_empty():

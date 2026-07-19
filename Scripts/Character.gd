@@ -26,7 +26,8 @@ func _process(delta: float) -> void:
 	timeSinceMovement += delta
 	lerp_min_step(targetPosition,movespeed,1.0)
 	if $Character.position.x == targetPosition and !sentSignal and timeSinceMovement > minTimeBetweenMovements:
-		Global.emitSignal("commandComplete","")
+		if !Global.getGameData("characterReturnSilence"):
+			Global.emitSignal("commandComplete","")
 		sentSignal = true
 
 func lerp_min_step(target: float, weight: float, min_step: float):
@@ -45,6 +46,12 @@ func lerp_min_step(target: float, weight: float, min_step: float):
 func changeCharacter(data): # ["PickCharacter", "newCharacter"]
 	if !isThisCharacter(data[0]):
 		return
+	if data[1] == "":
+		return
+	if self.name == "CharLeft":
+		Global.setGameData("ScenarioCharL",data[1])
+	else:
+		Global.setGameData("ScenarioCharR",data[1])
 	var texture = load(Global.getImage(data[1]))
 	$Character.texture = texture
 
@@ -56,10 +63,22 @@ func moveCharacter(data): # ["PickCharacter", "newLocation", "SpeedOfMovement"]
 	match data[1]:
 		"center":
 			targetPosition = centerPos
+			if self.name == "CharLeft":
+				Global.setGameData("ScenarioCharLLocation","center")
+			else:
+				Global.setGameData("ScenarioCharRLocation","center")
 		"left":
 			targetPosition = leftSide
+			if self.name == "CharLeft":
+				Global.setGameData("ScenarioCharLLocation","left")
+			else:
+				Global.setGameData("ScenarioCharRLocation","left")
 		"right":
 			targetPosition = rightSide
+			if self.name == "CharLeft":
+				Global.setGameData("ScenarioCharLLocation","right")
+			else:
+				Global.setGameData("ScenarioCharRLocation","right")
 	movespeed = float(data[2])
 	timeSinceMovement = 0
 
@@ -68,8 +87,8 @@ func preventDuplicateComplete():
 	sentSignal = true
 
 # character commands are sent to all instances. This chooses which one is activated.
-func isThisCharacter(name) -> bool: # CharRight / CharLeft
-	if self.name == name:
+func isThisCharacter(thisName) -> bool: # CharRight / CharLeft
+	if self.name == thisName:
 		return true
 	else:
 		return false
