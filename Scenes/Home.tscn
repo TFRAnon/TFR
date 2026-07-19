@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://ce1fugug0wi0g"]
+[gd_scene load_steps=30 format=3 uid="uid://ce1fugug0wi0g"]
 
 [ext_resource type="Script" path="res://Scripts/Home.gd" id="1_tlqgb"]
 [ext_resource type="Texture2D" uid="uid://b2f46y78pq5d0" path="res://Textures/Home/room-menu.jpg" id="1_yhjw6"]
 [ext_resource type="Texture2D" uid="uid://cyk5360ed0eqh" path="res://Textures/Home/act.png" id="2_wsl8s"]
 [ext_resource type="Texture2D" uid="uid://dflu1lfah2fb2" path="res://Textures/Home/Time/1.png" id="3_oyo0s"]
-[ext_resource type="Texture2D" uid="uid://bca4n5tgrojp8" path="res://Textures/Home/testbackground.png" id="4_18gjs"]
+[ext_resource type="Texture2D" uid="uid://c8gohfx4gtf0s" path="res://Textures/Home/testbackground2.png" id="5_7xmkf"]
 [ext_resource type="PackedScene" uid="uid://tyc3p7xiiwmd" path="res://Scenes/Overlay.tscn" id="5_v7dek"]
 [ext_resource type="Texture2D" uid="uid://b6730vetsmb2m" path="res://Textures/Home/buttons/c_pat.png" id="6_ywm1n"]
 [ext_resource type="Texture2D" uid="uid://cfapve8sfnp4" path="res://Textures/Home/buttons/c_pat_.png" id="7_23l42"]
@@ -23,6 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://cyy0oadqgeh8c" path="res://Textures/Home/buttons/repeat.png" id="20_xj3g4"]
 [ext_resource type="Texture2D" uid="uid://rrfqseo40r8v" path="res://Textures/Home/buttons/repeat-.png" id="21_q3sxu"]
 [ext_resource type="Texture2D" uid="uid://ibsp4ctow6lh" path="res://Textures/Home/buttons/repeat_.png" id="22_jc0e3"]
+[ext_resource type="Texture2D" uid="uid://o0nhs6yjgojp" path="res://Textures/Home/buttons/c_out.png" id="23_715m2"]
+[ext_resource type="Texture2D" uid="uid://dbds8jjolrk2b" path="res://Textures/Home/buttons/c_out_.png" id="24_shrlw"]
+[ext_resource type="Texture2D" uid="uid://xcau8anxceo5" path="res://Textures/Home/buttons/c_out_n.png" id="25_cq2j2"]
+[ext_resource type="Texture2D" uid="uid://bpdhvvfv7aw1y" path="res://Textures/Home/buttons/c_out_n_.png" id="26_06h0r"]
+[ext_resource type="Texture2D" uid="uid://b2pjn3tkrsqq4" path="res://Textures/Home/buttons/s_dress.png" id="27_nttbu"]
+[ext_resource type="Texture2D" uid="uid://bhxapon8p0orl" path="res://Textures/Home/buttons/s_dress_.png" id="28_dch25"]
 
 [node name="Home" type="Node2D"]
 script = ExtResource("1_tlqgb")
@@ -48,18 +54,18 @@ metadata/_edit_lock_ = true
 [node name="TestMenu" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.176471)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("4_18gjs")
+texture = ExtResource("5_7xmkf")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Buttons" type="Control" parent="."]
+[node name="HomeButtons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="PatHead" type="TextureButton" parent="Buttons"]
+[node name="PatHead" type="TextureButton" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1309.0
 offset_top = 140.0
@@ -70,7 +76,7 @@ texture_hover = ExtResource("7_23l42")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Chat" type="TextureButton" parent="Buttons"]
+[node name="Chat" type="TextureButton" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1149.0
 offset_top = 140.0
@@ -81,7 +87,7 @@ texture_hover = ExtResource("9_l63aq")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Molest" type="TextureButton" parent="Buttons"]
+[node name="Molest" type="TextureButton" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1158.0
 offset_top = 318.0
@@ -92,7 +98,7 @@ texture_hover = ExtResource("11_ff3fk")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Items" type="TextureButton" parent="Buttons"]
+[node name="Items" type="TextureButton" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1097.0
 offset_top = 586.0
@@ -103,7 +109,7 @@ texture_hover = ExtResource("13_j5o40")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Status" type="TextureButton" parent="Buttons"]
+[node name="Status" type="TextureButton" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1645.0
 offset_top = 517.0
@@ -114,7 +120,7 @@ texture_hover = ExtResource("15_phlr1")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Save" type="TextureButton" parent="Buttons"]
+[node name="Save" type="TextureButton" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1631.0
 offset_top = 690.0
@@ -125,7 +131,7 @@ texture_hover = ExtResource("17_e8kfu")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Memory" type="TextureButton" parent="Buttons"]
+[node name="Memory" type="TextureButton" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1481.0
 offset_top = 690.0
@@ -136,7 +142,7 @@ texture_hover = ExtResource("19_lm64v")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Repeat" type="TextureButton" parent="Buttons"]
+[node name="Repeat" type="TextureButton" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1784.0
 offset_top = 43.0
@@ -145,6 +151,37 @@ offset_bottom = 93.0
 texture_normal = ExtResource("20_xj3g4")
 texture_pressed = ExtResource("21_q3sxu")
 texture_hover = ExtResource("22_jc0e3")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="GoOut" type="TextureButton" parent="HomeButtons"]
+offset_left = 1112.0
+offset_top = 216.0
+offset_right = 1288.0
+offset_bottom = 280.0
+texture_normal = ExtResource("23_715m2")
+texture_hover = ExtResource("24_shrlw")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="GoOutNight" type="TextureButton" parent="HomeButtons"]
+visible = false
+offset_left = 1112.0
+offset_top = 216.0
+offset_right = 1288.0
+offset_bottom = 280.0
+texture_normal = ExtResource("25_cq2j2")
+texture_hover = ExtResource("26_06h0r")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Closet" type="TextureButton" parent="HomeButtons"]
+offset_left = 1104.0
+offset_top = 517.0
+offset_right = 1240.0
+offset_bottom = 568.0
+texture_normal = ExtResource("27_nttbu")
+texture_hover = ExtResource("28_dch25")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 

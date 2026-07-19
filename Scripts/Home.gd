@@ -4,14 +4,14 @@ var timeWhenLastUpdated
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Buttons/PatHead.pressed.connect(buttonPressed.bind("PatHead"))
-	$Buttons/Chat.pressed.connect(buttonPressed.bind("Chat"))
-	$Buttons/Molest.pressed.connect(buttonPressed.bind("Molest"))
-	$Buttons/Items.pressed.connect(buttonPressed.bind("Items"))
-	$Buttons/Status.pressed.connect(buttonPressed.bind("Status"))
-	$Buttons/Save.pressed.connect(buttonPressed.bind("Save"))
-	$Buttons/Memory.pressed.connect(buttonPressed.bind("Memory"))
-	$Buttons/Repeat.pressed.connect(toggleRepeat)
+	$HomeButtons/PatHead.pressed.connect(buttonPressed.bind("PatHead"))
+	$HomeButtons/Chat.pressed.connect(buttonPressed.bind("Chat"))
+	$HomeButtons/Molest.pressed.connect(buttonPressed.bind("Molest"))
+	$HomeButtons/Items.pressed.connect(buttonPressed.bind("Items"))
+	$HomeButtons/Status.pressed.connect(buttonPressed.bind("Status"))
+	$HomeButtons/Save.pressed.connect(buttonPressed.bind("Save"))
+	$HomeButtons/Memory.pressed.connect(buttonPressed.bind("Memory"))
+	$HomeButtons/Repeat.pressed.connect(toggleRepeat)
 	timeWhenLastUpdated = -1
 	Global.resetInternalSceneData()
 
@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 func buttonPressed(buttonName):
 	print(buttonName+" : pressed")
 	match buttonName:
+		"Save":
+			Global.setGameData("return",true)
+			Global.changeScene("SaveGame")
 		"PatHead":
 			pass
 
@@ -39,11 +42,11 @@ func keepUpdated():
 	var onTexture = load("res://Textures/Home/buttons/repeat-.png")
 	var offTexture = load("res://Textures/Home/buttons/repeat.png")
 	if Global.getSettings("RepeatToggled"):
-		$Buttons/Repeat.texture_normal = onTexture
-		$Buttons/Repeat.texture_pressed = offTexture
+		$HomeButtons/Repeat.texture_normal = onTexture
+		$HomeButtons/Repeat.texture_pressed = offTexture
 	else:
-		$Buttons/Repeat.texture_normal = offTexture
-		$Buttons/Repeat.texture_pressed = onTexture
+		$HomeButtons/Repeat.texture_normal = offTexture
+		$HomeButtons/Repeat.texture_pressed = onTexture
 
 func updateTimeBackground():
 	var texture
