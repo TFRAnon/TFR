@@ -96,6 +96,7 @@ func loadOldData():
 	Global.emitSignal("moveCharacter",["CharRight",Global.getGameData("ScenarioCharRLocation"),1])
 	Global.emitSignal("moveCharacter",["CharLeft",Global.getGameData("ScenarioCharLLocation"),1])
 	Global.emitSignal("loadSavedText","N/A")
+	Global.emitSignal("changeNameCard",Global.getGameData("savedNameCard"))
 	if Global.getGameData("atChoices"):
 		Global.emitSignal("makeChoice",Global.getGameData("currentChoices"))
 	Global.emitSignal("commandComplete","N/A")

@@ -51,7 +51,8 @@ var internalSave : Dictionary = {
 	"return" : false,
 	"characterReturnSilence" : false,
 	"atChoices" : false,
-	"currentChoices" : []
+	"currentChoices" : [],
+	"savedNameCard" : []
 }
 
 var customWordDict = {

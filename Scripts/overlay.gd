@@ -130,6 +130,7 @@ func processText(delta):
 	$MainTextBlock.visible_characters = textPos
 
 func changeNamecard(data):
+	Global.setGameData("savedNameCard",data)
 	var newName = data[0]
 	$Namecard/CenterContainer/RichTextLabel.text = newName
 	if newName == "":
