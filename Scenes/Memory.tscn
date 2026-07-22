@@ -1,8 +1,10 @@
-[gd_scene load_steps=62 format=3 uid="uid://dypp82p12bscv"]
+[gd_scene load_steps=64 format=3 uid="uid://dypp82p12bscv"]
 
 [ext_resource type="Texture2D" uid="uid://dw722sai7ix33" path="res://Textures/Memory/memory.jpg" id="1_nvllh"]
+[ext_resource type="Script" path="res://Scripts/Memory.gd" id="1_ufn4b"]
 [ext_resource type="Texture2D" uid="uid://dxgh4xtehrqsm" path="res://Textures/Memory/1.png" id="2_7t4xb"]
 [ext_resource type="Texture2D" uid="uid://84gf8xm2vsij" path="res://Textures/Memory/1_.png" id="3_6gj3e"]
+[ext_resource type="Texture2D" uid="uid://brskmb68rpr3b" path="res://Textures/Memory/memory_hint1.jpg" id="3_ohbu5"]
 [ext_resource type="Texture2D" uid="uid://c0rocxludv2vc" path="res://Textures/Memory/1-.png" id="4_gu7d3"]
 [ext_resource type="Texture2D" uid="uid://cm6mgarmdv5u6" path="res://Textures/Memory/2.png" id="5_d5aiv"]
 [ext_resource type="Texture2D" uid="uid://ctck5dsbyto4k" path="res://Textures/Memory/2_.png" id="6_kvhtj"]
@@ -63,10 +65,18 @@
 [ext_resource type="Texture2D" uid="uid://cm28jpme54i1f" path="res://Textures/Memory/EventImg/_rape_.png" id="61_d3tih"]
 
 [node name="Memory" type="Node2D"]
+script = ExtResource("1_ufn4b")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_nvllh")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="GuideBackground" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_ohbu5")
 centered = false
 metadata/_edit_lock_ = true
 

@@ -1,6 +1,7 @@
 extends Node2D
 
 var timeWhenLastUpdated
+var currentState
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,8 @@ func _ready() -> void:
 	$HomeButtons/Repeat.pressed.connect(toggleRepeat)
 	timeWhenLastUpdated = -1
 	Global.resetInternalSceneData()
+	Global.commandComplete.connect(textBoxPressed)
+	currentState = "main"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,6 +31,10 @@ func buttonPressed(buttonName):
 			Global.changeScene("SaveGame")
 		"PatHead":
 			pass
+		"Status":
+			goToStatus()
+		"Memory":
+			Global.changeScene("Memory")
 
 func toggleRepeat():
 	if Global.getSettings("RepeatToggled"):
@@ -72,3 +79,22 @@ func updateTimeBackground():
 		6 :
 			texture = load("res://Textures/Home/Time/7.png")
 			$Time.texture = texture
+
+func goToStatus():
+	$HomeButtons.visible = false
+	$Stats.visible = true
+	$ActMenu.texture = load("res://Textures/Home/status.png")
+	currentState = "status"
+
+func returnToMain():
+	$HomeButtons.visible = true
+	$Stats.visible = false
+	$ActMenu.texture = load("res://Textures/Home/act.png")
+	currentState = "main"
+
+func textBoxPressed():
+	match currentState:
+		"main":
+			pass
+		"status":
+			returnToMain()

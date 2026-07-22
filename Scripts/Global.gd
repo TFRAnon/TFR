@@ -290,6 +290,8 @@ func changeScene(sceneName):
 		"Home":
 			setGameData("savedLocation","Home")
 			get_tree().change_scene_to_file("res://Scenes/Home.tscn")
+		"Memory":
+			get_tree().change_scene_to_file("res://Scenes/Memory.tscn")
 
 # toggles full screen
 func toggleFullScreen():

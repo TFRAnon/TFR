@@ -155,6 +155,7 @@ stretch_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="GoOut" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
 offset_left = 1112.0
 offset_top = 216.0
 offset_right = 1288.0
@@ -166,6 +167,7 @@ metadata/_edit_lock_ = true
 
 [node name="GoOutNight" type="TextureButton" parent="HomeButtons"]
 visible = false
+layout_mode = 0
 offset_left = 1112.0
 offset_top = 216.0
 offset_right = 1288.0
@@ -176,6 +178,7 @@ stretch_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Closet" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
 offset_left = 1104.0
 offset_top = 517.0
 offset_right = 1240.0
@@ -185,19 +188,12 @@ texture_hover = ExtResource("28_dch25")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Stats" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_lock_ = true
-
-[node name="Trust" type="RichTextLabel" parent="Stats"]
+[node name="Trust" type="RichTextLabel" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1063.0
 offset_top = 692.0
-offset_right = 1117.0
-offset_bottom = 715.0
+offset_right = 1174.0
+offset_bottom = 739.0
 theme_override_font_sizes/normal_font_size = 33
 text = "Trust 1"
 fit_content = true
@@ -205,11 +201,11 @@ scroll_active = false
 autowrap_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Friendship" type="RichTextLabel" parent="Stats"]
+[node name="Friendship" type="RichTextLabel" parent="HomeButtons"]
 layout_mode = 0
 offset_left = 1242.0
 offset_top = 692.0
-offset_right = 1353.0
+offset_right = 1438.0
 offset_bottom = 739.0
 scale = Vector2(1.03, 0.99)
 theme_override_font_sizes/normal_font_size = 33
@@ -219,7 +215,7 @@ scroll_active = false
 autowrap_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Flavor" type="RichTextLabel" parent="Stats"]
+[node name="Flavor" type="RichTextLabel" parent="HomeButtons"]
 layout_mode = 2
 offset_left = 1098.0
 offset_top = 787.0
@@ -231,6 +227,14 @@ text = "Sylvie still thinks of you as a stranger."
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Stats" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="Overlay" parent="." instance=ExtResource("5_v7dek")]
