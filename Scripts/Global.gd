@@ -52,7 +52,8 @@ var internalSave : Dictionary = {
 	"characterReturnSilence" : false,
 	"atChoices" : false,
 	"currentChoices" : [],
-	"savedNameCard" : ["","basic"]
+	"savedNameCard" : ["","basic"],
+	"HomeBGM" : "SilverGlass"
 }
 
 var customWordDict = {
@@ -292,6 +293,9 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/Home.tscn")
 		"Memory":
 			get_tree().change_scene_to_file("res://Scenes/Memory.tscn")
+		"Music":
+			get_tree().change_scene_to_file("res://Scenes/Music.tscn")
+			
 
 # toggles full screen
 func toggleFullScreen():

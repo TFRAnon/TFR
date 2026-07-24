@@ -1,0 +1,272 @@
+[gd_scene load_steps=54 format=3 uid="uid://6cufbw4nbrc"]
+
+[ext_resource type="Texture2D" uid="uid://dojewnq6wreg2" path="res://Textures/Music/room.jpg" id="1_tr8ho"]
+[ext_resource type="Script" path="res://Scripts/Music.gd" id="1_xlof4"]
+[ext_resource type="Texture2D" uid="uid://dshm55dbj35dd" path="res://Textures/Music/music.png" id="2_fmm56"]
+[ext_resource type="Texture2D" uid="uid://b8va03q6mcrm3" path="res://Textures/Music/Buttons/Silver_Glass.png" id="3_hjoh2"]
+[ext_resource type="Texture2D" uid="uid://ds5k2mknlh32g" path="res://Textures/Music/Buttons/Apricot_Smile.png" id="3_t0e3v"]
+[ext_resource type="Texture2D" uid="uid://bd010w72q882j" path="res://Textures/Music/Buttons/Apricot_Smile_.png" id="4_8w15c"]
+[ext_resource type="Texture2D" uid="uid://bkuqaqdkki1ps" path="res://Textures/Music/Buttons/Silver_Glass_.png" id="4_fpxy0"]
+[ext_resource type="Texture2D" uid="uid://bayn860mp64mm" path="res://Textures/Music/Buttons/Silver_Glass-.png" id="5_v78gs"]
+[ext_resource type="Texture2D" uid="uid://bs5f44btepsg" path="res://Textures/Music/Buttons/Apricot_Smile-.png" id="5_vrog7"]
+[ext_resource type="Texture2D" uid="uid://tuwc4f0qsay5" path="res://Textures/Music/Buttons/Ivory_Fiber.png" id="6_2j2um"]
+[ext_resource type="Texture2D" uid="uid://d0rdcfm3f0vvo" path="res://Textures/Music/Buttons/Ivory_Fiber_.png" id="7_1gh07"]
+[ext_resource type="Texture2D" uid="uid://xyhy6c6g2cei" path="res://Textures/Music/Buttons/Ivory_Fiber-.png" id="8_1a5x7"]
+[ext_resource type="Texture2D" uid="uid://41qpa4pk28qc" path="res://Textures/Music/Buttons/Jelly_Honey.png" id="9_x7q3t"]
+[ext_resource type="Texture2D" uid="uid://do4g4cv2u4hik" path="res://Textures/Music/Buttons/Jelly_Honey_.png" id="10_httjh"]
+[ext_resource type="Texture2D" uid="uid://bb2hvry5djw1x" path="res://Textures/Music/Buttons/Jelly_Honey-.png" id="11_ulvkt"]
+[ext_resource type="Texture2D" uid="uid://cokrxniw3ffl1" path="res://Textures/Music/Buttons/Ochre_Breeze.png" id="15_6as8i"]
+[ext_resource type="Texture2D" uid="uid://ct5qufs6rklbh" path="res://Textures/Music/Buttons/Ochre_Breeze_.png" id="16_nvpha"]
+[ext_resource type="Texture2D" uid="uid://b0d8b5gtiwq7y" path="res://Textures/Music/Buttons/Ochre_Breeze-.png" id="17_v7rwf"]
+[ext_resource type="Texture2D" uid="uid://dmv33xetm25tg" path="res://Textures/Music/Buttons/Smooth_Turquoise.png" id="18_x0u0u"]
+[ext_resource type="Texture2D" uid="uid://bdsgkp6h5n5kf" path="res://Textures/Music/Buttons/Smooth_Turquoise_.png" id="19_aolo0"]
+[ext_resource type="Texture2D" uid="uid://ccc5guxd1q6ns" path="res://Textures/Music/Buttons/Smooth_Turquoise-.png" id="20_j6ywt"]
+[ext_resource type="Texture2D" uid="uid://bxvxnc57n65r4" path="res://Textures/Music/Buttons/Aquamarine_Temperature.png" id="21_pvaa7"]
+[ext_resource type="Texture2D" uid="uid://bu5d3rxbo2876" path="res://Textures/Music/Buttons/Aquamarine_Temperature_.png" id="22_4rvj7"]
+[ext_resource type="Texture2D" uid="uid://c7ypdwdqfqd3x" path="res://Textures/Music/Buttons/Aquamarine_Temperature-.png" id="23_g4h8v"]
+[ext_resource type="Texture2D" uid="uid://bguaoi18pyir6" path="res://Textures/Music/Buttons/Magenta_Touch.png" id="24_18pfp"]
+[ext_resource type="Texture2D" uid="uid://di80iu7uko8gs" path="res://Textures/Music/Buttons/Magenta_Touch_.png" id="25_up5el"]
+[ext_resource type="Texture2D" uid="uid://bgafkrssn4tmw" path="res://Textures/Music/Buttons/Magenta_Touch-.png" id="26_mxy37"]
+[ext_resource type="Texture2D" uid="uid://2oi22u43fqmk" path="res://Textures/Music/Buttons/Rusty_Gainsboro.png" id="27_504iv"]
+[ext_resource type="Texture2D" uid="uid://dd6ypywwdtr4j" path="res://Textures/Music/Buttons/Rusty_Gainsboro_.png" id="28_6spsk"]
+[ext_resource type="Texture2D" uid="uid://bkm2wonligvc2" path="res://Textures/Music/Buttons/Rusty_Gainsboro-.png" id="29_ikiq3"]
+[ext_resource type="Texture2D" uid="uid://cpb1qulkx2kmm" path="res://Textures/Music/Buttons/Lime_Swing.png" id="30_ii52t"]
+[ext_resource type="Texture2D" uid="uid://draqdcolsw7d1" path="res://Textures/Music/Buttons/Lime_Swing_.png" id="31_ub6mv"]
+[ext_resource type="Texture2D" uid="uid://b2k7613lvmhg2" path="res://Textures/Music/Buttons/Lime_Swing-.png" id="32_plc12"]
+[ext_resource type="Texture2D" uid="uid://cgqoy474pr6bb" path="res://Textures/Music/Buttons/Brilliant_Red.png" id="33_1gtvd"]
+[ext_resource type="Texture2D" uid="uid://crdqyefmah26l" path="res://Textures/Music/Buttons/Brilliant_Red_.png" id="34_w27jq"]
+[ext_resource type="Texture2D" uid="uid://no5x5s63xn1o" path="res://Textures/Music/Buttons/Brilliant_Red-.png" id="35_nopvp"]
+[ext_resource type="Texture2D" uid="uid://upmhmmi1s1dk" path="res://Textures/Music/Buttons/Misty_Rose.png" id="36_d50b1"]
+[ext_resource type="Texture2D" uid="uid://bov3wiq8ul8k" path="res://Textures/Music/Buttons/Misty_Rose_.png" id="37_qw8d6"]
+[ext_resource type="Texture2D" uid="uid://cevo7yjc8t636" path="res://Textures/Music/Buttons/Misty_Rose-.png" id="38_xg1em"]
+[ext_resource type="Texture2D" uid="uid://b4itvpugcn1tc" path="res://Textures/Music/Buttons/Cinnamon_Flavor.png" id="39_x60om"]
+[ext_resource type="Texture2D" uid="uid://dl6f0o400rhjs" path="res://Textures/Music/Buttons/Cinnamon_Flavor_.png" id="40_qori6"]
+[ext_resource type="Texture2D" uid="uid://cud2abhylkrvm" path="res://Textures/Music/Buttons/Cinnamon_Flavor-.png" id="41_m8ffx"]
+[ext_resource type="Texture2D" uid="uid://gtj4ief5d6fy" path="res://Textures/Music/Buttons/Indigo_Illumination.png" id="42_dovlc"]
+[ext_resource type="Texture2D" uid="uid://bg34d6cg3bv4b" path="res://Textures/Music/Buttons/Indigo_Illumination_.png" id="43_mke6x"]
+[ext_resource type="Texture2D" uid="uid://cckutggbw02e5" path="res://Textures/Music/Buttons/Indigo_Illumination-.png" id="44_7tt8s"]
+[ext_resource type="Texture2D" uid="uid://dueknoukopdft" path="res://Textures/Music/Buttons/Deep_Scarlet.png" id="45_lxfqg"]
+[ext_resource type="Texture2D" uid="uid://lvjhl40s8d1b" path="res://Textures/Music/Buttons/Deep_Scarlet_.png" id="46_38xs8"]
+[ext_resource type="Texture2D" uid="uid://b27njc1gwwbap" path="res://Textures/Music/Buttons/Deep_Scarlet-.png" id="47_7bccm"]
+[ext_resource type="Texture2D" uid="uid://de478th86ga35" path="res://Textures/Music/Buttons/set_room.png" id="48_3it8b"]
+[ext_resource type="Texture2D" uid="uid://basrwbime7sst" path="res://Textures/Music/Buttons/set_room_.png" id="49_85j8t"]
+[ext_resource type="Texture2D" uid="uid://cu5sc5wajwnj8" path="res://Textures/Music/Buttons/back.png" id="50_ese24"]
+[ext_resource type="Texture2D" uid="uid://cg33f7klypofp" path="res://Textures/Music/Buttons/back_.png" id="51_eug2v"]
+[ext_resource type="FontFile" uid="uid://gmhv7xjx4vrt" path="res://Fonts/kirieji04.ttf" id="52_rtbrk"]
+
+[node name="Music" type="Node2D"]
+script = ExtResource("1_xlof4")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_tr8ho")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Background2" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_tr8ho")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Menu" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_fmm56")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 351.0
+offset_top = 211.0
+offset_right = 1565.0
+offset_bottom = 839.0
+alignment = 1
+
+[node name="Spacer3" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SilverGlass" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("3_hjoh2")
+texture_hover = ExtResource("4_fpxy0")
+texture_disabled = ExtResource("5_v78gs")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="IvoryFiber" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("6_2j2um")
+texture_hover = ExtResource("7_1gh07")
+texture_disabled = ExtResource("8_1a5x7")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="JellyHoney" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("9_x7q3t")
+texture_hover = ExtResource("10_httjh")
+texture_disabled = ExtResource("11_ulvkt")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ApricotSmile" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("3_t0e3v")
+texture_hover = ExtResource("4_8w15c")
+texture_disabled = ExtResource("5_vrog7")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="OchreBreeze" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("15_6as8i")
+texture_hover = ExtResource("16_nvpha")
+texture_disabled = ExtResource("17_v7rwf")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SmoothTurquoise" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("18_x0u0u")
+texture_hover = ExtResource("19_aolo0")
+texture_disabled = ExtResource("20_j6ywt")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="AquamarineTermerature" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("21_pvaa7")
+texture_hover = ExtResource("22_4rvj7")
+texture_disabled = ExtResource("23_g4h8v")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="MagentaTouch" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("24_18pfp")
+texture_hover = ExtResource("25_up5el")
+texture_disabled = ExtResource("26_mxy37")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Spacer" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RustyGainsboro" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("27_504iv")
+texture_hover = ExtResource("28_6spsk")
+texture_disabled = ExtResource("29_ikiq3")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LimeSwing" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("30_ii52t")
+texture_hover = ExtResource("31_ub6mv")
+texture_disabled = ExtResource("32_plc12")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="BrilliantRed" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("33_1gtvd")
+texture_hover = ExtResource("34_w27jq")
+texture_disabled = ExtResource("35_nopvp")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="MistyRose" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("36_d50b1")
+texture_hover = ExtResource("37_qw8d6")
+texture_disabled = ExtResource("38_xg1em")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="CinnamonFlavor" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("39_x60om")
+texture_hover = ExtResource("40_qori6")
+texture_disabled = ExtResource("41_m8ffx")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="IndigoIllumination" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("42_dovlc")
+texture_hover = ExtResource("43_mke6x")
+texture_disabled = ExtResource("44_7tt8s")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="DeepScarlet" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture_normal = ExtResource("45_lxfqg")
+texture_hover = ExtResource("46_38xs8")
+texture_disabled = ExtResource("47_7bccm")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Spacer2" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="SetAsIndoorBGM" type="TextureButton" parent="."]
+offset_left = 1080.0
+offset_top = 898.0
+offset_right = 1443.0
+offset_bottom = 956.0
+texture_normal = ExtResource("48_3it8b")
+texture_hover = ExtResource("49_85j8t")
+stretch_mode = 4
+
+[node name="Back" type="TextureButton" parent="."]
+offset_left = 1454.0
+offset_top = 898.0
+offset_right = 1570.0
+offset_bottom = 956.0
+texture_normal = ExtResource("50_ese24")
+texture_hover = ExtResource("51_eug2v")
+stretch_mode = 4
+
+[node name="CurrentIndoorBGM" type="RichTextLabel" parent="."]
+offset_left = 669.0
+offset_top = 913.0
+offset_right = 1042.0
+offset_bottom = 944.0
+theme_override_fonts/normal_font = ExtResource("52_rtbrk")
+theme_override_font_sizes/normal_font_size = 33
+text = "Silver Glass"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

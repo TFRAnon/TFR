@@ -12,6 +12,7 @@ func _ready() -> void:
 	$HomeButtons/Status.pressed.connect(buttonPressed.bind("Status"))
 	$HomeButtons/Save.pressed.connect(buttonPressed.bind("Save"))
 	$HomeButtons/Memory.pressed.connect(buttonPressed.bind("Memory"))
+	$HomeButtons/Music.pressed.connect(buttonPressed.bind("Music"))
 	$HomeButtons/Repeat.pressed.connect(toggleRepeat)
 	timeWhenLastUpdated = -1
 	Global.resetInternalSceneData()
@@ -35,6 +36,8 @@ func buttonPressed(buttonName):
 			goToStatus()
 		"Memory":
 			Global.changeScene("Memory")
+		"Music":
+			Global.changeScene("Music")
 
 func toggleRepeat():
 	if Global.getSettings("RepeatToggled"):
