@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ce1fugug0wi0g"]
+[gd_scene load_steps=64 format=3 uid="uid://ce1fugug0wi0g"]
 
 [ext_resource type="Script" path="res://Scripts/Home.gd" id="1_tlqgb"]
 [ext_resource type="Texture2D" uid="uid://b2f46y78pq5d0" path="res://Textures/Home/room-menu.jpg" id="1_yhjw6"]
@@ -13,13 +13,21 @@
 [ext_resource type="Texture2D" uid="uid://2mttuaaltqi8" path="res://Textures/Home/buttons/h_touch.png" id="10_u7md2"]
 [ext_resource type="Texture2D" uid="uid://7p32p613xf30" path="res://Textures/Home/buttons/h_touch_.png" id="11_ff3fk"]
 [ext_resource type="Texture2D" uid="uid://keofu4f6d6a4" path="res://Textures/Home/buttons/s_items.png" id="12_q43w6"]
+[ext_resource type="Texture2D" uid="uid://c52qspirihg25" path="res://Textures/Home/buttons/h_bed.png" id="13_d6qeg"]
 [ext_resource type="Texture2D" uid="uid://dk475kas4boq1" path="res://Textures/Home/buttons/s_items_.png" id="13_j5o40"]
 [ext_resource type="Texture2D" uid="uid://b8dbop00y0egf" path="res://Textures/Home/buttons/s_states.png" id="14_evf1v"]
+[ext_resource type="Texture2D" uid="uid://k4ogusiwsdod" path="res://Textures/Home/buttons/h_bed_.png" id="14_u27sx"]
 [ext_resource type="Texture2D" uid="uid://b3nnyxk116grc" path="res://Textures/Home/buttons/s_states_.png" id="15_phlr1"]
+[ext_resource type="Texture2D" uid="uid://dia4flrhk6h2r" path="res://Textures/Home/buttons/h_mouth.png" id="15_rfo43"]
 [ext_resource type="Texture2D" uid="uid://bpq2muuc6i1w2" path="res://Textures/Home/buttons/s_save.png" id="16_guyl6"]
+[ext_resource type="Texture2D" uid="uid://dmqns6mevbdxa" path="res://Textures/Home/buttons/h_mouth_.png" id="16_uext4"]
+[ext_resource type="Texture2D" uid="uid://cvlhoxfk6kxpb" path="res://Textures/Home/buttons/h_self.png" id="17_3o0xd"]
 [ext_resource type="Texture2D" uid="uid://db77su55t2fc6" path="res://Textures/Home/buttons/s_save_.png" id="17_e8kfu"]
 [ext_resource type="Texture2D" uid="uid://bmckabpabgp0e" path="res://Textures/Home/buttons/s_memory.png" id="18_bv0t3"]
+[ext_resource type="Texture2D" uid="uid://fuabjl7u3a0w" path="res://Textures/Home/buttons/h_self_.png" id="18_ivnfo"]
 [ext_resource type="Texture2D" uid="uid://bc3xbvloprfuw" path="res://Textures/Home/buttons/s_memory_.png" id="19_lm64v"]
+[ext_resource type="Texture2D" uid="uid://f7gvp12dco0v" path="res://Textures/Home/buttons/h_hard.png" id="19_uc54g"]
+[ext_resource type="Texture2D" uid="uid://cgmxbarsnmuxe" path="res://Textures/Home/buttons/h_hard_.png" id="20_jjl0g"]
 [ext_resource type="Texture2D" uid="uid://cyy0oadqgeh8c" path="res://Textures/Home/buttons/repeat.png" id="20_xj3g4"]
 [ext_resource type="Texture2D" uid="uid://rrfqseo40r8v" path="res://Textures/Home/buttons/repeat-.png" id="21_q3sxu"]
 [ext_resource type="Texture2D" uid="uid://ibsp4ctow6lh" path="res://Textures/Home/buttons/repeat_.png" id="22_jc0e3"]
@@ -29,6 +37,32 @@
 [ext_resource type="Texture2D" uid="uid://bpdhvvfv7aw1y" path="res://Textures/Home/buttons/c_out_n_.png" id="26_06h0r"]
 [ext_resource type="Texture2D" uid="uid://b2pjn3tkrsqq4" path="res://Textures/Home/buttons/s_dress.png" id="27_nttbu"]
 [ext_resource type="Texture2D" uid="uid://bhxapon8p0orl" path="res://Textures/Home/buttons/s_dress_.png" id="28_dch25"]
+[ext_resource type="Texture2D" uid="uid://bysy0l70epr6e" path="res://Textures/Home/buttons/c_drink.png" id="30_dfcti"]
+[ext_resource type="Texture2D" uid="uid://nl2tpj70i70a" path="res://Textures/Home/buttons/c_drink_.png" id="31_wxyk8"]
+[ext_resource type="Texture2D" uid="uid://bifp4lwvnt5mv" path="res://Textures/Home/buttons/c_tea.png" id="32_8gs0q"]
+[ext_resource type="Texture2D" uid="uid://cv1x18n3eounb" path="res://Textures/Home/buttons/c_tea_.png" id="33_xa30n"]
+[ext_resource type="Texture2D" uid="uid://qvnhmrawh0mq" path="res://Textures/Home/buttons/c_work.png" id="34_uchmm"]
+[ext_resource type="Texture2D" uid="uid://b5gw8x11hxt4h" path="res://Textures/Home/buttons/c_work_.png" id="35_h6yh4"]
+[ext_resource type="Texture2D" uid="uid://buxv81s7lmlm6" path="res://Textures/Home/buttons/c_touch.png" id="36_tgepb"]
+[ext_resource type="Texture2D" uid="uid://dox8abhx2rjhi" path="res://Textures/Home/buttons/c_touch_.png" id="37_87lhw"]
+[ext_resource type="Texture2D" uid="uid://c26yxsjx6gkar" path="res://Textures/Home/buttons/s_call.png" id="38_2e5f8"]
+[ext_resource type="Texture2D" uid="uid://6guwpf3swaqf" path="res://Textures/Home/buttons/s_call_.png" id="39_0eway"]
+[ext_resource type="Texture2D" uid="uid://b6pf3kjtfy5h3" path="res://Textures/Home/buttons/s_medi.png" id="40_bse3f"]
+[ext_resource type="Texture2D" uid="uid://dxcjrbxu8p5qu" path="res://Textures/Home/buttons/s_medi_.png" id="41_cc4j3"]
+[ext_resource type="Texture2D" uid="uid://dwpf1s3x7yfbd" path="res://Textures/Home/buttons/s_popuri.png" id="42_l1e8h"]
+[ext_resource type="Texture2D" uid="uid://bhacufrutxlx2" path="res://Textures/Home/buttons/s_popuri_.png" id="43_f0jxa"]
+[ext_resource type="Texture2D" uid="uid://dnjiau1xug8jd" path="res://Textures/Home/buttons/s_h_word.png" id="44_gu0dh"]
+[ext_resource type="Texture2D" uid="uid://bd5tmn6pmcgwq" path="res://Textures/Home/buttons/s_h_word_.png" id="45_g0f5a"]
+[ext_resource type="Texture2D" uid="uid://ldxxji5naoan" path="res://Textures/Home/buttons/s_h_states.png" id="46_f0v0q"]
+[ext_resource type="Texture2D" uid="uid://coembot5s8hu1" path="res://Textures/Home/buttons/s_h_states_.png" id="47_5274e"]
+[ext_resource type="Texture2D" uid="uid://dtqdkek2i0qop" path="res://Textures/Home/buttons/s_music.png" id="48_rsith"]
+[ext_resource type="Texture2D" uid="uid://cn2chaw6wp65m" path="res://Textures/Home/buttons/s_music_.png" id="49_xvorf"]
+[ext_resource type="Texture2D" uid="uid://41elj8sg3wo0" path="res://Textures/Home/buttons/s_touch.png" id="50_0j8ck"]
+[ext_resource type="Texture2D" uid="uid://4yl07i5ouvua" path="res://Textures/Home/buttons/s_touch_.png" id="51_sps4g"]
+[ext_resource type="Texture2D" uid="uid://dh5t1g0qbxx34" path="res://Textures/Home/buttons/commu_sel.png" id="52_3cdye"]
+[ext_resource type="Texture2D" uid="uid://xk33cqp2d3bc" path="res://Textures/Home/buttons/commu_sel_.png" id="53_1m5il"]
+[ext_resource type="Texture2D" uid="uid://grom0s58ogjv" path="res://Textures/Home/buttons/communicate.png" id="54_uvp0x"]
+[ext_resource type="Texture2D" uid="uid://bs037xduulb32" path="res://Textures/Home/buttons/communicate_.png" id="55_447fk"]
 
 [node name="Home" type="Node2D"]
 script = ExtResource("1_tlqgb")
@@ -88,6 +122,7 @@ stretch_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Molest" type="TextureButton" parent="HomeButtons"]
+visible = false
 layout_mode = 0
 offset_left = 1158.0
 offset_top = 318.0
@@ -95,6 +130,50 @@ offset_right = 1319.0
 offset_bottom = 378.0
 texture_normal = ExtResource("10_u7md2")
 texture_hover = ExtResource("11_ff3fk")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="ToBed" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1087.0
+offset_top = 316.0
+offset_right = 1249.0
+offset_bottom = 377.0
+texture_normal = ExtResource("13_d6qeg")
+texture_hover = ExtResource("14_u27sx")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="ReceiveOral" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1091.0
+offset_top = 391.0
+offset_right = 1353.0
+offset_bottom = 451.0
+texture_normal = ExtResource("15_rfo43")
+texture_hover = ExtResource("16_uext4")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="WatchHer" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1380.0
+offset_top = 391.0
+offset_right = 1805.0
+offset_bottom = 451.0
+texture_normal = ExtResource("17_3o0xd")
+texture_hover = ExtResource("18_ivnfo")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="PushHerDown" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 316.0
+offset_right = 1574.0
+offset_bottom = 377.0
+texture_normal = ExtResource("19_uc54g")
+texture_hover = ExtResource("20_jjl0g")
 stretch_mode = 0
 metadata/_edit_lock_ = true
 
@@ -189,6 +268,7 @@ stretch_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Trust" type="RichTextLabel" parent="HomeButtons"]
+visible = false
 layout_mode = 0
 offset_left = 1063.0
 offset_top = 692.0
@@ -202,6 +282,7 @@ autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Friendship" type="RichTextLabel" parent="HomeButtons"]
+visible = false
 layout_mode = 0
 offset_left = 1242.0
 offset_top = 692.0
@@ -216,6 +297,7 @@ autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Flavor" type="RichTextLabel" parent="HomeButtons"]
+visible = false
 layout_mode = 2
 offset_left = 1098.0
 offset_top = 787.0
@@ -227,6 +309,159 @@ text = "Sylvie still thinks of you as a stranger."
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="DrinkWine" type="TextureButton" parent="HomeButtons"]
+visible = false
+layout_mode = 0
+offset_left = 1544.0
+offset_top = 138.0
+offset_right = 1744.0
+offset_bottom = 198.0
+texture_normal = ExtResource("30_dfcti")
+texture_hover = ExtResource("31_wxyk8")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="DrinkTea" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1544.0
+offset_top = 138.0
+offset_right = 1744.0
+offset_bottom = 198.0
+texture_normal = ExtResource("32_8gs0q")
+texture_hover = ExtResource("33_xa30n")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="WorkTogether" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1312.0
+offset_top = 216.0
+offset_right = 1608.0
+offset_bottom = 280.0
+texture_normal = ExtResource("34_uchmm")
+texture_hover = ExtResource("35_h6yh4")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Touch" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1636.0
+offset_top = 216.0
+offset_right = 1786.0
+offset_bottom = 277.0
+texture_normal = ExtResource("36_tgepb")
+texture_hover = ExtResource("37_87lhw")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="ChangeName" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1420.0
+offset_top = 517.0
+offset_right = 1633.0
+offset_bottom = 568.0
+texture_normal = ExtResource("38_2e5f8")
+texture_hover = ExtResource("39_0eway")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Prepare" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1258.0
+offset_top = 517.0
+offset_right = 1403.0
+offset_bottom = 567.0
+texture_normal = ExtResource("40_bse3f")
+texture_hover = ExtResource("41_cc4j3")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Potpourri" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1249.0
+offset_top = 586.0
+offset_right = 1422.0
+offset_bottom = 637.0
+texture_normal = ExtResource("42_l1e8h")
+texture_hover = ExtResource("43_f0jxa")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Nicknames" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1436.0
+offset_top = 586.0
+offset_right = 1610.0
+offset_bottom = 637.0
+texture_normal = ExtResource("44_gu0dh")
+texture_hover = ExtResource("45_g0f5a")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="HStatus" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1626.0
+offset_top = 586.0
+offset_right = 1795.0
+offset_bottom = 637.0
+texture_normal = ExtResource("46_f0v0q")
+texture_hover = ExtResource("47_5274e")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Music" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1356.0
+offset_top = 690.0
+offset_right = 1468.0
+offset_bottom = 742.0
+texture_normal = ExtResource("48_rsith")
+texture_hover = ExtResource("49_xvorf")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="TouchMode" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1155.0
+offset_top = 690.0
+offset_right = 1340.0
+offset_bottom = 741.0
+texture_normal = ExtResource("50_0j8ck")
+texture_hover = ExtResource("51_sps4g")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Choices" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1041.0
+offset_top = 774.0
+offset_right = 1183.0
+offset_bottom = 830.0
+texture_normal = ExtResource("52_3cdye")
+texture_hover = ExtResource("53_1m5il")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Say" type="TextureButton" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 774.0
+offset_right = 1867.0
+offset_bottom = 830.0
+texture_normal = ExtResource("54_uvp0x")
+texture_hover = ExtResource("55_447fk")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="SayTextField" type="LineEdit" parent="HomeButtons"]
+layout_mode = 0
+offset_left = 1198.0
+offset_top = 774.0
+offset_right = 1755.0
+offset_bottom = 830.0
+theme_override_font_sizes/font_size = 30
 metadata/_edit_lock_ = true
 
 [node name="Stats" type="Control" parent="."]
