@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3 uid="uid://b3jwlgpxlm1na"]
+
+[ext_resource type="Script" path="res://Scripts/HeadPat.gd" id="1_0vaf6"]
+[ext_resource type="Texture2D" uid="uid://dohgeepqct6ys" path="res://Textures/Headpat/nade.jpg" id="1_nr00p"]
+[ext_resource type="Texture2D" uid="uid://dhucum7ffe20f" path="res://Textures/Headpat/nade.png" id="2_0ea2b"]
+[ext_resource type="Texture2D" uid="uid://cw516tfcynanw" path="res://Textures/Headpat/testImage2.PNG" id="2_1h51y"]
+[ext_resource type="Texture2D" uid="uid://cu1onatfxijml" path="res://Textures/Headpat/n_conti.png" id="3_bksww"]
+[ext_resource type="Texture2D" uid="uid://b461dwqu2h0o5" path="res://Textures/Headpat/n_conti_.png" id="4_jaxqi"]
+[ext_resource type="Texture2D" uid="uid://crd7h380j0wws" path="res://Textures/Headpat/n_stop.png" id="5_vkmuj"]
+[ext_resource type="Texture2D" uid="uid://wbf6agnx7xff" path="res://Textures/Headpat/n_stop_.png" id="6_5f2ua"]
+[ext_resource type="Texture2D" uid="uid://cyy0oadqgeh8c" path="res://Textures/Home/buttons/repeat.png" id="7_3dw7l"]
+[ext_resource type="Texture2D" uid="uid://rrfqseo40r8v" path="res://Textures/Home/buttons/repeat-.png" id="8_ebrad"]
+[ext_resource type="Texture2D" uid="uid://ibsp4ctow6lh" path="res://Textures/Home/buttons/repeat_.png" id="9_3343k"]
+[ext_resource type="Texture2D" uid="uid://el57wmxd3vfy" path="res://Textures/Headpat/Time/1.png" id="10_ols1t"]
+[ext_resource type="PackedScene" uid="uid://tyc3p7xiiwmd" path="res://Scenes/Overlay.tscn" id="11_bco76"]
+
+[node name="HeadPat" type="Node2D"]
+script = ExtResource("1_0vaf6")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.42222, 1.2)
+texture = ExtResource("1_nr00p")
+centered = false
+
+[node name="BackgroundTest" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.372549)
+position = Vector2(0, -37)
+scale = Vector2(1.1985, 1.1985)
+texture = ExtResource("2_1h51y")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Time" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("10_ols1t")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_0ea2b")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Continue" type="TextureButton" parent="MenuBackground"]
+offset_left = 1233.33
+offset_top = 111.667
+offset_right = 1561.33
+offset_bottom = 154.667
+texture_normal = ExtResource("3_bksww")
+texture_hover = ExtResource("4_jaxqi")
+
+[node name="Stop" type="TextureButton" parent="MenuBackground"]
+offset_left = 1233.33
+offset_top = 249.167
+offset_right = 1561.33
+offset_bottom = 292.167
+texture_normal = ExtResource("5_vkmuj")
+texture_hover = ExtResource("6_5f2ua")
+
+[node name="Repeat" type="TextureButton" parent="MenuBackground"]
+offset_left = 1528.0
+offset_top = 3.0
+offset_right = 1595.0
+offset_bottom = 46.0
+texture_normal = ExtResource("7_3dw7l")
+texture_pressed = ExtResource("8_ebrad")
+texture_hover = ExtResource("9_3343k")
+stretch_mode = 0
+
+[node name="Overlay" parent="." instance=ExtResource("11_bco76")]

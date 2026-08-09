@@ -31,7 +31,7 @@ func buttonPressed(buttonName):
 			Global.setGameData("return",true)
 			Global.changeScene("SaveGame")
 		"PatHead":
-			pass
+			Global.changeScene("PatHead")
 		"Status":
 			goToStatus()
 		"Memory":

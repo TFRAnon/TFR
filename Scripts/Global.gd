@@ -295,7 +295,8 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/Memory.tscn")
 		"Music":
 			get_tree().change_scene_to_file("res://Scenes/Music.tscn")
-			
+		"PatHead":
+			get_tree().change_scene_to_file("res://Scenes/HeadPat.tscn")
 
 # toggles full screen
 func toggleFullScreen():
