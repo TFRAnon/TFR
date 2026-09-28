@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bitbyvcqbg2g3"
-path="res://.godot/imported/x_1.jpg-9892cfd603be49c361018e3edfb156bc.ctex"
+uid="uid://b6fyqn1q51puh"
+path="res://.godot/imported/a-13.png-2849a583ddb0e5127d6c490964307b08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/CGPlayer/FirstTime/Main/x_1.jpg"
-dest_files=["res://.godot/imported/x_1.jpg-9892cfd603be49c361018e3edfb156bc.ctex"]
+source_file="res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-13.png"
+dest_files=["res://.godot/imported/a-13.png-2849a583ddb0e5127d6c490964307b08.ctex"]
 
 [params]
 

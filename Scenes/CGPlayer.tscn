@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://clwpixejwi8b3"]
+[gd_scene load_steps=17 format=3 uid="uid://clwpixejwi8b3"]
 
+[ext_resource type="Script" path="res://Scripts/CGPlayer.gd" id="1_0ffk1"]
 [ext_resource type="Texture2D" uid="uid://b5nw7xbrbg0kl" path="res://Textures/CGPlayer/Black.png" id="1_wjb5q"]
-[ext_resource type="Texture2D" uid="uid://qua5vnee26me" path="res://Textures/CGPlayer/FirstTime/Main/b1.png" id="2_8j2xc"]
-[ext_resource type="Texture2D" uid="uid://bitbyvcqbg2g3" path="res://Textures/CGPlayer/FirstTime/Main/x_1.jpg" id="2_q4d1k"]
+[ext_resource type="Texture2D" uid="uid://c16jdvw8bw7sc" path="res://Textures/CGPlayer/FirstTime/Main/b1.png" id="2_8j2xc"]
+[ext_resource type="Texture2D" uid="uid://bitbyvcqbg2g3" path="res://Textures/CGPlayer/FirstTime/Background/x_1.jpg" id="2_q4d1k"]
 [ext_resource type="Texture2D" uid="uid://8eu4vq1y7tgf" path="res://Textures/CGPlayer/next_p.png" id="4_ut7ux"]
+[ext_resource type="Texture2D" uid="uid://qymq8aw2vitd" path="res://Textures/CGPlayer/FirstTime/Effects/breath1.png" id="5_2dqwi"]
 [ext_resource type="Texture2D" uid="uid://d1t0bn0o6yxeb" path="res://Textures/CGPlayer/next_p_.png" id="5_717rb"]
+[ext_resource type="Texture2D" uid="uid://bc2plk0jcphc1" path="res://Textures/CGPlayer/FirstTime/Effects/a-2.png" id="6_1h6a0"]
 [ext_resource type="Texture2D" uid="uid://chdmwlstlv2pn" path="res://Textures/CGPlayer/prev_p.png" id="6_v3xxd"]
 [ext_resource type="Texture2D" uid="uid://csba7ma1tf107" path="res://Textures/CGPlayer/prev_p_.png" id="7_8ybx2"]
 [ext_resource type="Texture2D" uid="uid://cgt0b63t7dig3" path="res://Textures/CGPlayer/se-.png" id="8_wveaj"]
@@ -15,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bafkj7b4mq1sq" path="res://Textures/CGPlayer/memory_.png" id="13_2qn6f"]
 
 [node name="CGPlayer" type="Node2D"]
+script = ExtResource("1_0ffk1")
 
 [node name="BlackBackground" type="Sprite2D" parent="."]
 scale = Vector2(1, 1.0037)
@@ -22,19 +26,28 @@ texture = ExtResource("1_wjb5q")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Effect" type="CenterContainer" parent="."]
+[node name="Background" type="CenterContainer" parent="."]
 offset_top = 2.0
 offset_right = 1920.0
 offset_bottom = 1082.0
 metadata/_edit_lock_ = true
 
-[node name="Control2" type="Control" parent="Effect"]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Effect/Control2"]
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(960, 540)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_q4d1k")
+metadata/_edit_lock_ = true
+
+[node name="Main" type="CenterContainer" parent="."]
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 1082.0
+metadata/_edit_lock_ = true
+
+[node name="Effects" type="CenterContainer" parent="."]
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 1082.0
 metadata/_edit_lock_ = true
 
 [node name="SFX" type="CenterContainer" parent="."]
@@ -43,19 +56,22 @@ offset_right = 1920.0
 offset_bottom = 1082.0
 metadata/_edit_lock_ = true
 
-[node name="Control2" type="Control" parent="SFX"]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="SFX/Control2"]
+[node name="Sprite2D" type="Sprite2D" parent="SFX"]
+position = Vector2(960, 540)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_8j2xc")
 metadata/_edit_lock_ = true
 
-[node name="Main" type="CenterContainer" parent="."]
-offset_top = 2.0
-offset_right = 1920.0
-offset_bottom = 1082.0
+[node name="Breath1" type="Sprite2D" parent="SFX"]
+position = Vector2(960, 540)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_2dqwi")
+metadata/_edit_lock_ = true
+
+[node name="A-2" type="Sprite2D" parent="SFX"]
+position = Vector2(960, 540)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_1h6a0")
 metadata/_edit_lock_ = true
 
 [node name="Internal" type="CenterContainer" parent="."]

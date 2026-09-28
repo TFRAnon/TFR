@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c16jdvw8bw7sc"
-path="res://.godot/imported/b1.png-99b44028562e6d32220ede654e04aa10.ctex"
+uid="uid://mwc0yn4ttjfy"
+path="res://.godot/imported/hair_poney.png-e83a9736d39f016afa066da6a7718c23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/CGPlayer/FirstTime/Main/b1.png"
-dest_files=["res://.godot/imported/b1.png-99b44028562e6d32220ede654e04aa10.ctex"]
+source_file="res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"
+dest_files=["res://.godot/imported/hair_poney.png-e83a9736d39f016afa066da6a7718c23.ctex"]
 
 [params]
 

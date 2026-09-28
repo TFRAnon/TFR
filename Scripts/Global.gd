@@ -53,7 +53,8 @@ var internalSave : Dictionary = {
 	"atChoices" : false,
 	"currentChoices" : [],
 	"savedNameCard" : ["","basic"],
-	"HomeBGM" : "SilverGlass"
+	"HomeBGM" : "SilverGlass",
+	"CurrentMemory" : "First"
 }
 
 var customWordDict = {
@@ -197,6 +198,63 @@ var imageDict : Dictionary = {
 	
 }
 
+# Template
+#{ 
+	#"Background" : [],
+	#"Effects" : [],
+	#"Hair" : [],
+	#"Internal" : [],
+	#"Main" : [],
+	#"SFX" : [],
+	#"SpeachBubbles" : []
+#}
+
+var CGDataDict : Dictionary = {
+	"First" : [
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : [],
+			"Hair" : [],
+			"Internal" : [],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b1.png","res://Textures/CGPlayer/FirstTime/Main/a1.png"],
+			"SFX" : [],
+			"SpeachBubbles" : []
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : [],
+			"Hair" : [],
+			"Internal" : [],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b1.png","res://Textures/CGPlayer/FirstTime/Main/a2.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/Effects/a-2.png"],
+			"SpeachBubbles" : []
+		},
+		{
+			"Background" : [],
+			"Effects" : [],
+			"Hair" : [],
+			"Internal" : [],
+			"Main" : [],
+			"SFX" : [],
+			"SpeachBubbles" : []
+		}
+	]
+}
+
+
+
+var memoryDict : Dictionary = {
+	"FirstTime" : {
+		1 : {
+			"Main" : [],
+			"Internal" : [],
+			"Dialogue" : [],
+			"Effect" : [],
+			"SFX" : []
+		}
+	}
+}
+
 var talkDict : Dictionary = {
 	0 : []
 }
@@ -259,6 +317,9 @@ func getGameData(dataName):
 func setGameData(dataName, value):
 	print("set gamedata "+dataName+" : "+str(value))
 	internalSave[dataName] = value
+
+func getMemoryData(dataName):
+	return CGDataDict[internalSave["CurrentMemory"]].duplicate(true)
 
 # function used to change from one scene to another 
 func changeScene(sceneName):

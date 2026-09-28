@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c16jdvw8bw7sc"
-path="res://.godot/imported/b1.png-99b44028562e6d32220ede654e04aa10.ctex"
+uid="uid://7k5gjis38uug"
+path="res://.godot/imported/m-n-hand.png-27e5b3b19bad254ee8ddd6054e561ffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/CGPlayer/FirstTime/Main/b1.png"
-dest_files=["res://.godot/imported/b1.png-99b44028562e6d32220ede654e04aa10.ctex"]
+source_file="res://Textures/Headpat/m-n-hand.png"
+dest_files=["res://.godot/imported/m-n-hand.png-27e5b3b19bad254ee8ddd6054e561ffe.ctex"]
 
 [params]
 
