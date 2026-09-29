@@ -214,7 +214,7 @@ var CGDataDict : Dictionary = {
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
 			"Effects" : [],
-			"Hair" : [],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
 			"Internal" : [],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b1.png","res://Textures/CGPlayer/FirstTime/Main/a1.png"],
 			"SFX" : [],
@@ -223,36 +223,121 @@ var CGDataDict : Dictionary = {
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
 			"Effects" : [],
-			"Hair" : [],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
 			"Internal" : [],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b1.png","res://Textures/CGPlayer/FirstTime/Main/a2.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/Effects/a-2.png"],
 			"SpeachBubbles" : []
 		},
 		{
-			"Background" : [],
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
 			"Effects" : [],
-			"Hair" : [],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
 			"Internal" : [],
-			"Main" : [],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b1.png","res://Textures/CGPlayer/FirstTime/Main/a3.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
 			"SFX" : [],
 			"SpeachBubbles" : []
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : ["res://Textures/CGPlayer/FirstTime/Effects/a-4.png"],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/1.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b2.png","res://Textures/CGPlayer/FirstTime/Main/a4.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-4.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-4.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : [],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/1.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b2.png","res://Textures/CGPlayer/FirstTime/Main/a5.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
+			"SFX" : [],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-5.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : [],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/1.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b2.png","res://Textures/CGPlayer/FirstTime/Main/a6.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
+			"SFX" : [],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-5.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : [],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/2.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b3.png","res://Textures/CGPlayer/FirstTime/Main/a7.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-7.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-7.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : ["res://Textures/CGPlayer/FirstTime/Effects/a-8.png"],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/2.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b3.png","res://Textures/CGPlayer/FirstTime/Main/a8.png","res://Textures/CGPlayer/FirstTime/Effects/breath2.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-7.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-8.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : ["res://Textures/CGPlayer/FirstTime/Effects/a-9.png"],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/2.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b3.png","res://Textures/CGPlayer/FirstTime/Main/a9.png","res://Textures/CGPlayer/FirstTime/Effects/breath2.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-7.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-9.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : ["res://Textures/CGPlayer/FirstTime/Effects/a-10.png"],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/3.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b4.png","res://Textures/CGPlayer/FirstTime/Main/a10.png","res://Textures/CGPlayer/FirstTime/Effects/breath2.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-10.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-10.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : ["res://Textures/CGPlayer/FirstTime/Effects/a-11.png"],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/3.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b4.png","res://Textures/CGPlayer/FirstTime/Main/a11.png","res://Textures/CGPlayer/FirstTime/Effects/ex-a1.png","res://Textures/CGPlayer/FirstTime/Effects/breath2.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-11.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-11.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : ["res://Textures/CGPlayer/FirstTime/Effects/a-11.png"],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/3.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b4.png","res://Textures/CGPlayer/FirstTime/Main/a12.png","res://Textures/CGPlayer/FirstTime/Effects/ex-a2.png","res://Textures/CGPlayer/FirstTime/Effects/breath3.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-11.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-11.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : ["res://Textures/CGPlayer/FirstTime/Effects/a-13.png"],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/4.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b5a.png","res://Textures/CGPlayer/FirstTime/Main/a13.png","res://Textures/CGPlayer/FirstTime/Effects/ex-a3.png","res://Textures/CGPlayer/FirstTime/Effects/breath3.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-13.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-13.png"]
+		},
+		{
+			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
+			"Effects" : ["res://Textures/CGPlayer/FirstTime/Effects/a-14.png"],
+			"Hair" : [["res://Textures/CGPlayer/FirstTime/Hair/hair_poney.png"],["res://Textures/CGPlayer/FirstTime/Hair/fh_single.png"]],
+			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/5.png"],
+			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b5a.png","res://Textures/CGPlayer/FirstTime/Main/a14.png","res://Textures/CGPlayer/FirstTime/Effects/breath3.png"],
+			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-14.png"],
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-13.png"]
 		}
 	]
-}
-
-
-
-var memoryDict : Dictionary = {
-	"FirstTime" : {
-		1 : {
-			"Main" : [],
-			"Internal" : [],
-			"Dialogue" : [],
-			"Effect" : [],
-			"SFX" : []
-		}
-	}
 }
 
 var talkDict : Dictionary = {

@@ -38,7 +38,25 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_q4d1k")
 metadata/_edit_lock_ = true
 
+[node name="HairFront" type="CenterContainer" parent="."]
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 1082.0
+metadata/_edit_lock_ = true
+
 [node name="Main" type="CenterContainer" parent="."]
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 1082.0
+metadata/_edit_lock_ = true
+
+[node name="HairBack" type="CenterContainer" parent="."]
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 1082.0
+metadata/_edit_lock_ = true
+
+[node name="Internal" type="CenterContainer" parent="."]
 offset_top = 2.0
 offset_right = 1920.0
 offset_bottom = 1082.0
@@ -72,12 +90,6 @@ metadata/_edit_lock_ = true
 position = Vector2(960, 540)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("6_1h6a0")
-metadata/_edit_lock_ = true
-
-[node name="Internal" type="CenterContainer" parent="."]
-offset_top = 2.0
-offset_right = 1920.0
-offset_bottom = 1082.0
 metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="CenterContainer" parent="."]

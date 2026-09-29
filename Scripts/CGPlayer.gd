@@ -66,6 +66,10 @@ func clearScene():
 		node.queue_free()
 	for node in $Dialogue.get_children():
 		node.queue_free()
+	for node in $HairFront.get_children():
+		node.queue_free()
+	for node in $HairBack.get_children():
+		node.queue_free()
 
 func loadScene():
 	var imageQueue = data[sceneNumber]
@@ -105,6 +109,19 @@ func loadScene():
 		newImage.scale = Vector2(1.2, 1.2)
 		newImage.texture = load(imgTexture)
 		$Dialogue.add_child(newImage)
+	if !imageQueue["Hair"].is_empty():
+		for imgTexture in imageQueue["Hair"][0]:
+			var newImage := Sprite2D.new()
+			newImage.position = Vector2(960, 540)
+			newImage.scale = Vector2(1.2, 1.2)
+			newImage.texture = load(imgTexture)
+			$HairFront.add_child(newImage)
+		for imgTexture in imageQueue["Hair"][1]:
+			var newImage := Sprite2D.new()
+			newImage.position = Vector2(960, 540)
+			newImage.scale = Vector2(1.2, 1.2)
+			newImage.texture = load(imgTexture)
+			$HairBack.add_child(newImage)
 
 func has_position(array: Array, position: int) -> bool:
 	return position >= 0 and position < array.size()
