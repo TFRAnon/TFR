@@ -123,6 +123,12 @@ offset_bottom = 1033.0
 texture_normal = ExtResource("8_wveaj")
 metadata/_edit_lock_ = true
 
+[node name="TextEdit" type="TextEdit" parent="InternalToggle"]
+offset_right = 120.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "Internal"
+
 [node name="DialogueToggle" type="TextureButton" parent="."]
 offset_left = 1784.0
 offset_top = 940.0
@@ -130,6 +136,12 @@ offset_right = 1904.0
 offset_bottom = 971.0
 texture_normal = ExtResource("9_dvbxo")
 metadata/_edit_lock_ = true
+
+[node name="TextEdit" type="TextEdit" parent="DialogueToggle"]
+offset_right = 120.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "Dialogue"
 
 [node name="SFXToggle" type="TextureButton" parent="."]
 offset_left = 1784.0
@@ -139,6 +151,12 @@ offset_bottom = 1002.0
 texture_normal = ExtResource("10_wf2is")
 metadata/_edit_lock_ = true
 
+[node name="TextEdit" type="TextEdit" parent="SFXToggle"]
+offset_right = 120.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "SFX"
+
 [node name="EffectsToggle" type="TextureButton" parent="."]
 offset_left = 1784.0
 offset_top = 909.0
@@ -146,6 +164,13 @@ offset_right = 1904.0
 offset_bottom = 940.0
 texture_normal = ExtResource("11_i7u64")
 metadata/_edit_lock_ = true
+
+[node name="TextEdit" type="TextEdit" parent="EffectsToggle"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "EFFECTS"
 
 [node name="ReturnToMemory" type="TextureButton" parent="."]
 offset_left = 1784.0
