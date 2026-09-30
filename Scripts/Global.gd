@@ -54,7 +54,8 @@ var internalSave : Dictionary = {
 	"currentChoices" : [],
 	"savedNameCard" : ["","basic"],
 	"HomeBGM" : "SilverGlass",
-	"CurrentMemory" : "First_Inside_LowLust"
+	"CurrentMemory" : "Kitchen_1",
+	"CGMode" : false
 }
 
 var customWordDict = {
@@ -720,6 +721,17 @@ var CGDataDict : Dictionary = {
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b5b.png","res://Textures/CGPlayer/FirstTime/Main/x8.png","res://Textures/CGPlayer/FirstTime/Effects/ex-x4b.png","res://Textures/CGPlayer/FirstTime/Effects/breath3.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/x-7a.png"],
 			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-13.png"]
+		}
+	],
+	"Kitchen_1" : [
+		{ 
+			"Background" : ["res://Textures/CGPlayer/Kitchen/Background/kitchen.jpg"],
+			"Effects" : [],
+			"Hair" : [],
+			"Internal" : [],
+			"Main" : [],
+			"SFX" : [],
+			"SpeachBubbles" : []
 		}
 	]
 }

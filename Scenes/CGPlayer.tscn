@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://clwpixejwi8b3"]
+[gd_scene load_steps=29 format=3 uid="uid://clwpixejwi8b3"]
 
 [ext_resource type="Script" path="res://Scripts/CGPlayer.gd" id="1_0ffk1"]
 [ext_resource type="Texture2D" uid="uid://b5nw7xbrbg0kl" path="res://Textures/CGPlayer/Black.png" id="1_wjb5q"]
@@ -16,6 +16,18 @@
 [ext_resource type="Texture2D" uid="uid://do5du2u1hht6f" path="res://Textures/CGPlayer/ef-.png" id="11_i7u64"]
 [ext_resource type="Texture2D" uid="uid://c3uhj7qrd88ba" path="res://Textures/CGPlayer/memory.png" id="12_83clv"]
 [ext_resource type="Texture2D" uid="uid://bafkj7b4mq1sq" path="res://Textures/CGPlayer/memory_.png" id="13_2qn6f"]
+[ext_resource type="Texture2D" uid="uid://b0bgu1wd268wq" path="res://Textures/CGPlayer/h_event.png" id="17_m77h6"]
+[ext_resource type="Texture2D" uid="uid://cs4jaw7ug6ob8" path="res://Textures/CGPlayer/h_event_Syl.png" id="18_w0g75"]
+[ext_resource type="Texture2D" uid="uid://dmt6eaks1o6ne" path="res://Textures/CGPlayer/load.png" id="19_pyrqx"]
+[ext_resource type="Texture2D" uid="uid://stv82ryjs8ac" path="res://Textures/CGPlayer/load_.png" id="20_obeee"]
+[ext_resource type="Texture2D" uid="uid://ciypxqso8n0mg" path="res://Textures/CGPlayer/skip.png" id="21_7u5p0"]
+[ext_resource type="Texture2D" uid="uid://bxaf7vpcxh0vm" path="res://Textures/CGPlayer/skip_.png" id="22_3fldt"]
+[ext_resource type="Texture2D" uid="uid://p1xatolrnay3" path="res://Textures/CGPlayer/auto.png" id="23_1gmry"]
+[ext_resource type="Texture2D" uid="uid://b6l056x62t6ou" path="res://Textures/CGPlayer/auto_.png" id="24_lwg5k"]
+[ext_resource type="Texture2D" uid="uid://dv6xax4c85qcn" path="res://Textures/CGPlayer/log.png" id="25_4d6xp"]
+[ext_resource type="Texture2D" uid="uid://ds3kwpb3u4o42" path="res://Textures/CGPlayer/log_.png" id="26_t7kjd"]
+[ext_resource type="Texture2D" uid="uid://bmnr2x20kqo5f" path="res://Textures/CGPlayer/close.png" id="27_7ea28"]
+[ext_resource type="Texture2D" uid="uid://blqlvyutpered" path="res://Textures/CGPlayer/close_.png" id="28_6bdip"]
 
 [node name="CGPlayer" type="Node2D"]
 script = ExtResource("1_0ffk1")
@@ -98,7 +110,13 @@ offset_right = 1920.0
 offset_bottom = 1082.0
 metadata/_edit_lock_ = true
 
-[node name="Next" type="TextureButton" parent="."]
+[node name="CGMode" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Next" type="TextureButton" parent="CGMode"]
 offset_left = 1254.0
 offset_top = 4.0
 offset_right = 1920.0
@@ -107,7 +125,7 @@ texture_normal = ExtResource("4_ut7ux")
 texture_hover = ExtResource("5_717rb")
 metadata/_edit_lock_ = true
 
-[node name="Previous" type="TextureButton" parent="."]
+[node name="Previous" type="TextureButton" parent="CGMode"]
 offset_top = 4.0
 offset_right = 666.0
 offset_bottom = 1082.0
@@ -115,7 +133,7 @@ texture_normal = ExtResource("6_v3xxd")
 texture_hover = ExtResource("7_8ybx2")
 metadata/_edit_lock_ = true
 
-[node name="InternalToggle" type="TextureButton" parent="."]
+[node name="InternalToggle" type="TextureButton" parent="CGMode"]
 offset_left = 1784.0
 offset_top = 1002.0
 offset_right = 1904.0
@@ -123,13 +141,13 @@ offset_bottom = 1033.0
 texture_normal = ExtResource("8_wveaj")
 metadata/_edit_lock_ = true
 
-[node name="TextEdit" type="TextEdit" parent="InternalToggle"]
+[node name="TextEdit" type="TextEdit" parent="CGMode/InternalToggle"]
 offset_right = 120.0
 offset_bottom = 31.0
 mouse_filter = 2
 text = "Internal"
 
-[node name="DialogueToggle" type="TextureButton" parent="."]
+[node name="DialogueToggle" type="TextureButton" parent="CGMode"]
 offset_left = 1784.0
 offset_top = 940.0
 offset_right = 1904.0
@@ -137,13 +155,13 @@ offset_bottom = 971.0
 texture_normal = ExtResource("9_dvbxo")
 metadata/_edit_lock_ = true
 
-[node name="TextEdit" type="TextEdit" parent="DialogueToggle"]
+[node name="TextEdit" type="TextEdit" parent="CGMode/DialogueToggle"]
 offset_right = 120.0
 offset_bottom = 31.0
 mouse_filter = 2
 text = "Dialogue"
 
-[node name="SFXToggle" type="TextureButton" parent="."]
+[node name="SFXToggle" type="TextureButton" parent="CGMode"]
 offset_left = 1784.0
 offset_top = 971.0
 offset_right = 1904.0
@@ -151,13 +169,13 @@ offset_bottom = 1002.0
 texture_normal = ExtResource("10_wf2is")
 metadata/_edit_lock_ = true
 
-[node name="TextEdit" type="TextEdit" parent="SFXToggle"]
+[node name="TextEdit" type="TextEdit" parent="CGMode/SFXToggle"]
 offset_right = 120.0
 offset_bottom = 31.0
 mouse_filter = 2
 text = "SFX"
 
-[node name="EffectsToggle" type="TextureButton" parent="."]
+[node name="EffectsToggle" type="TextureButton" parent="CGMode"]
 offset_left = 1784.0
 offset_top = 909.0
 offset_right = 1904.0
@@ -165,14 +183,14 @@ offset_bottom = 940.0
 texture_normal = ExtResource("11_i7u64")
 metadata/_edit_lock_ = true
 
-[node name="TextEdit" type="TextEdit" parent="EffectsToggle"]
+[node name="TextEdit" type="TextEdit" parent="CGMode/EffectsToggle"]
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 31.0
 mouse_filter = 2
 text = "EFFECTS"
 
-[node name="ReturnToMemory" type="TextureButton" parent="."]
+[node name="ReturnToMemory" type="TextureButton" parent="CGMode"]
 offset_left = 1784.0
 offset_top = 1033.0
 offset_right = 1904.0
@@ -180,3 +198,170 @@ offset_bottom = 1073.0
 texture_normal = ExtResource("12_83clv")
 texture_hover = ExtResource("13_2qn6f")
 metadata/_edit_lock_ = true
+
+[node name="SceneMode" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HEvent" type="Sprite2D" parent="SceneMode"]
+position = Vector2(960, 542)
+scale = Vector2(1.2, 1.20444)
+texture = ExtResource("17_m77h6")
+metadata/_edit_lock_ = true
+
+[node name="HEventSyl" type="Sprite2D" parent="SceneMode"]
+position = Vector2(960, 542)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("18_w0g75")
+
+[node name="EffectsToggle" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 701.0
+offset_right = 1904.0
+offset_bottom = 732.0
+texture_normal = ExtResource("11_i7u64")
+metadata/_edit_group_ = true
+
+[node name="TextEdit" type="TextEdit" parent="SceneMode/EffectsToggle"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "EFFECTS"
+
+[node name="DialogueToggle" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 732.0
+offset_right = 1904.0
+offset_bottom = 763.0
+texture_normal = ExtResource("9_dvbxo")
+metadata/_edit_group_ = true
+
+[node name="TextEdit" type="TextEdit" parent="SceneMode/DialogueToggle"]
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "Dialogue"
+
+[node name="SFXToggle" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 763.0
+offset_right = 1904.0
+offset_bottom = 794.0
+texture_normal = ExtResource("10_wf2is")
+metadata/_edit_group_ = true
+
+[node name="TextEdit" type="TextEdit" parent="SceneMode/SFXToggle"]
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "SFX"
+
+[node name="InternalToggle" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 794.0
+offset_right = 1904.0
+offset_bottom = 825.0
+texture_normal = ExtResource("8_wveaj")
+metadata/_edit_group_ = true
+
+[node name="TextEdit" type="TextEdit" parent="SceneMode/InternalToggle"]
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "Internal"
+
+[node name="ReturnToMemory" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 1033.0
+offset_right = 1904.0
+offset_bottom = 1073.0
+texture_normal = ExtResource("12_83clv")
+texture_hover = ExtResource("13_2qn6f")
+metadata/_edit_lock_ = true
+
+[node name="Load" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 898.0
+offset_right = 1904.0
+offset_bottom = 929.0
+texture_normal = ExtResource("19_pyrqx")
+texture_hover = ExtResource("20_obeee")
+metadata/_edit_group_ = true
+
+[node name="TextEdit" type="TextEdit" parent="SceneMode/Load"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "Load"
+
+[node name="SkipToggle" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 929.0
+offset_right = 1904.0
+offset_bottom = 960.0
+texture_normal = ExtResource("21_7u5p0")
+texture_hover = ExtResource("22_3fldt")
+metadata/_edit_group_ = true
+
+[node name="TextEdit" type="TextEdit" parent="SceneMode/SkipToggle"]
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "Skip"
+
+[node name="AutoToggle" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 960.0
+offset_right = 1904.0
+offset_bottom = 991.0
+texture_normal = ExtResource("23_1gmry")
+texture_hover = ExtResource("24_lwg5k")
+metadata/_edit_group_ = true
+
+[node name="TextEdit" type="TextEdit" parent="SceneMode/AutoToggle"]
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "Auto"
+
+[node name="Log" type="TextureButton" parent="SceneMode"]
+offset_left = 1784.0
+offset_top = 991.0
+offset_right = 1904.0
+offset_bottom = 1022.0
+texture_normal = ExtResource("25_4d6xp")
+texture_hover = ExtResource("26_t7kjd")
+metadata/_edit_group_ = true
+
+[node name="TextEdit" type="TextEdit" parent="SceneMode/Log"]
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 31.0
+mouse_filter = 2
+text = "Log"
+
+[node name="CloseUI" type="TextureButton" parent="SceneMode"]
+layout_mode = 0
+offset_left = 1710.0
+offset_top = 1043.0
+offset_right = 1771.0
+offset_bottom = 1083.0
+texture_normal = ExtResource("27_7ea28")
+texture_hover = ExtResource("28_6bdip")
+
+[node name="ReopenUI" type="TextureButton" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1082.0
