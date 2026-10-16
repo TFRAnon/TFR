@@ -2,6 +2,8 @@ extends Node2D
 
 var data : Array
 var sceneNumber : int
+var currentText : Array
+var textPos : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +25,7 @@ func _ready() -> void:
 	$SceneMode/SkipToggle.pressed.connect(toggleSkip)
 	$SceneMode/AutoToggle.pressed.connect(toggleAuto)
 	$SceneMode/Log.pressed.connect(openLog)
+	$SceneMode/TextBoxClicked.pressed.connect(continueText)
 	$SceneMode/CloseUI.pressed.connect(closeUI)
 	
 	$ReopenUI.pressed.connect(openUI)
@@ -35,15 +38,15 @@ func _ready() -> void:
 		$SceneMode.visible = true
 	
 	sceneNumber = 0
+	textPos = 0
 	clearScene()
 	loadData()
 	loadScene()
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	processText(delta)
 
 func buttonPressed(buttonName):
 	match buttonName:
@@ -135,6 +138,12 @@ func clearScene():
 
 func loadScene():
 	var imageQueue = data[sceneNumber]
+	
+	# set text
+	currentText = imageQueue["Text"]
+	continueText()
+	
+	# set images
 	for imgTexture in imageQueue["Background"]:
 		var newImage := Sprite2D.new()
 		newImage.position = Vector2(960, 540)
@@ -188,6 +197,60 @@ func loadScene():
 func has_position(array: Array, position: int) -> bool:
 	return position >= 0 and position < array.size()
 
+func continueText():
+	# when all text is used up
+	if currentText.is_empty():
+		$SceneMode/MainText.text = ""
+		textPos = 0
+		$SceneMode/MainText.visible_characters = 0
+		buttonPressed("Next")
+		return
+	
+	# If text is still scrolling, finish displaying it
+	if textPos < $SceneMode/MainText.text.length():
+		textPos = $SceneMode/MainText.text.length()
+		$SceneMode/MainText.visible_characters = $SceneMode/MainText.text.length()
+		return
+	
+	# reset text if text block is finished
+	if currentText[0].is_empty():
+		currentText.pop_front()
+		$SceneMode/MainText.text = ""
+		textPos = 0
+		$SceneMode/MainText.visible_characters = 0
+		# If no more text blocks remain
+		if currentText.is_empty():
+			buttonPressed("Next")
+			return
+		$SceneMode/MainText.text = currentText[0].pop_front()
+	else:
+		var next_text = currentText[0].pop_front()
+		if $SceneMode/MainText.text == "":
+			$SceneMode/MainText.text = next_text
+			textPos = 0
+			$SceneMode/MainText.visible_characters = 0
+		else:
+			textPos = $SceneMode/MainText.text.length()
+			$SceneMode/MainText.visible_characters = $SceneMode/MainText.text.length()
+			$SceneMode/MainText.text += next_text
+	
+	# Apply tags inside text
+	checkTextTags()
+
+func checkTextTags():
+	var startPos = $SceneMode/MainText.text.find("#")
+	if startPos == -1:
+		return
+
+	var endPos = $SceneMode/MainText.text.find("#", startPos + 1)
+	if endPos == -1:
+		return
+
+	var tagText = $SceneMode/MainText.text.substr(startPos + 1, endPos - startPos - 1)
+	setNameTag(tagText)
+	
+	$SceneMode/MainText.text = $SceneMode/MainText.text.substr(0, startPos) + $SceneMode/MainText.text.substr(endPos + 1)
+
 func openLoadMenu():
 	pass
 
@@ -200,6 +263,13 @@ func toggleSkip():
 func toggleAuto():
 	pass
 
+func setNameTag(newName):
+	$SceneMode/HEventNamePlate/NameTag.text = newName
+	if newName == "":
+		$SceneMode/HEventNamePlate.visible = false
+	else:
+		$SceneMode/HEventNamePlate.visible = true
+
 func closeUI():
 	$CGMode.visible = false
 	$SceneMode.visible = false
@@ -211,3 +281,7 @@ func openUI():
 		$CGMode.visible = true
 	else:
 		$SceneMode.visible = true
+
+func processText(delta):
+	textPos += delta * Global.getSettings("ScrollSpeed")
+	$SceneMode/MainText.visible_characters = textPos

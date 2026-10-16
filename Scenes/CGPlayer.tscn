@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c3uhj7qrd88ba" path="res://Textures/CGPlayer/memory.png" id="12_83clv"]
 [ext_resource type="Texture2D" uid="uid://bafkj7b4mq1sq" path="res://Textures/CGPlayer/memory_.png" id="13_2qn6f"]
 [ext_resource type="Texture2D" uid="uid://b0bgu1wd268wq" path="res://Textures/CGPlayer/h_event.png" id="17_m77h6"]
-[ext_resource type="Texture2D" uid="uid://cs4jaw7ug6ob8" path="res://Textures/CGPlayer/h_event_Syl.png" id="18_w0g75"]
+[ext_resource type="Texture2D" uid="uid://omb6rwa88b32" path="res://Textures/CGPlayer/h_event_NameTag.png" id="18_8bx85"]
 [ext_resource type="Texture2D" uid="uid://dmt6eaks1o6ne" path="res://Textures/CGPlayer/load.png" id="19_pyrqx"]
 [ext_resource type="Texture2D" uid="uid://stv82ryjs8ac" path="res://Textures/CGPlayer/load_.png" id="20_obeee"]
 [ext_resource type="Texture2D" uid="uid://ciypxqso8n0mg" path="res://Textures/CGPlayer/skip.png" id="21_7u5p0"]
@@ -111,6 +111,7 @@ offset_bottom = 1082.0
 metadata/_edit_lock_ = true
 
 [node name="CGMode" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -200,7 +201,6 @@ texture_hover = ExtResource("13_2qn6f")
 metadata/_edit_lock_ = true
 
 [node name="SceneMode" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
@@ -212,10 +212,19 @@ scale = Vector2(1.2, 1.20444)
 texture = ExtResource("17_m77h6")
 metadata/_edit_lock_ = true
 
-[node name="HEventSyl" type="Sprite2D" parent="SceneMode"]
+[node name="HEventNamePlate" type="Sprite2D" parent="SceneMode"]
+visible = false
 position = Vector2(960, 542)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("18_w0g75")
+texture = ExtResource("18_8bx85")
+metadata/_edit_lock_ = true
+
+[node name="NameTag" type="RichTextLabel" parent="SceneMode/HEventNamePlate"]
+offset_left = -624.167
+offset_top = 309.167
+offset_right = -535.167
+offset_bottom = 332.167
+fit_content = true
 
 [node name="EffectsToggle" type="TextureButton" parent="SceneMode"]
 offset_left = 1784.0
@@ -351,6 +360,20 @@ offset_right = 119.0
 offset_bottom = 31.0
 mouse_filter = 2
 text = "Log"
+
+[node name="MainText" type="RichTextLabel" parent="SceneMode"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 960.0
+offset_right = 1771.0
+offset_bottom = 1084.0
+
+[node name="TextBoxClicked" type="TextureButton" parent="SceneMode"]
+offset_left = 150.0
+offset_top = 898.0
+offset_right = 1771.0
+offset_bottom = 1084.0
+metadata/_edit_lock_ = true
 
 [node name="CloseUI" type="TextureButton" parent="SceneMode"]
 layout_mode = 0

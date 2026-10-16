@@ -15,6 +15,9 @@ func _ready() -> void:
 	$CgMode.pressed.connect(changeMode.bind("cgmode"))
 	$Guide.pressed.connect(changeMode.bind("guide"))
 	$Back.pressed.connect(returnHome)
+	
+	$Page1Nodes/FirstTime.pressed.connect(goToPlayer.bind("First_Inside_LowLust"))
+	$Page1Nodes/Kitchen1.pressed.connect(goToPlayer.bind("Kitchen_1"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,9 +32,11 @@ func changeMode(newMode):
 	match newMode:
 		"scenes":
 			$Scenes.disabled = true
+			Global.setGameData("CGMode",false);
 			changePage(currentPage)
 		"cgmode":
 			$CgMode.disabled = true
+			Global.setGameData("CGMode",true);
 			changePage(currentPage)
 		"guide":
 			$Guide.disabled = true
@@ -67,3 +72,7 @@ func changePage(page):
 
 func returnHome():
 	Global.changeScene("Home")
+
+func goToPlayer(sceneName):
+	Global.setGameData("CurrentMemory",sceneName)
+	Global.changeScene("CGPlayer")

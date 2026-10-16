@@ -210,6 +210,67 @@ var imageDict : Dictionary = {
 	#"SpeachBubbles" : []
 #}
 
+				#[
+					#["(I slowly begin penetrating her."],
+					#["#Sylvie#Mn... Kuu..."],
+				#],
+				#[
+					#["##(Most of my penis is inside her now and I see blood trickling out,\nproof that she had lost her virginity."],
+					#["#Sylvie#Haa... Haa..."],
+					#["##(The pain that she should be feeling isn't apperent on her face, so she must be fine to an extent."],
+				#],
+				#[
+					#["#Sylvie#If it's just this much... I'm completely fine.","\nPlease... use me... to pleasure yourself."],
+					#["##(Maybe she means that she's used to pain. I begin while carefully watching her."],
+				#],
+				#[
+					#["#Sylvie#Mn... Haa."],
+					#["...Fu."],
+					#["##Her small vagina grips my penis tightly, and tightens even more each time I go in and out."],
+				#],
+				#[
+					#["#Sylvie#Aah... Master is... inside me."],
+					#["We're connected... ♡"],
+					#["##(Maybe the love juices are making it easier, or maybe she's overcome with joy,\nbut Sylvie doesn't seem to be aware of any pain of losing her chastity."],
+				#],
+				#[
+					#["#Sylvie#Master... does it... feel good?","\nIt's... okay to be rougher."],
+					#["##(It doesn't seem like she's straining herself."],
+					#["(I slowly begin increasing the strength of my thrusts."],
+				#],
+				#[
+					#["#Sylvie#Aaah...! Mn!"],
+					#["##(Sylvie's sweet moans begin wearing at my sense of reason,\nand my instincts gradually begin taking over my actions."],
+					#["#Sylvie#This... feels tingly... It's different from pain. It... feels weird..."],
+					#["##(I slowly begin increasing the strength of my thrusts."],
+					#["(Her body, as if responding to my actions, gets wetter and tightens around my penis."],
+					#["#Sylvie#This... feels... good?"],
+					#["##(Sylvie's face, which looked like she was losing it, awoke some animalistic passion in me,\nand my thrusts lost all sense of hesitation."],
+					#["(The sound of our hips smacking together echoed though the room..."],
+				#],
+				#[
+					#["#Sylvie#Ah... Something is... coming up...!"],
+					#["What... is this..."],
+					#["(After a while, Sylvie's breathing becomes erratic."],
+					#["(It seems like she's going to cum soon."]
+				#],
+				#[
+					#["#Sylvie#Master... I... Something is...!"],
+					#["##(I'm almost at my limit too..."],
+				#],
+				#[
+					#["#Sylvie#Aaaah!!♡!♡"],
+					#["##(Sylvie's pussy twitches madly and squeezes down on my penis with tremendous force."],
+					#["(At that moment, my hips are glued against hers and I pour all of my desire inside her."],
+				#],
+				#[
+					#["#Sylvie#Ah... Aaaah...♡\nMaster...♡ Master...♡♡"],
+					#["##(Sylvie kept trembling and calling out my name,\nbut it seems like her energy was spent after her first climax."],
+					#["(Soon after, her body loses all strength and I can hear her quiet, sleeping breaths."],
+					#["(As if enticed by those sounds, my eyelids also begin to feel heavy,\nand my consciousness slowly fades..."],
+					#["..."],
+				#]
+
 var CGDataDict : Dictionary = {
 	"First_Inside_LowLust" : [
 		{
@@ -219,7 +280,11 @@ var CGDataDict : Dictionary = {
 			"Internal" : [],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b1.png","res://Textures/CGPlayer/FirstTime/Main/a1.png"],
 			"SFX" : [],
-			"SpeachBubbles" : []
+			"SpeachBubbles" : [],
+			"Text" : [
+				["(I place my swollen member against Sylvie's small vagina."],
+				["#Sylvie#Master is... so big...","\nI wonder if it will go in properly..."]
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -228,7 +293,12 @@ var CGDataDict : Dictionary = {
 			"Internal" : [],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b1.png","res://Textures/CGPlayer/FirstTime/Main/a2.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/Effects/a-2.png"],
-			"SpeachBubbles" : []
+			"SpeachBubbles" : [],
+			"Text" : [
+				["#Sylvie#...Nn. Fuu..."],
+				["##(As I rub my penis against her,\nshe gradually gets wetter."],
+				["..."]
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -237,7 +307,11 @@ var CGDataDict : Dictionary = {
 			"Internal" : [],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b1.png","res://Textures/CGPlayer/FirstTime/Main/a3.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
 			"SFX" : [],
-			"SpeachBubbles" : []
+			"SpeachBubbles" : [],
+			"Text" : [
+				["#Sylvie#Um... I think... I'm alright now.","\nP-Please... Go ahead..."],
+				["##(Sylvie's vagina, which I was just rubbing, has gotten quite wet.\nIt seems like we're ready to have sex."]
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -246,7 +320,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/1.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b2.png","res://Textures/CGPlayer/FirstTime/Main/a4.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-4.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-4.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-4.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -255,7 +332,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/1.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b2.png","res://Textures/CGPlayer/FirstTime/Main/a5.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
 			"SFX" : [],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-5.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-5.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -264,7 +344,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/1.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b2.png","res://Textures/CGPlayer/FirstTime/Main/a6.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
 			"SFX" : [],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-5.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-5.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -273,7 +356,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/2.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b3.png","res://Textures/CGPlayer/FirstTime/Main/a7.png","res://Textures/CGPlayer/FirstTime/Effects/breath1.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-7.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-7.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-7.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -282,7 +368,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/2.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b3.png","res://Textures/CGPlayer/FirstTime/Main/a8.png","res://Textures/CGPlayer/FirstTime/Effects/breath2.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-7.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-8.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-8.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -291,7 +380,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/2.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b3.png","res://Textures/CGPlayer/FirstTime/Main/a9.png","res://Textures/CGPlayer/FirstTime/Effects/breath2.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-7.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-9.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-9.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -300,7 +392,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/3.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b4.png","res://Textures/CGPlayer/FirstTime/Main/a10.png","res://Textures/CGPlayer/FirstTime/Effects/breath2.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-10.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-10.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-10.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -309,7 +404,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/3.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b4.png","res://Textures/CGPlayer/FirstTime/Main/a11.png","res://Textures/CGPlayer/FirstTime/Effects/ex-a1.png","res://Textures/CGPlayer/FirstTime/Effects/breath2.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-11.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-11.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-11.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -318,7 +416,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/3.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b4.png","res://Textures/CGPlayer/FirstTime/Main/a12.png","res://Textures/CGPlayer/FirstTime/Effects/ex-a2.png","res://Textures/CGPlayer/FirstTime/Effects/breath3.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-11.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-11.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-11.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -327,7 +428,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/4.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b5a.png","res://Textures/CGPlayer/FirstTime/Main/a13.png","res://Textures/CGPlayer/FirstTime/Effects/ex-a3.png","res://Textures/CGPlayer/FirstTime/Effects/breath3.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-13.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-13.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-13.png"],
+			"Text" : [
+				
+			]
 		},
 		{
 			"Background" : ["res://Textures/CGPlayer/FirstTime/Background/x_1.jpg"],
@@ -336,7 +440,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : ["res://Textures/CGPlayer/FirstTime/Internal/5.png"],
 			"Main" : ["res://Textures/CGPlayer/FirstTime/Main/b5a.png","res://Textures/CGPlayer/FirstTime/Main/a14.png","res://Textures/CGPlayer/FirstTime/Effects/breath3.png"],
 			"SFX" : ["res://Textures/CGPlayer/FirstTime/SFX/a-14.png"],
-			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-13.png"]
+			"SpeachBubbles" : ["res://Textures/CGPlayer/FirstTime/SpeechBubbles/a-13.png"],
+			"Text" : [
+				
+			]
 		}
 	],
 	"First_Outside_LowLust" : [
@@ -731,7 +838,10 @@ var CGDataDict : Dictionary = {
 			"Internal" : [],
 			"Main" : [],
 			"SFX" : [],
-			"SpeachBubbles" : []
+			"SpeachBubbles" : [],
+			"Text" : [
+				[""]
+			]
 		}
 	]
 }
@@ -839,6 +949,8 @@ func changeScene(sceneName):
 			get_tree().change_scene_to_file("res://Scenes/Music.tscn")
 		"PatHead":
 			get_tree().change_scene_to_file("res://Scenes/HeadPat.tscn")
+		"CGPlayer":
+			get_tree().change_scene_to_file("res://Scenes/CGPlayer.tscn")
 
 # toggles full screen
 func toggleFullScreen():
