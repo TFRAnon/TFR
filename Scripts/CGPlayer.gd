@@ -4,6 +4,8 @@ var data : Array
 var sceneNumber : int
 var currentText : Array
 var textPos : float
+var logPageVisible: bool
+var timeSinceLastMove : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,11 +24,12 @@ func _ready() -> void:
 	$SceneMode/ReturnToMemory.pressed.connect(buttonPressed.bind("ReturnToMemory"))
 	
 	$SceneMode/Load.pressed.connect(openLoadMenu)
-	$SceneMode/SkipToggle.pressed.connect(toggleSkip)
-	$SceneMode/AutoToggle.pressed.connect(toggleAuto)
-	$SceneMode/Log.pressed.connect(openLog)
+	$SceneMode/SkipToggle.pressed.connect(buttonPressed.bind("SkipToggle"))
+	$SceneMode/AutoToggle.pressed.connect(buttonPressed.bind("AutoToggle"))
+	$SceneMode/Log.pressed.connect(buttonPressed.bind("Log"))
 	$SceneMode/TextBoxClicked.pressed.connect(continueText)
 	$SceneMode/CloseUI.pressed.connect(closeUI)
+	$SceneMode/LogPage/ExitButton.pressed.connect(closeLog)
 	
 	$ReopenUI.pressed.connect(openUI)
 	
@@ -37,16 +40,41 @@ func _ready() -> void:
 		$CGMode.visible = false
 		$SceneMode.visible = true
 	
+	if Global.getSettings("skipToggled"):
+		$SceneMode/SkipToggle.texture_normal = load("res://Textures/CGPlayer/skip_.png")
+	else:
+		$SceneMode/SkipToggle.texture_normal = load("res://Textures/CGPlayer/skip.png")
+	
+	if Global.getSettings("autoToggled"):
+		$SceneMode/AutoToggle.texture_normal = load("res://Textures/CGPlayer/auto_.png")
+	else:
+		$SceneMode/AutoToggle.texture_normal = load("res://Textures/CGPlayer/auto.png")
+	
 	sceneNumber = 0
 	textPos = 0
 	clearScene()
 	loadData()
+	deleteTaggedData()
 	loadScene()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	processText(delta)
+	if logPageVisible:
+		$SceneMode/LogPage.modulate.a = lerp($SceneMode/LogPage.modulate.a, 1.0, 0.1)
+	else:
+		$SceneMode/LogPage.modulate.a = lerp($SceneMode/LogPage.modulate.a, 0.0, 0.1)
+		if $SceneMode/LogPage.modulate.a <= 0.1:
+			$SceneMode/LogPage.visible = false
+	
+	if isSkiped():
+		continueText()
+	if isAuto():
+		timeSinceLastMove += delta
+		if timeSinceLastMove > ( Global.getSettings("AutoScrollSpeed") / 4):
+			timeSinceLastMove = 0
+			continueText()
 
 func buttonPressed(buttonName):
 	match buttonName:
@@ -114,6 +142,25 @@ func buttonPressed(buttonName):
 				loadScene()
 			else:
 				print("at start")
+		"SkipToggle":
+			if Global.getSettings("skipToggled"):
+				Global.setSettings("skipToggled",false)
+				$SceneMode/SkipToggle.texture_normal = load("res://Textures/CGPlayer/skip.png")
+			else:
+				Global.setSettings("skipToggled",true)
+				$SceneMode/SkipToggle.texture_normal = load("res://Textures/CGPlayer/skip_.png")
+				
+		"AutoToggle":
+			if Global.getSettings("autoToggled"):
+				Global.setSettings("autoToggled",false)
+				$SceneMode/AutoToggle.texture_normal = load("res://Textures/CGPlayer/auto.png")
+			else:
+				Global.setSettings("autoToggled",true)
+				$SceneMode/AutoToggle.texture_normal = load("res://Textures/CGPlayer/auto_.png")
+		"Log":
+			# fade in overlay with log. return fades back
+			logPageVisible = true
+			$SceneMode/LogPage.visible = true
 
 func loadData():
 	data = Global.getMemoryData(Global.getGameData("CurrentMemory"))
@@ -254,15 +301,6 @@ func checkTextTags():
 func openLoadMenu():
 	pass
 
-func openLog():
-	pass
-
-func toggleSkip():
-	pass
-
-func toggleAuto():
-	pass
-
 func setNameTag(newName):
 	$SceneMode/HEventNamePlate/NameTag.text = newName
 	if newName == "":
@@ -285,3 +323,17 @@ func openUI():
 func processText(delta):
 	textPos += delta * Global.getSettings("ScrollSpeed")
 	$SceneMode/MainText.visible_characters = textPos
+
+func deleteTaggedData() -> void:
+	for i in range(data.size() - 1, -1, -1):
+		if data[i]["Tags"].has("DISABLED_IN_CGS"):
+			data.remove_at(i)
+
+func closeLog():
+	logPageVisible = false
+
+func isSkiped():
+	return Global.getSettings("skipToggled")
+
+func isAuto():
+	return Global.getSettings("autoToggled")

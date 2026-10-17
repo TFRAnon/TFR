@@ -8,9 +8,8 @@ func _ready() -> void:
 	$Page1.pressed.connect(changePage.bind("1"))
 	$Page2.pressed.connect(changePage.bind("2"))
 	$Page1.disabled = true
-	$Scenes.disabled = true
 	currentPage = "1"
-	mode = "Scenes"
+	
 	$Scenes.pressed.connect(changeMode.bind("scenes"))
 	$CgMode.pressed.connect(changeMode.bind("cgmode"))
 	$Guide.pressed.connect(changeMode.bind("guide"))
@@ -18,6 +17,13 @@ func _ready() -> void:
 	
 	$Page1Nodes/FirstTime.pressed.connect(goToPlayer.bind("First_Inside_LowLust"))
 	$Page1Nodes/Kitchen1.pressed.connect(goToPlayer.bind("Kitchen_1"))
+	
+	if Global.getGameData("CGMode"):
+		$CgMode.disabled = true
+		mode = "cgmode"
+	else:
+		$Scenes.disabled = true
+		mode = "Scenes"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
