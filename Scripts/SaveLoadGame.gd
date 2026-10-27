@@ -36,6 +36,8 @@ func exitButton():
 			Global.changeScene("ScenarioPlayer")
 		"Home":
 			Global.changeScene("Home")
+		"CGPlayer":
+			Global.changeScene("CGPlayer")
 
 func loadBackground():
 	match Global.getSettings("SaveLoadBG"):

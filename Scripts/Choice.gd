@@ -38,7 +38,16 @@ func changeOnPress(action,data):
 					Global.setSettings("currentScene",data)
 					Global.emitSignal("loadNewScene","N/A"))
 		"changeRedotScene":
-			self.pressed.connect(Global.changeScene.bind(data))
+			self.pressed.connect(
+				func():
+					print("Pressed :", action," : ", data)
+					Global.changeScene(data))
+		"playCG":
+			self.pressed.connect(
+				func():
+					print("Pressed :", action," : ", data)
+					Global.setGameData("CurrentMemory",data)
+					Global.changeScene("CGPlayer"))
 
 func clear():
 	self.queue_free()

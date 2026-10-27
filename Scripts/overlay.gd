@@ -205,14 +205,18 @@ func createChoices(dataArr): #[ ["Take the girl","Normal","changeScene","girlTak
 func toggleSkip():
 	if Global.getSettings("skipToggled"):
 		Global.setSettings("skipToggled",false)
+		$Skip.texture_normal = load("res://Textures/Overlay/Buttons/skip.png")
 	else:
 		Global.setSettings("skipToggled",true)
+		$Skip.texture_normal = load("res://Textures/Overlay/Buttons/skip_.png")
 
 func toggleAuto():
 	if Global.getSettings("autoToggled"):
 		Global.setSettings("autoToggled",false)
+		$Auto.texture_normal = load("res://Textures/Overlay/Buttons/auto.png")
 	else:
 		Global.setSettings("autoToggled",true)
+		$Auto.texture_normal = load("res://Textures/Overlay/Buttons/auto_.png")
 
 func isSkiped():
 	return Global.getSettings("skipToggled")

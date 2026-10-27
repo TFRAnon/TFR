@@ -45,14 +45,31 @@ func loadData():
 func waitOver():
 	state = states.CONTINUE
 
-func changeBackground(textureName):
-	print("changing background to : "+str(textureName))
-	var texture = load(Global.getImage(textureName))
-	if texture:
-		$Background.texture = texture
-		Global.setGameData("ScenarioBackground",textureName)
-	else:
-		print("Failed to load texture from :"+str(textureName))
+func changeBackground(textureInput):
+	# clear out previous background
+	for child in $Background.get_children():
+		child.queue_free()
+	
+	if textureInput is String:
+		print("changing background to : "+str(textureInput))
+		var texture = load(Global.getImage(textureInput))
+		if texture:
+			$Background.texture = texture
+			Global.setGameData("ScenarioBackground",textureInput)
+		else:
+			print("Failed to load texture from :"+str(textureInput))
+	elif textureInput is Array:
+		print("changing background to : "+str(textureInput))
+		for imageInput in textureInput:
+			var texture = load(Global.getImage(imageInput))
+
+			if texture:
+				var sprite = Sprite2D.new()
+				sprite.texture = texture
+				sprite.centered = false
+				$Background.add_child(sprite)
+			else:
+				print("Failed to load texture from :" + str(imageInput))
 
 # "changeText", [text,text,text]
 # "changeBackground", "newBackground"
@@ -63,9 +80,11 @@ func changeBackground(textureName):
 
 func processLine():
 	var command = dataDict.get(currentPosition, ["NA"])
-	if command[0] != "NA":
-		print("processing command : "+str(command))
-		Global.setGameData("atChoices",false) # reset flag
+	if command[0] == "NA":
+		return
+		
+	print("processing command : "+str(command))
+	Global.setGameData("atChoices",false) # reset flag
 	match command[0]:
 		"changeText":
 			Global.emitSignal("displayText",command[1])
@@ -85,6 +104,11 @@ func processLine():
 			Global.emitSignal(command[0],[command[1],command[2]])
 		"changeScene":
 			Global.changeScene(command[1])
+		"playCG":
+			Global.setGameData("CurrentMemory",command[1])
+			Global.changeScene("CGPlayer")
+		"setCGReturnLocation":
+			Global.setGameData("CGPlayerReturnLocation",command[1])
 	currentPosition = currentPosition + 1
 	Global.setGameData("gameDataPosition",currentPosition)
 

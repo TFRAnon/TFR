@@ -81,4 +81,5 @@ func returnHome():
 
 func goToPlayer(sceneName):
 	Global.setGameData("CurrentMemory",sceneName)
+	Global.setGameData("CGPlayerReturnLocation","Memory")
 	Global.changeScene("CGPlayer")

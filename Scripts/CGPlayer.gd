@@ -50,12 +50,22 @@ func _ready() -> void:
 	else:
 		$SceneMode/AutoToggle.texture_normal = load("res://Textures/CGPlayer/auto.png")
 	
-	sceneNumber = 0
-	textPos = 0
-	clearScene()
-	loadData()
-	deleteTaggedData()
-	loadScene()
+	if Global.getGameData("IsCGPlayerRunning"):
+		var oldData = Global.getGameData("CGPlayerData")
+		sceneNumber = oldData[0]
+		textPos = oldData[1]
+		clearScene()
+		loadData()
+		deleteTaggedData()
+		loadScene()
+		# TODO properly set what textbox should be displayed and set visible characters. add vars to CGPlayerData 
+	else:
+		sceneNumber = 0
+		textPos = 0
+		clearScene()
+		loadData()
+		deleteTaggedData()
+		loadScene()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -127,7 +137,15 @@ func buttonPressed(buttonName):
 				$SceneMode/EffectsToggle.texture_normal = load("res://Textures/CGPlayer/ef.png")
 				$SceneMode/EffectsToggle.texture_hover = load("res://Textures/CGPlayer/ef_.png")
 		"ReturnToMemory":
-			Global.changeScene("Memory")
+			Global.setGameData("IsCGPlayerRunning", false)
+			match Global.getGameData("CGPlayerReturnLocation"):
+				"Memory":
+					Global.changeScene("Memory")
+				"Home":
+					Global.changeScene("Home")
+				_:
+					print("No CGPlayer return location set.")
+					Global.changeScene("Memory")
 		"Next":
 			if has_position(data,sceneNumber+1):
 				clearScene()
@@ -299,7 +317,13 @@ func checkTextTags():
 	$SceneMode/MainText.text = $SceneMode/MainText.text.substr(0, startPos) + $SceneMode/MainText.text.substr(endPos + 1)
 
 func openLoadMenu():
-	pass
+	Global.setGameData("IsCGPlayerRunning", true)
+	Global.setGameData("CGPlayerData", [sceneNumber,textPos])
+	
+	Global.setGameData("savedLocation","CGPlayer")
+	Global.changeScene("LoadGame")
+
+
 
 func setNameTag(newName):
 	$SceneMode/HEventNamePlate/NameTag.text = newName

@@ -38,6 +38,17 @@ func buttonPressed(buttonName):
 			Global.changeScene("Memory")
 		"Music":
 			Global.changeScene("Music")
+		"Molest":
+			if Global.getGameData("Molested"):
+				Global.setSettings("currentScene","molest_2")
+				Global.setGameData("savedLocation","ScenarioPlayer")
+				get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
+			else:
+				Global.setSettings("currentScene","molest_1")
+				Global.setGameData("Molested",true)
+				Global.setGameData("savedLocation","ScenarioPlayer")
+				get_tree().change_scene_to_file("res://Scenes/ScenarioPlayer.tscn")
+
 
 func toggleRepeat():
 	if Global.getSettings("RepeatToggled"):

@@ -55,7 +55,11 @@ var internalSave : Dictionary = {
 	"savedNameCard" : ["","basic"],
 	"HomeBGM" : "SilverGlass",
 	"CurrentMemory" : "First_Inside_LowLust",
-	"CGMode" : false
+	"CGMode" : false,
+	"IsCGPlayerRunning" : false, # for when navigating within CGPlayer
+	"CGPlayerData" : [],
+	"CGPlayerReturnLocation" : "",
+	"Molested" : false
 }
 
 var customWordDict = {
@@ -77,7 +81,8 @@ var customWordDict = {
 # "changeBackground", "newBackground"
 # "changeCharacter", "PickCharacter", "newCharacter" 
 # "moveCharacter", "PickCharacter", "newLocation", "SpeedOfMovement"
-# "makeChoice", choicesArr[] ( ["text","button texture","command","commandData" ] ) 
+# "makeChoice", choicesArr[] ( ["button text","button texture/ (Bad / Normal)","command (changeScene / changeRedotScene / playCG)","commandData (Scene Name / Redot Scene name / CG Name)" ] ) 
+
 # "changeNameCard", "newName", "frame type"
 
 
@@ -165,7 +170,6 @@ var gameDataDict : Dictionary = {
 		16 : ["changeCharacter","CharLeft","Sylvie-rags-talk"],
 		17 : ["changeText",["Please... treat me gently..."]],
 		18 : ["changeScene","Home"]
-		
 	},
 	"girlRejected" = {
 		0 : ["changeCharacter","CharRight","StrangerAFrown"],
@@ -182,12 +186,64 @@ var gameDataDict : Dictionary = {
 			["Return to the title screen","Normal","changeRedotScene","MainMenu"]
 		]]
 	},
+	"molest_1" = {
+		0 : ["changeBackground","Sylvie-molest"],
+		1 : ["changeText",["(I try touching Sylvie's breasts...","\n...But she only has small bulges so there isn't much to feel."]],
+		2 : ["changeNameCard","Sylvie","silver"],
+		3 : ["changeText",["...?"]],
+		4 : ["changeNameCard","","basic"],
+		5 : ["(She stirs slightly, but she doesn't resist."],
+		6 : ["changeScene","Home"]
+	},
+	"molest_2" = {
+		0 : ["changeBackground","Sylvie-molest"],
+		1 : ["changeText",["(When I ordered Sylvie to lift up her clothes, she obeyed without saying anything.","\nIt seems that she wasn't given any underwear, her mons enters my vision."]],
+		2 : ["changeText",["..."]],
+		3 : ["changeBackground","Sylvie-molest"],
+		4 : ["changeText",["(I stretch out my hand and begin touching her hairless pubic region."]],
+		5 : ["changeBackground","Sylvie-molest"],
+		6 : ["changeText",["W-What are you...?"]],
+		7 : ["makeChoice",[
+			["Continue","Normal","changeScene","molest_3"],
+			["Stop","Normal","changeRedotScene","Home"]
+		]],
+	},
+	"molest_3" = {
+		0 : ["changeBackground","Sylvie-molest"],
+		1 : ["changeText",["(I gently rub her vagina and clitoris."]],
+		2 : ["changeText",["Mn..."]],
+		3 : ["makeChoice",[
+			["Continue","Normal","changeScene","molest_4"],
+			["Stop","Normal","changeRedotScene","Home"]
+		]],
+	},
+	"molest_4" = {
+		0 : ["changeBackground","Sylvie-molest"],
+		1 : ["changeText",["(Her vagina gradually gets wetter as I continue gently touching her there.","\nI wonder if she has any experience?"]],
+		2 : ["changeText",["Eh...?","\nNo, my previous master never did anything like... this to me before..."]],
+		3 : ["makeChoice",[
+			["Continue","Normal","changeScene","molest_5"],
+			["Stop","Normal","changeRedotScene","Home"]
+		]],
+	},
+	"molest_5" = {
+		0 : ["changeBackground","Sylvie-molest"],
+		1 : ["changeText",["This somehow... feels strange..."]],
+		2 : ["changeText",["(It seems like she's beginning to feel pleasure from this.","\nHer love juices dampen her inner thighs."]],
+		3 : ["changeText",["(...This should be enough."]],
+		4 : ["setCGReturnLocation","Home"],
+		5 : ["makeChoice",[
+			["Push her down","Bad","playCG","First_Inside_LowLust"],
+			["I've changed my mind","Normal","changeRedotScene","Home"]
+		]]
+	},
 	"nullRoom" = {}
 }
 
 var imageDict : Dictionary = {
 	"gameOver" = "res://Textures/Scenario/black.jpg",
 	"error" = "res://Textures/Scenario/black.jpg",
+	"black" = "res://Textures/Scenario/black.jpg",
 	"empty" = "res://Textures/Scenario/Character/empty.png",
 	"DoorStart" = "res://Textures/Scenario/door.jpg",
 	"StrangerASmile" = "res://Textures/Scenario/Character/fel_a_smile.png",
@@ -195,8 +251,9 @@ var imageDict : Dictionary = {
 	"forrest" = "res://Textures/Scenario/Crossdale/forest.jpg",
 	"Sylvie-rags" = "res://Textures/Scenario/Character/s.png",
 	"Sylvie-rags-talk" = "res://Textures/Scenario/Character/s-talk.png",
-	"Sylvie-rags-talk-blink" = "res://Textures/Scenario/Character/s-talk-blink.png"
-	
+	"Sylvie-rags-talk-blink" = "res://Textures/Scenario/Character/s-talk-blink.png",
+	"Sylvie-molest" = "res://Textures/Scenario/Molest/s00.jpg"
+	# Molest route. Why the fuck did ray do this? why is it in pieces?
 }
 
 # Template
@@ -208,40 +265,11 @@ var imageDict : Dictionary = {
 	#"Main" : [],
 	#"SFX" : [],
 	#"SpeachBubbles" : []
+	#"Text" : [],
+	#"Tags" : []
 #}
 
-				#[
-				#],
-				#[
-				#],
-				#[
-				
-				#],
-				#[
-					
-				#],
-				#[
-				
-				#],
-				#[
-				
-				#],
-				#[
-				
-				#],
-				#[
-				
-				#],
-				#[
-					#["#Sylvie#Master... I... Something is...!"],
-					#["##(I'm almost at my limit too..."],
-				#],
-				#[
-				
-				#],
-				#[
-				
-				#]
+ # DISABLED_IN_CGS : removes frame when viewed in CG mode.
 
 var CGDataDict : Dictionary = {
 	"First_Inside_LowLust" : [
@@ -868,6 +896,30 @@ var CGDataDict : Dictionary = {
 				[""]
 			]
 		}
+	],
+	"Forced_1" : [
+		{
+			"Background" : [],
+			"Effects" : [],
+			"Hair" : [],
+			"Internal" : [],
+			"Main" : [],
+			"SFX" : [],
+			"SpeachBubbles" : [],
+			"Text" : [],
+			"Tags" : []
+		},
+		{
+			"Background" : [],
+			"Effects" : [],
+			"Hair" : [],
+			"Internal" : [],
+			"Main" : [],
+			"SFX" : [],
+			"SpeachBubbles" : [],
+			"Text" : [],
+			"Tags" : []
+		}
 	]
 }
 
@@ -918,6 +970,8 @@ func getImage(imageName):
 
 # get values from settings
 func getSettings(settingName):
+	if settingsDict[settingName] is Array:
+		return settingsDict[settingName].duplicate(true)
 	return settingsDict[settingName]
 
 # set values in settings
@@ -927,6 +981,8 @@ func setSettings(settingName, value):
 
 # get values from game data
 func getGameData(dataName):
+	if internalSave[dataName] is Array:
+		return internalSave[dataName].duplicate(true)
 	return internalSave[dataName]
 
 # set values in game data
