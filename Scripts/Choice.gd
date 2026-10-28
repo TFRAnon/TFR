@@ -48,6 +48,8 @@ func changeOnPress(action,data):
 					print("Pressed :", action," : ", data)
 					Global.setGameData("CurrentMemory",data)
 					Global.changeScene("CGPlayer"))
+		_:
+			print("No action found for action : "+str(action)+" , with data : "+str(data))
 
 func clear():
 	self.queue_free()

@@ -80,7 +80,7 @@ func changeBackground(textureInput):
 
 func processLine():
 	var command = dataDict.get(currentPosition, ["NA"])
-	if command[0] == "NA":
+	if command[0] == "NA" && currentPosition != 0:
 		return
 		
 	print("processing command : "+str(command))

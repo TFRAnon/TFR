@@ -196,12 +196,12 @@ var gameDataDict : Dictionary = {
 		6 : ["changeScene","Home"]
 	},
 	"molest_2" = {
-		0 : ["changeBackground","Sylvie-molest"],
+		0 : ["changeBackground",["molest-background","molest-Rout-2a","molest-Rout-2b","molest-Rout-2c","molest-Rout-2d"]],
 		1 : ["changeText",["(When I ordered Sylvie to lift up her clothes, she obeyed without saying anything.","\nIt seems that she wasn't given any underwear, her mons enters my vision."]],
 		2 : ["changeText",["..."]],
-		3 : ["changeBackground","Sylvie-molest"],
+		3 : ["changeBackground",["molest-background","molest-Rout-2a","molest-Rout-2b","molest-Rout-2c","molest-Rout-2d","molest-Rout-2e"]],
 		4 : ["changeText",["(I stretch out my hand and begin touching her hairless pubic region."]],
-		5 : ["changeBackground","Sylvie-molest"],
+		5 : ["changeBackground",["molest-background","molest-Rout-2a","molest-Rout-2b","molest-Rout-2c","molest-Rout-2f","molest-Rout-2e"]],
 		6 : ["changeText",["W-What are you...?"]],
 		7 : ["makeChoice",[
 			["Continue","Normal","changeScene","molest_3"],
@@ -209,7 +209,7 @@ var gameDataDict : Dictionary = {
 		]],
 	},
 	"molest_3" = {
-		0 : ["changeBackground","Sylvie-molest"],
+		0 : ["changeBackground",["molest-background","molest-Rout-2a","molest-Rout-2b","molest-Rout-2c","molest-Rout-2d","molest-Rout-3a"]],
 		1 : ["changeText",["(I gently rub her vagina and clitoris."]],
 		2 : ["changeText",["Mn..."]],
 		3 : ["makeChoice",[
@@ -252,8 +252,16 @@ var imageDict : Dictionary = {
 	"Sylvie-rags" = "res://Textures/Scenario/Character/s.png",
 	"Sylvie-rags-talk" = "res://Textures/Scenario/Character/s-talk.png",
 	"Sylvie-rags-talk-blink" = "res://Textures/Scenario/Character/s-talk-blink.png",
-	"Sylvie-molest" = "res://Textures/Scenario/Molest/s00.jpg"
 	# Molest route. Why the fuck did ray do this? why is it in pieces?
+	"Sylvie-molest" = "res://Textures/Scenario/Molest/s00.jpg",
+	"molest-background" = "res://Textures/Scenario/Molest/2/Hxf.jpg",
+	"molest-Rout-2a" = "res://Textures/Scenario/Molest/2/body0.png",
+	"molest-Rout-2b" = "res://Textures/Scenario/Molest/2/a0.png",
+	"molest-Rout-2c" = "res://Textures/Scenario/Molest/2/head.png",
+	"molest-Rout-2d" = "res://Textures/Scenario/Molest/2/face1.png",
+	"molest-Rout-2e" = "res://Textures/Scenario/Molest/2/hand1.png",
+	"molest-Rout-2f" = "res://Textures/Scenario/Molest/2/face2.png",
+	"molest-Rout-3a" = "res://Textures/Scenario/Molest/3/hand2.png"
 }
 
 # Template
